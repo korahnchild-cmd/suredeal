@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#0C1730">
+<title>슈어딜 — 손님이 받는 알림</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<style>
+:root{
+  --deep:#0C1730; --blue:#2453D9; --blue-d:#1B41B0;
+  --kbg:#B2C7D9;            /* 카톡 채팅방 배경 */
+  --bubble:#FFFFFF;
+  --ink:#1A1A1A; --sub:#6B7684;
+  --ytitle:#FFEB33;         /* 알림톡 상단 밴드 */
+  --line:#EAECEF;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Pretendard Variable',Pretendard,-apple-system,system-ui,'Malgun Gothic',sans-serif;background:#070D1D;display:flex;justify-content:center;min-height:100vh;color:var(--ink)}
+.phone{width:100%;max-width:432px;background:var(--kbg);min-height:100vh;min-height:100dvh;box-shadow:0 0 80px rgba(0,0,0,.55);display:flex;flex-direction:column}
+
+/* 상단 — 슈어딜 브랜드 바 + 카톡방 헤더 */
+.topbar{background:var(--deep);color:#fff;padding:13px 18px;display:flex;align-items:center;gap:9px;position:sticky;top:0;z-index:30;
+  background-image:radial-gradient(120% 160% at 100% 0%,#1A2E5C 0%,var(--deep) 55%)}
+.mark{width:25px;height:28px;display:flex;align-items:center;justify-content:center}
+.mark svg{width:100%;height:100%}
+.topbar b{font-size:15px;font-weight:800;letter-spacing:-.2px}
+.topbar small{font-size:11px;color:#93A5CC;margin-left:2px;font-weight:500}
+.demo-tag{margin-left:auto;font-size:9.5px;font-weight:800;letter-spacing:1.5px;border:1px solid rgba(255,255,255,.22);padding:4px 9px;border-radius:6px;color:#AFC2EE}
+
+.kakao-head{background:#A9BFD3;padding:12px 16px;display:flex;align-items:center;gap:11px;border-bottom:1px solid rgba(0,0,0,.06);position:sticky;top:51px;z-index:29}
+.kh-avatar{width:38px;height:38px;border-radius:14px;background:linear-gradient(135deg,#3D6BFF,#1B41B0);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.kh-avatar svg{width:20px;height:20px}
+.kh-name{font-size:14.5px;font-weight:750;letter-spacing:-.2px}
+.kh-name .ch{display:inline-block;vertical-align:1px;margin-left:4px;width:14px;height:14px;border-radius:50%;background:#FFEB33;color:#3B1E1E;font-size:9px;font-weight:900;text-align:center;line-height:14px}
+.kh-sub{font-size:11px;color:#5B6B7C;margin-top:2px}
+
+/* 안내 배너 */
+.intro-note{margin:14px 14px 4px;background:rgba(12,23,48,.85);color:#DCE5F8;border-radius:12px;padding:13px 15px;font-size:12.5px;line-height:1.65;letter-spacing:-.1px;backdrop-filter:blur(2px)}
+.intro-note b{color:#fff}
+
+/* 채팅 본문 */
+.chat{padding:10px 14px 50px;flex:1}
+.day-chip{display:flex;justify-content:center;margin:22px 0 6px}
+.day-chip span{background:rgba(0,0,0,.18);color:#fff;font-size:11px;font-weight:600;padding:5px 14px;border-radius:999px;letter-spacing:.2px}
+.scene{display:flex;justify-content:center;margin:10px 0 12px}
+.scene span{background:rgba(255,255,255,.55);color:#3D4B5C;font-size:11.5px;font-weight:650;padding:6px 13px;border-radius:999px;letter-spacing:-.1px;text-align:center;line-height:1.5;max-width:320px}
+.scene.alert span{background:#FFE9E4;color:#B4402E}
+
+.msg{display:flex;gap:8px;margin-bottom:14px;align-items:flex-start}
+.m-avatar{width:34px;height:34px;border-radius:13px;background:linear-gradient(135deg,#3D6BFF,#1B41B0);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.m-avatar svg{width:18px;height:18px}
+.m-col{max-width:82%}
+.m-name{font-size:11.5px;color:#4A5A6B;margin-bottom:5px;font-weight:600}
+.m-row{display:flex;align-items:flex-end;gap:6px}
+.m-time{font-size:10px;color:#5E6E80;flex-shrink:0;padding-bottom:2px}
+
+/* 알림톡 카드 */
+.atalk{background:var(--bubble);border-radius:4px 16px 16px 16px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.1);min-width:230px}
+.at-band{background:var(--ytitle);padding:8px 14px;font-size:11px;font-weight:800;color:#3B2E00;display:flex;align-items:center;gap:5px;letter-spacing:.2px}
+.at-band:before{content:"";width:13px;height:13px;border-radius:50%;background:#3B2E00;flex-shrink:0;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3C7 3 3 6.1 3 10c0 2.4 1.6 4.5 4 5.8L6.3 19c-.1.4.3.7.6.5l3.7-2.2c.5.1.9.1 1.4.1 5 0 9-3.1 9-7S17 3 12 3z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3C7 3 3 6.1 3 10c0 2.4 1.6 4.5 4 5.8L6.3 19c-.1.4.3.7.6.5l3.7-2.2c.5.1.9.1 1.4.1 5 0 9-3.1 9-7S17 3 12 3z'/%3E%3C/svg%3E") center/contain no-repeat}
+.at-body{padding:13px 15px 14px;font-size:13px;line-height:1.66;letter-spacing:-.15px}
+.at-title{font-size:14px;font-weight:800;margin-bottom:8px;letter-spacing:-.3px}
+.at-body b{font-weight:730}
+.at-list{margin:9px 0;padding:10px 12px;background:#F7F8FA;border-radius:9px}
+.at-list div{display:flex;gap:7px;font-size:12.5px;padding:2px 0}
+.at-list div:before{content:"·";font-weight:900;color:#9AA4B2}
+.at-btn{margin-top:11px;border-top:1px solid var(--line);padding-top:11px;text-align:center;font-size:13px;font-weight:750;color:var(--blue);letter-spacing:-.2px}
+.at-foot{font-size:11px;color:#98A2AE;margin-top:8px}
+
+/* 손님 말풍선 (스토리텔링용) */
+.me{display:flex;justify-content:flex-end;margin-bottom:14px}
+.me-row{display:flex;align-items:flex-end;gap:6px;max-width:80%}
+.me-bubble{background:#FFEB33;border-radius:16px 4px 16px 16px;padding:10px 14px;font-size:13px;line-height:1.6;letter-spacing:-.15px;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+
+/* 섹션 구분 (변형 케이스) */
+.section-break{margin:34px 10px 6px;text-align:center}
+.section-break b{display:inline-block;background:var(--deep);color:#fff;font-size:12px;font-weight:750;padding:8px 18px;border-radius:999px;letter-spacing:-.1px;box-shadow:0 4px 12px rgba(12,23,48,.3)}
+.section-break p{font-size:11.5px;color:#3D4B5C;margin-top:8px;line-height:1.6}
+
+/* 하단 포인트 요약 */
+.outro{margin:30px 14px 30px;background:#fff;border-radius:16px;padding:19px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.outro h3{font-size:14.5px;font-weight:800;letter-spacing:-.3px;margin-bottom:11px;color:var(--deep)}
+.outro li{list-style:none;display:flex;gap:9px;font-size:13px;line-height:1.65;padding:5px 0;letter-spacing:-.15px;color:#333D4B}
+.outro li:before{content:"✓";color:#0B7A4B;font-weight:900;flex-shrink:0}
+</style>
+</head>
+<body>
+<div class="phone">
+
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="i-shield" viewBox="0 0 24 24"><path fill="#fff" d="M12 2 4.5 5v6c0 4.8 3.2 9.1 7.5 10.4 4.3-1.3 7.5-5.6 7.5-10.4V5L12 2Zm-1.2 13.6-3-3 1.4-1.4 1.6 1.6 4-4 1.4 1.4-5.4 5.4Z"/></symbol>
+<symbol id="i-mark" viewBox="0 0 60 68" fill="none">
+  <path d="M30 4l25 9.5v21.8C55 53 43.5 60.5 30 64.5 16.5 60.5 5 53 5 35.3V13.5z" stroke="#3D6BFF" stroke-width="7.5" stroke-linejoin="round"/>
+  <path d="M17 35.5l11 11.5L57 12" stroke="#2FA85F" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+</defs></svg>
+
+<div class="topbar">
+  <div class="mark"><svg><use href="#i-mark"/></svg></div>
+  <b>슈어딜</b><small>손님이 받는 알림</small>
+  <span class="demo-tag">DEMO</span>
+</div>
+
+<div class="kakao-head">
+  <div class="kh-avatar"><svg><use href="#i-shield"/></svg></div>
+  <div>
+    <div class="kh-name">슈어딜<span class="ch">ch</span></div>
+    <div class="kh-sub">카카오 알림톡 · 광고 아님</div>
+  </div>
+</div>
+
+<div class="chat">
+
+<div class="intro-note"><b>이 화면은 계약한 손님의 실제 카카오톡입니다.</b><br>토요일 오후에 계약한 손님이 등록 완료까지 받게 되는 알림을 시간 순서대로 보여드립니다. 모든 문구는 실제 진행 상태와 일치할 때만 발송됩니다.</div>
+
+<!-- ============ 토요일 ============ -->
+<div class="day-chip"><span>8월 8일 토요일</span></div>
+<div class="scene"><span>오후 2시 — 굿카닷컴에서 그랜저 계약, 대금 전액 결제 후 서명 완료 직후</span></div>
+
+<div class="msg">
+  <div class="m-avatar"><svg><use href="#i-shield"/></svg></div>
+  <div class="m-col">
+    <div class="m-name">슈어딜</div>
+    <div class="m-row">
+      <div class="atalk">
+        <div class="at-band">알림톡 도착</div>
+        <div class="at-body">
+          <div class="at-title">계약이 확정되었습니다</div>
+          이O진님, <b>그랜저 IG 2.5(12가 3456)</b> 매매계약이 확정되었습니다.
+          <div class="at-list">
+            <div>관리번호: SD-2608-0142</div>
+            <div>차량 대금 입금 완료 — 잔금 없음</div>
+            <div>본인인증 · 전자서명 완료</div>
+            <div>판매: 굿카닷컴 (담당 김성훈)</div>
+          </div>
+          계약 내용과 슈어딜 보증서는 아래에서 언제든 확인하실 수 있습니다.
+          <div class="at-btn">보증서 확인하기</div>
+        </div>
+      </div>
+      <span class="m-time">14:24</span>
+    </div>
+  </div>
+</div>
+
+<div class="scene"><span>오후 3시 — 손님, 차량 인수 후 귀가</span></div>
+
+<div class="msg">
+  <div class="m-avatar"><svg><use href="#i-shield"/></svg></div>
+  <div class="m-col">
+    <div class="m-name">슈어딜</div>
+    <div class="m-row">
+      <div class="atalk">
+        <div class="at-band">알림톡 도착</div>
+        <div class="at-body">
+          <div class="at-title">계약 서류 확정 완료</div>
+          이O진님의 이전등록 서류 준비가 완료되었습니다.<br>
+          등록 절차가 순차적으로 진행되며, 단계별로 안내드리겠습니다.
+          <div class="at-btn">진행 상황 확인</div>
+        </div>
+      </div>
+      <span class="m-time">15:42</span>
+    </div>
+  </div>
+</div>
+
+<div class="scene alert"><span>저녁 — 가족들의 한마디 "그거 왜 샀어" "비싸게 준 거 아냐?"<br>손님 마음이 흔들리는 바로 그 시간</span></div>
+
+<div class="msg">
+  <div class="m-avatar"><svg><use href="#i-shield"/></svg></div>
+  <div class="m-col">
+    <div class="m-name">슈어딜</div>
+    <div class="m-row">
+      <div class="atalk">
+        <div class="at-band">알림톡 도착</div>
+        <div class="at-body">
+          <div class="at-title">고객님의 차량은 보증이 적용 중입니다</div>
+          이O진님, 오늘부터 그랜저와 함께하시네요.<br><br>
+          고객님의 차량은 <b>성능보증보험 적용 차량</b>입니다.<br>
+          주행 중 주요 장치(엔진·미션 등)에 이상이 느껴지시면 보증 기간(인도일로부터 <b>30일 / 2,000km</b>) 내 무상 보증 접수가 가능합니다.
+          <div class="at-list"><div>문의: 김성훈 010-1234-5678</div></div>
+          <div class="at-btn">내 보증 내용 확인</div>
+        </div>
+      </div>
+      <span class="m-time">19:00</span>
+    </div>
+  </div>
+</div>
+
+<div class="me"><div class="me-row"><span class="m-time">19:12</span><div class="me-bubble">(가족 단톡방에 보증서 공유) 봐봐, 보증서까지 받았다니까 😎</div></div></div>
+
+<!-- ============ 월요일 ============ -->
+<div class="day-chip"><span>8월 10일 월요일</span></div>
+<div class="scene"><span>오전 — 등록사업소 접수 진행</span></div>
+
+<div class="msg">
+  <div class="m-avatar"><svg><use href="#i-shield"/></svg></div>
+  <div class="m-col">
+    <div class="m-name">슈어딜</div>
+    <div class="m-row">
+      <div class="atalk">
+        <div class="at-band">알림톡 도착</div>
+        <div class="at-body">
+          <div class="at-title">이전등록 절차가 진행 중입니다</div>
+          이O진님의 그랜저 이전등록 절차가 진행되고 있습니다.<br>
+          등록이 완료되면 즉시 안내드리겠습니다.
+        </div>
+      </div>
+      <span class="m-time">09:38</span>
+    </div>
+  </div>
+</div>
+
+<div class="scene"><span>오후 — 딜러가 등록증 수령, 버튼 한 번</span></div>
+
+<div class="msg">
+  <div class="m-avatar"><svg><use href="#i-shield"/></svg></div>
+  <div class="m-col">
+    <div class="m-name">슈어딜</div>
+    <div class="m-row">
+      <div class="atalk">
+        <div class="at-band">알림톡 도착</div>
+        <div class="at-body">
+          <div class="at-title">이전등록이 완료되었습니다 🎉</div>
+          이O진님, <b>그랜저 IG 2.5(12가 3456)</b>의 이전등록이 완료되었습니다.<br>
+          이제 완전히 고객님의 차량입니다.
+          <div class="at-list">
+            <div>자동차등록증: 굿카닷컴에서 전달 예정</div>
+            <div>계약·보증 기록은 보증서에서 계속 확인 가능</div>
+          </div>
+          굿카닷컴를 믿고 거래해 주셔서 감사합니다.
+          <div class="at-btn">보증서 확인하기</div>
+        </div>
+      </div>
+      <span class="m-time">14:51</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 변형 케이스 ============ -->
+<div class="section-break">
+  <b>이런 경우에도 알림이 지킵니다</b>
+  <p>계약금만 먼저 입금하는 가계약 · 차를 보지 않고 송금하는 비대면 구매</p>
+</div>
+
+<div class="scene"><span>가계약 — 계약금 300만 원만 입금, 인도는 수요일</span></div>
+
+<div class="msg">
+  <div class="m-avatar"><svg><use href="#i-shield"/></svg></div>
+  <div class="m-col">
+    <div class="m-name">슈어딜</div>
+    <div class="m-row">
+      <div class="atalk">
+        <div class="at-band">알림톡 도착</div>
+        <div class="at-body">
+          <div class="at-title">계약금 입금이 확인되어 계약이 성립되었습니다</div>
+          이O진님, 그랜저(12가 3456) <b>계약금 300만 원</b> 입금이 확인되었습니다.
+          <div class="at-list">
+            <div>관리번호: SD-2608-0143</div>
+            <div>잔금 2,520만 원 — 입금 예정 8/12(수)</div>
+            <div>인도 예정일: 8/12(수)</div>
+          </div>
+          차량은 고객님 명의 계약 건으로 관리되며, 본계약 진행 시 다시 안내드리겠습니다.
+          <div class="at-btn">계약 확인하기</div>
+        </div>
+      </div>
+      <span class="m-time">16:05</span>
+    </div>
+  </div>
+</div>
+
+<div class="scene"><span>비대면 — 차량 확인 없이 송금 구매하는 손님</span></div>
+
+<div class="msg">
+  <div class="m-avatar"><svg><use href="#i-shield"/></svg></div>
+  <div class="m-col">
+    <div class="m-name">슈어딜</div>
+    <div class="m-row">
+      <div class="atalk">
+        <div class="at-band">알림톡 도착</div>
+        <div class="at-body">
+          <div class="at-title">굿카닷컴 계약 확인 요청</div>
+          이O진님, <b>그랜저 IG 2.5(12가 3456)</b> 계약 내용이 도착했습니다.<br>
+          본인인증 후 계약 내용과 차량 정보를 확인하고 서명해 주세요.<br><br>
+          슈어딜은 본인인증 기반으로 계약 기록을 안전하게 보관하여 <b>비대면 거래에서도 고객님을 보호합니다.</b>
+          <div class="at-btn">계약 확인하기</div>
+        </div>
+      </div>
+      <span class="m-time">11:20</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 요약 ============ -->
+<div class="outro">
+  <h3>이 알림들이 하는 일</h3>
+  <li>계약 직후 1분 안에 "이미 진행되고 있다"를 손님 폰에 남깁니다</li>
+  <li>가족들이 흔드는 토요일 저녁, 보증 알림이 손님 곁을 지킵니다</li>
+  <li>손님이 보증서를 가족에게 직접 공유 — "왜 샀냐"를 스스로 방어합니다</li>
+  <li>모든 문구는 실제 상태와 일치 — 등록 완료는 등록증을 받은 순간에만 발송됩니다</li>
+  <li>딜러가 할 일은 등록증 받을 때 버튼 한 번, 나머지는 전부 자동입니다</li>
+</div>
+
+</div>
+</div>
+</body>
+</html>
