@@ -292,6 +292,40 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 .vc-foot{font-size:11.5px;color:#6E7EA6;margin-top:11px;letter-spacing:-.1px;line-height:1.55}
 
 
+/* ============ 입금 확인 · 주행거리 분기 ============ */
+.paybox{background:linear-gradient(180deg,#F6FBF8,#EDF7F1);border:1px solid #CBE8D8;
+  border-radius:var(--r-md);padding:14px 15px;margin-top:13px}
+.paybox .ph2{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;color:var(--green)}
+.paybox .ph2 i{width:18px;height:18px;border-radius:50%;background:var(--green);color:#fff;
+  font-style:normal;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none}
+.pay-r{display:flex;justify-content:space-between;align-items:baseline;font-size:12.5px;
+  padding:8px 0;color:var(--ink-2)}
+.pay-r + .pay-r{border-top:1px solid rgba(11,122,75,.12)}
+.pay-r b{font-weight:750;color:var(--ink)}
+.pay-r .when{font-size:11px;color:var(--sub);font-weight:600;margin-left:6px}
+.pay-shot{display:flex;align-items:center;gap:10px;margin-top:11px;padding-top:11px;
+  border-top:1px solid rgba(11,122,75,.14);font-size:11.5px;color:var(--sub);line-height:1.55}
+.pay-shot .thumb{width:44px;height:56px;border-radius:7px;background:#fff;border:1px solid #CBE8D8;flex:none;
+  display:flex;flex-direction:column;gap:3px;padding:7px 6px}
+.pay-shot .thumb span{height:3px;border-radius:2px;background:#D7E7DE}
+.pay-shot .thumb span:nth-child(2){width:70%}
+.pay-shot .thumb span:nth-child(4){width:55%}
+.pay-sub{font-size:11px;color:var(--sub);line-height:1.65;margin-top:9px;padding-top:9px;
+  border-top:1px dashed rgba(11,122,75,.2)}
+.pay-sub b{color:var(--green);font-weight:800}
+.pay-note{font-size:10.5px;color:var(--sub);margin-top:10px;line-height:1.6}
+.km-warn{display:flex;gap:9px;background:var(--amber-bg);border:1px solid #F0DFBC;border-radius:var(--r-md);
+  padding:13px 14px;margin-top:12px;font-size:12px;line-height:1.65;color:var(--amber)}
+.km-warn b{font-weight:800}
+.km-badge{display:inline-block;font-size:10.5px;font-weight:800;color:var(--amber);background:var(--amber-bg);
+  border:1px solid #F0DFBC;border-radius:5px;padding:2px 7px;margin-left:6px;vertical-align:1px}
+.demo-switch{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(100px + env(safe-area-inset-bottom));white-space:nowrap;
+  z-index:40;background:rgba(12,23,48,.94);color:#C3CFE6;border-radius:999px;padding:7px 8px 7px 14px;
+  display:flex;align-items:center;gap:10px;font-size:11.5px;font-weight:650;box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.demo-switch button{background:rgba(255,255,255,.12);color:#fff;border-radius:999px;padding:5px 12px;
+  font-size:11.5px;font-weight:750;font-family:inherit}
+.demo-switch button:active{transform:scale(.96)}
+
 /* ============ S8 딜러 빠른 조회 (전화 받으면서 30초) ============ */
 #s8{background:var(--paper)}
 .lookup-head{background:var(--deep);color:#fff;padding:22px 22px 26px;
@@ -452,18 +486,32 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
         <div>
           <h2>그랜저 IG 2.5 가솔린</h2>
           <span class="plate">12가 3456</span>
-          <div class="meta">2021년식 · 41,820km · 무사고</div>
+          <div class="meta" id="vehMeta">2021년식 · 41,820km · 무사고</div>
         </div>
       </div>
-      <div class="kv"><span>매매금액</span><b class="price">2,820<small style="font-size:13px;font-weight:700">만 원</small></b></div>
-      <div class="kv"><span>계약금</span><b>300만 원<span class="paid">입금 완료</span></b></div>
-      <div class="kv"><span>잔금</span><b>2,520만 원</b></div>
+      <div class="kv"><span>차량 매매금액</span><b class="price">2,780<small style="font-size:13px;font-weight:700">만 원</small></b></div>
       <div class="kv"><span>인도 예정일</span><b>2026. 8. 12 (수)</b></div>
+
+      <div class="paybox">
+        <div class="ph2"><i>₩</i>입금 확인 기록</div>
+        <div class="pay-r"><span>계약금 <span class="when">8. 8(토) 14:05</span></span><b>300만 원 <span style="color:var(--green);font-size:11px;font-weight:800">입금 확인</span></b></div>
+        <div class="pay-r" id="payRest"><span>잔금 <span class="when">8. 12(수) 예정</span></span><b>2,520만 원</b></div>
+        <div class="pay-r" style="border-top:1px solid rgba(11,122,75,.28);margin-top:2px">
+          <span>입금 합계</span><b style="font-size:14px">2,820만 원</b></div>
+        <div class="pay-sub">차량 매매금액 2,780만 원 + 부대비용 40만 원<br>
+          <b>✓ 이 외에 추가로 청구되는 비용은 없습니다</b></div>
+        <div class="pay-shot">
+          <div class="thumb"><span></span><span></span><span></span><span></span></div>
+          <div>딜러가 첨부한 <b>입금 확인 화면</b>입니다.<br>계약 기록과 함께 보관되어 나중에 다시 확인하실 수 있습니다.</div>
+        </div>
+        <div class="pay-note">※ 세법상 영수증·현금영수증이 아니라, 당사자 간 <b>입금 사실을 남기는 기록</b>입니다.
+          현금영수증은 판매 상사에 별도로 요청해 주세요.</div>
+      </div>
     </div>
     <div class="card rise" style="animation-delay:.08s">
       <div class="kv" style="padding-top:2px"><span>판매 상사</span><b>굿카닷컴 · 대구 동구</b></div>
       <div class="kv"><span>담당 딜러</span><b>김성훈 &nbsp;010-1234-5678</b></div>
-      <div class="kv"><span>계약 일시</span><b>2026. 8. 8 (일) 14:20</b></div>
+      <div class="kv"><span>계약 일시</span><b>2026. 8. 8 (토) 14:20</b></div>
     </div>
   </div>
   <div class="cta-wrap"><button class="cta" onclick="go('s3')">계약 내용을 확인했습니다</button></div>
@@ -484,12 +532,24 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
     <h1>안내를 읽고<br>직접 체크해 주세요</h1>
     <p class="lead">담당 딜러에게 설명받은 내용입니다. 한 항목씩 확인 후 체크해 주세요.</p>
 
-    <div class="group">
+    <div class="group" id="grpA1">
       <div class="group-title"><span class="gnum">A</span>보증 안내<span class="gsub">4개 항목</span></div>
       <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>본 차량은 <b>성능·상태점검 및 성능보증보험 가입 차량</b>이며, 보증기간은 <b>인도일로부터 30일 또는 2,000km</b>입니다.</div></div>
       <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>엔진·미션 등 <b>주요 장치</b>가 성능점검 기재 내용과 다른 고장 발생 시, 보험을 통해 <b>무상 수리</b>가 가능합니다.</div></div>
       <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div><span class="warn">소모성 부품</span>(타이어 · 와이퍼 · 브레이크패드 · 배터리 · 오일류 · 벨트류 · 전구 등)은 <span class="warn">보증 대상이 아닙니다.</span></div></div>
       <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>중고차 특성상 소모품은 사용 정도에 따른 마모 상태이며, <b>언제든 교환 시기가 도래할 수 있음</b>을 확인했습니다.</div></div>
+    </div>
+
+    <!-- 20만km 초과 차량: 보험 미가입 → 법정 보증 안내로 대체 (A그룹 교체) -->
+    <div class="group" id="grpA2" style="display:none">
+      <div class="group-title"><span class="gnum">A</span>보증 안내<span class="gsub">보험 미가입 차량 · 4개 항목</span></div>
+      <div class="km-warn" style="margin:0 0 10px"><span>!</span><div>
+        본 차량은 <b>주행거리 20만km를 초과</b>하여 성능·상태점검 책임보험(성능보증보험) <b>가입 대상이 아닙니다.</b>
+        아래 내용을 반드시 확인해 주세요.</div></div>
+      <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>본 차량은 <span class="warn">성능보증보험에 가입되지 않은 차량</span>이며, 보험을 통한 무상 수리는 <span class="warn">적용되지 않습니다.</span></div></div>
+      <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>다만 <b>자동차관리법에 따른 판매자의 하자담보책임</b>은 그대로 유지되며, 성능·상태점검 기록과 다른 사실이 확인되면 법에 정한 바에 따라 조치를 요구하실 수 있습니다.</div></div>
+      <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>보험이 없는 대신 <b>판매 상사가 직접 약속한 보증 내용</b>은 다음 단계 &lt;합의 조정 내역&gt;에 기재되며, 기재된 내용만 효력이 있습니다.</div></div>
+      <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>주행거리 20만km 초과 차량 특성상 <b>주요 장치에도 노후에 따른 고장이 발생할 수 있음</b>을 확인했으며, 이를 감안한 가격임을 이해했습니다.</div></div>
     </div>
 
     <div class="group">
@@ -499,16 +559,18 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
     </div>
 
     <div class="group">
-      <div class="group-title"><span class="gnum">C</span>거래 조건 · 총액 확인<span class="gsub">3개 항목</span></div>
-      <div class="total-box">
-        <div class="tb-title">📋 거래 총액 내역</div>
-        <div class="tb-row"><span>차량 가격</span><b>2,780만 원</b></div>
-        <div class="tb-row"><span>매도비 (관리비용)</span><b>30만 원</b></div>
-        <div class="tb-row"><span>성능보증보험료</span><b>10만 원</b></div>
-        <div class="tb-row sum"><span>거래 총액</span><b>2,820만 원</b></div>
-        <div class="tb-badge">✓ 이 외 추가 수수료 없음</div>
+      <div class="group-title"><span class="gnum">C</span>거래 조건 확인<span class="gsub">3개 항목</span></div>
+      <div class="fold" id="foldFee">
+        <div class="fold-h" onclick="this.parentNode.classList.toggle('open');
+             var b=this.nextElementSibling; b.style.maxHeight=this.parentNode.classList.contains('open')?b.scrollHeight+'px':null;">
+          부대비용 내역 보기<span class="ar">▾</span></div>
+        <div class="fold-b"><div class="in">
+          <div class="tb-row"><span>매도비 (관리비용)</span><b>30만 원</b></div>
+          <div class="tb-row" id="rowIns"><span>성능보증보험료</span><b>10만 원</b></div>
+          <div class="tb-badge" style="margin-top:10px">✓ 이 외 추가 수수료 없음</div>
+        </div></div>
       </div>
-      <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>위 <b>거래 총액 내역</b>을 확인했으며, <b>표시된 총액 외 추가 비용이 없음</b>을 안내받았습니다.</div></div>
+      <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>차량 매매금액 외에 납부하신 <b>부대비용 금액을 확인</b>했으며, 이 외에 <b>추가로 청구되는 비용은 없음</b>을 안내받았습니다.</div></div>
       <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>이전등록비 등 <b>등록 관련 비용</b> 안내를 받았습니다.</div></div>
       <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>계약 체결 후 <b>단순 변심에 의한 해제 시 계약금 관련 규정</b>을 안내받았습니다.</div></div>
     </div>
@@ -589,13 +651,13 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
       <div class="vc-title">📋 오늘 고객님이 직접 확인하셨습니다</div>
       <div class="vc-row"><span class="vc-chk">✓</span><span><b>성능·상태점검기록부</b> — 사고이력·침수여부·주행거리</span></div>
       <div class="vc-row"><span class="vc-chk">✓</span><span><b>보증 범위와 제외 항목</b> — 주요 장치 30일/2,000km · 소모품 제외</span></div>
-      <div class="vc-row"><span class="vc-chk">✓</span><span><b>거래 총액 내역</b> — 2,820만 원 · 추가 수수료 없음</span></div>
+      <div class="vc-row"><span class="vc-chk">✓</span><span><b>거래 조건</b> — 부대비용 확인 · 추가 청구 비용 없음</span></div>
       <div class="vc-row"><span class="vc-chk">✓</span><span><b>합의 조정 내역 2건</b> — 가격 반영 합의 · 판매자 이행 약속</span></div>
       <div class="vc-foot">모든 항목은 고객님 본인인증 상태에서 직접 확인·서명되었으며, 확인 시각과 함께 안전하게 보관됩니다.</div>
     </div>
     <div class="card rise" style="animation-delay:.2s">
-      <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>본인인증 완료</b><small>2026. 8. 8 (일) 14:22 · PASS</small></div></div>
-      <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>고지 확인 · 전자서명 완료</b><small>2026. 8. 8 (일) 14:24 · 전 항목 본인 확인</small></div></div>
+      <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>본인인증 완료</b><small>2026. 8. 8 (토) 14:22 · PASS</small></div></div>
+      <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>고지 확인 · 전자서명 완료</b><small>2026. 8. 8 (토) 14:24 · 전 항목 본인 확인</small></div></div>
       <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>계약 서류 확정 완료</b><small>이전등록 절차가 순차 진행됩니다</small></div></div>
       <div class="tl-item wait"><div class="tl-dot">4</div><div>이전등록 접수<small>진행 시 알림으로 안내드립니다</small></div></div>
       <div class="tl-item wait"><div class="tl-dot">5</div><div>등록 완료 · 등록증 발급</div></div>
@@ -637,7 +699,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
         <div class="cert-row"><span>차 량</span><b>그랜저 IG 2.5 (2021) · 12가 3456</b></div>
         <div class="cert-row"><span>매수인</span><b>이O진 <span style="color:var(--green);font-size:11px;font-weight:800">· 본인인증 완료</span></b></div>
         <div class="cert-row"><span>판매 상사</span><b>굿카닷컴 · 담당 김성훈</b></div>
-        <div class="cert-row"><span>거래 총액</span><b>2,820만 원 <span style="color:var(--green);font-size:11px;font-weight:800">· 추가 수수료 없음 확인</span></b></div>
+        <div class="cert-row"><span>거래 조건</span><b>부대비용 확인 <span style="color:var(--green);font-size:11px;font-weight:800">· 추가 청구 비용 없음</span></b></div>
 
         <div class="cert-sec">보증 내용</div>
         <div class="cert-li">성능보증보험 가입 차량 — <b>주요 장치 30일 / 2,000km 무상 보증</b></div>
@@ -716,7 +778,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
         <div class="lk-row"><span class="ck2">✓</span>성능·상태점검기록부 열람<span class="tm2">14:25</span></div>
         <div class="lk-row"><span class="ck2">✓</span>보증 범위와 제외 항목<span class="tm2">14:23</span></div>
         <div class="lk-row"><span class="ck2">✓</span>소모성 부품 보증 제외<span class="tm2">14:24</span></div>
-        <div class="lk-row"><span class="ck2">✓</span>거래 총액 내역 (추가 수수료 없음)<span class="tm2">14:27</span></div>
+        <div class="lk-row"><span class="ck2">✓</span>거래 조건 · 부대비용 확인 (추가 청구 없음)<span class="tm2">14:27</span></div>
         <div class="lk-row"><span class="ck2">✓</span>기재된 내용 외 구두 약속 없음<span class="tm2">14:28</span></div>
       </div>
 
@@ -778,6 +840,38 @@ function runLookup(){
   },110);
   }, 1100);   /* 최근 계약 목록을 잠깐 보여준 뒤 타이핑 시작 */
 }
+/* 주행거리 20만km 초과 분기 — 성능보증보험 미가입 대상 */
+var HIGH_KM = false;
+function toggleKm(){
+  HIGH_KM = !HIGH_KM;
+  applyKm();
+  toast(HIGH_KM ? '20만km 초과 차량 — 보험 미가입 안내로 전환되었습니다'
+                : '일반 차량 — 성능보증보험 가입 안내로 전환되었습니다');
+}
+function applyKm(){
+  var meta=document.getElementById('vehMeta');
+  var a1=document.getElementById('grpA1'), a2=document.getElementById('grpA2');
+  var lab=document.getElementById('swLabel'), sw=document.getElementById('demoSw');
+  if(meta) meta.innerHTML = HIGH_KM
+    ? '2015년식 · 213,400km · 무사고<span class="km-badge">성능보증보험 미가입</span>'
+    : '2021년식 · 41,820km · 무사고';
+  var hide = HIGH_KM ? a1 : a2;
+  if(hide) hide.querySelectorAll('.chk.on').forEach(function(c){ c.classList.remove('on'); });
+  var ins=document.getElementById('rowIns');
+  var ps=document.querySelector('.pay-sub');
+  if(ps) ps.innerHTML = HIGH_KM
+    ? '차량 매매금액 2,780만 원 + 부대비용 30만 원<br><b>✓ 이 외에 추가로 청구되는 비용은 없습니다</b>'
+    : '차량 매매금액 2,780만 원 + 부대비용 40만 원<br><b>✓ 이 외에 추가로 청구되는 비용은 없습니다</b>';
+  var pr=document.querySelectorAll('.paybox .pay-r');
+  if(pr.length>2) pr[2].querySelector('b').textContent = HIGH_KM ? '2,810만 원' : '2,820만 원';
+  if(ins) ins.style.display = HIGH_KM ? 'none' : '';
+  if(a1) a1.style.display = HIGH_KM ? 'none' : '';
+  if(a2) a2.style.display = HIGH_KM ? '' : 'none';
+  if(lab) lab.textContent = HIGH_KM ? '20만km 초과 (21.3만km)' : '일반 차량 (4.1만km)';
+  if(sw) sw.querySelector('button').textContent = HIGH_KM ? '일반 차량으로 보기' : '20만km 초과로 보기';
+  /* 체크 개수 재계산 */
+  if(typeof updChk==='function') updChk();
+}
 function go(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   const t=document.getElementById(id);t.classList.add('active');
@@ -785,6 +879,9 @@ function go(id){
   if(id==='s5')setTimeout(initSig,80);
   if(id==='s7')updDplus();
   if(id==='s8')runLookup();
+  var sw=document.getElementById('demoSw');
+  if(sw) sw.style.display = (id==='s2'||id==='s3') ? 'flex' : 'none';
+  if(id==='s2'||id==='s3') applyKm();
 }
 /* 확정 의식 — 봉인 시퀀스 */
 function sealAndGo(){
@@ -815,14 +912,18 @@ function doPass(){
     b.onclick=()=>go('s2');
   },1400);
 }
-function tg(el){
-  el.classList.toggle('on');
-  const all=document.querySelectorAll('#s3 .chk');
-  const on=document.querySelectorAll('#s3 .chk.on').length;
-  const btn=document.getElementById('chkBtn');
-  btn.textContent=on===all.length?'모두 확인했습니다':'모두 확인했습니다 ('+on+'/'+all.length+')';
-  btn.disabled=on!==all.length;
+/* 숨겨진 A그룹(주행거리 분기)은 세지 않는다 */
+function visChk(){
+  return [].slice.call(document.querySelectorAll('#s3 .chk')).filter(function(c){ return c.offsetParent !== null; });
 }
+function updChk(){
+  const all=visChk(), on=all.filter(function(c){return c.classList.contains('on')}).length;
+  const btn=document.getElementById('chkBtn');
+  if(!btn) return;
+  btn.textContent = on===all.length ? '모두 확인했습니다' : '모두 확인했습니다 ('+on+'/'+all.length+')';
+  btn.disabled = on!==all.length;
+}
+function tg(el){ el.classList.toggle('on'); updChk(); }
 function tgSingle(el){
   el.classList.toggle('on');
   document.getElementById('adjBtn').disabled=!el.classList.contains('on');
@@ -859,5 +960,9 @@ function clearSig(){
   document.getElementById('sigBtn').disabled=true;
 }
 </script>
+<div class="demo-switch" id="demoSw">
+  <span id="swLabel">일반 차량 (4.1만km)</span>
+  <button type="button" onclick="toggleKm()">20만km 초과로 보기</button>
+</div>
 </body>
 </html>
