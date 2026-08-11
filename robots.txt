@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /$
+Allow: /index.html
+Allow: /privacy.html
+Allow: /og.png
+Disallow: /demo.html
+Disallow: /alimtalk.html
+
+Sitemap: https://korahnchild-cmd.github.io/suredeal/sitemap.xml
