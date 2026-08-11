@@ -1009,7 +1009,7 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
           <div class="vt">그랜저 IG 2.5</div>
           <span class="vp">12가 3456</span>
         </div>
-        <div class="vprice"><div class="l">거래 총액</div><div class="n">1,640<em>만 원</em></div></div>
+        <div class="vprice"><div class="l">거래 총액</div><div class="n">2,820<em>만 원</em></div></div>
       </div>
 
       <div class="pdf-back" aria-hidden="true">
@@ -1315,7 +1315,7 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
                 <span class="vp">12가 3456</span>
               </div>
             </div>
-            <div class="fld"><div class="l">매매금액</div><div class="v">1,640만 원</div></div>
+            <div class="fld"><div class="l">매매금액</div><div class="v">2,780만 원</div></div>
             <div class="fld"><div class="l">매수인 휴대폰</div><div class="v">010-****-1234</div></div>
             <div class="s-btn">손님에게 링크 보내기</div>
             <div class="s-note">문자로 링크가 발송됩니다</div>
@@ -1522,8 +1522,8 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
             <div class="b me2">“8월 8일 14시 25분에 직접 확인하신 항목입니다.<br>보증서 링크 다시 보내드릴게요.”</div></div>
           <div><div class="who">손님</div><div class="b cust">“…아, 그게 그거였구나.”</div></div>
         </div>
-        <div class="out">차량번호만 넣으면 그날의 기록이 뜹니다.
-          <b>감정 소모 없이, 근거로 끝납니다.</b></div>
+        <div class="out">차량번호만 넣으면 그날의 기록과 <b>손님에게 나간 알림톡 발송 시각</b>까지 함께 뜹니다.
+          감정 소모 없이, 근거로 끝납니다.</div>
         <span class="stampx">1분</span>
       </div>
     </div>
@@ -2314,8 +2314,7 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
   });
 
   /* ---------- 문의 폼 ----------
-     서버가 붙기 전까지는 메일 작성창으로 넘겨 문의가 유실되지 않게 한다.
-     정식 배포 시 fetch(ENDPOINT, ...) 로 교체할 것. */
+     서버가 붙기 전까지는 메일 작성창으로 넘겨 문의가 유실되지 않게 한다. */
   document.getElementById('inq').addEventListener('submit', function(e){
     e.preventDefault();
     var f = e.target;

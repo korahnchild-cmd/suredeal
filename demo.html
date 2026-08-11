@@ -327,6 +327,29 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 .lk-row .ck2{width:16px;height:16px;border-radius:5px;background:var(--green);color:#fff;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900}
 .lk-row .tm2{margin-left:auto;font-size:10.5px;color:var(--faint);flex-shrink:0;font-variant-numeric:tabular-nums}
+.lk-recent{margin-top:2px}
+.rc{display:flex;align-items:center;gap:11px;background:#fff;border:1px solid var(--line);
+  border-radius:var(--r-md);padding:12px 14px;margin-bottom:7px;box-shadow:var(--shadow-card);cursor:pointer;
+  transition:transform .14s cubic-bezier(.34,1.4,.5,1),box-shadow .2s}
+.rc:active{transform:scale(.985)}
+.rc .pl2{font-size:11px;font-weight:700;border:1.3px solid var(--ink);border-radius:5px;padding:2px 7px;
+  letter-spacing:.5px;flex-shrink:0}
+.rc .nm2{font-size:13px;font-weight:750;letter-spacing:-.3px}
+.rc .dt{font-size:10.5px;color:var(--faint);margin-top:2px}
+.rc .st{margin-left:auto;font-size:10px;font-weight:800;padding:4px 8px;border-radius:6px;flex-shrink:0}
+.rc .st.ok{background:var(--green-soft);color:var(--green)}
+.rc .st.ing{background:var(--blue-soft);color:var(--blue-d)}
+.sendlog{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:6px 16px;
+  box-shadow:var(--shadow-card)}
+.sl-row{display:flex;align-items:center;gap:9px;padding:10px 0;font-size:12.5px;color:var(--ink-2)}
+.sl-row + .sl-row{border-top:1px solid var(--line-2)}
+.sl-row .dot{width:16px;height:16px;border-radius:50%;background:var(--green);color:#fff;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900}
+.sl-row.pending .dot{background:#DFE4EE;color:#98A2B8}
+.sl-row.pending{color:var(--faint)}
+.sl-row .tm3{margin-left:auto;font-size:10.5px;color:var(--faint);flex-shrink:0;font-variant-numeric:tabular-nums}
+.sl-foot{font-size:10.5px;color:var(--faint);line-height:1.6;padding:10px 0 12px;border-top:1px solid var(--line-2);
+  margin-top:2px}
 .lk-note{display:flex;gap:9px;background:var(--blue-soft);border:1px solid var(--blue-line);
   border-radius:var(--r-md);padding:13px 14px;margin-top:14px;font-size:12px;line-height:1.65;color:var(--blue-d)}
 .lk-note b{font-weight:800}
@@ -376,6 +399,8 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
     </div>
   </div>
   <div class="cta-wrap"><button class="cta" onclick="go('s1')">본인인증하고 시작하기</button>
+    <div style="text-align:center;margin-top:12px"><span class="back-link" style="margin:0;color:#7E92BF"
+      onclick="go('s8')">딜러·상사 화면 — 빠른 조회 보기 →</span></div>
   <p class="hint">고객님 명의의 휴대폰으로 본인 확인을 진행합니다</p></div>
 </section>
 
@@ -438,7 +463,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
     <div class="card rise" style="animation-delay:.08s">
       <div class="kv" style="padding-top:2px"><span>판매 상사</span><b>굿카닷컴 · 대구 동구</b></div>
       <div class="kv"><span>담당 딜러</span><b>김성훈 &nbsp;010-1234-5678</b></div>
-      <div class="kv"><span>계약 일시</span><b>2026. 8. 9 (일) 14:20</b></div>
+      <div class="kv"><span>계약 일시</span><b>2026. 8. 8 (일) 14:20</b></div>
     </div>
   </div>
   <div class="cta-wrap"><button class="cta" onclick="go('s3')">계약 내용을 확인했습니다</button></div>
@@ -569,13 +594,13 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
       <div class="vc-foot">모든 항목은 고객님 본인인증 상태에서 직접 확인·서명되었으며, 확인 시각과 함께 안전하게 보관됩니다.</div>
     </div>
     <div class="card rise" style="animation-delay:.2s">
-      <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>본인인증 완료</b><small>2026. 8. 9 (일) 14:22 · PASS</small></div></div>
-      <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>고지 확인 · 전자서명 완료</b><small>2026. 8. 9 (일) 14:24 · 전 항목 본인 확인</small></div></div>
+      <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>본인인증 완료</b><small>2026. 8. 8 (일) 14:22 · PASS</small></div></div>
+      <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>고지 확인 · 전자서명 완료</b><small>2026. 8. 8 (일) 14:24 · 전 항목 본인 확인</small></div></div>
       <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>계약 서류 확정 완료</b><small>이전등록 절차가 순차 진행됩니다</small></div></div>
       <div class="tl-item wait"><div class="tl-dot">4</div><div>이전등록 접수<small>진행 시 알림으로 안내드립니다</small></div></div>
       <div class="tl-item wait"><div class="tl-dot">5</div><div>등록 완료 · 등록증 발급</div></div>
     </div>
-    <div class="alim">💬 <span>진행 상황은 단계마다 <b>카카오 알림톡</b>으로 자동 안내됩니다. 이 페이지는 언제든 다시 열어보실 수 있습니다.</span></div>
+    <div class="sendlog">💬 <span>진행 상황은 단계마다 <b>카카오 알림톡</b>으로 자동 안내됩니다. 이 페이지는 언제든 다시 열어보실 수 있습니다.</span></div>
     <button class="btn-line" onclick="go('s7')">슈어딜 보증서 보기</button>
   </div>
 </section>
@@ -598,7 +623,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
           <span>보증 주체 <b>굿카닷컴</b></span>
           <em>발급·기록 슈어딜</em>
         </div>
-        <div class="cert-no">NO. SD-2608-0142 &nbsp;·&nbsp; 발급일 2026. 8. 9</div>
+        <div class="cert-no">NO. SD-2608-0142 &nbsp;·&nbsp; 발급일 2026. 8. 8</div>
         <div class="dplus">🚘 이O진님의 그랜저와 함께한 지 <b id="dplusN">D+1</b></div>
       </div>
 
@@ -621,7 +646,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 
         <div class="cert-sec">합의 기록</div>
         <div class="cert-li">타이어 마모 → 차량가액 30만 원 할인 반영 · 추가 조치 없음 합의</div>
-        <div class="cert-li">전 항목 매수인 본인 확인 · 전자서명 (2026. 8. 9 14:24)</div>
+        <div class="cert-li">전 항목 매수인 본인 확인 · 전자서명 (2026. 8. 8 14:28)</div>
 
         <div class="cert-foot">
           <div>
@@ -631,7 +656,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
           <div class="seal-area">
             <div class="seal"><span class="s-ring"></span><span class="s-in">굿카<br>닷&nbsp;컴</span></div>
             <div class="seal-name">굿카닷컴 대표 김성훈</div>
-            <div class="seal-date">SUREDEAL 발급 시스템 · 2026. 8. 9</div>
+            <div class="seal-date">SUREDEAL 발급 시스템 · 2026. 8. 8</div>
           </div>
         </div>
         <div class="cert-legal">보증 이행 주체 <b>굿카닷컴</b> · 사업자등록번호 698-26-01844<br>
@@ -646,7 +671,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 </section>
 <!-- ============ 8. 딜러 빠른 조회 ============ -->
 <section class="screen" id="s8">
-  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><div class="demo-tag">딜러</div></div>
+  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>딜러</small></div><div class="demo-tag" style="cursor:pointer" onclick="go('s0')">← 손님 화면</div></div>
 
   <div class="lookup-head">
     <div class="lh-eye">빠른 조회</div>
@@ -659,14 +684,29 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
   </div>
 
   <div class="lk-body">
-    <div class="lk-hint" id="lkHint">차량번호를 입력하면 그 계약의 고지 기록이 바로 나옵니다.</div>
+    <div id="lkHint">
+      <div class="lk-sec" style="margin-top:2px">최근 계약</div>
+      <div class="lk-recent">
+        <div class="rc" onclick="runLookup()"><span class="pl2">12가 3456</span>
+          <div><div class="nm2">그랜저 IG 2.5</div><div class="dt">이O진 · 8/8(토) 계약</div></div>
+          <span class="st ok">등록 완료</span></div>
+        <div class="rc"><span class="pl2">34나 7788</span>
+          <div><div class="nm2">쏘렌토 MQ4</div><div class="dt">박O수 · 8/9(일) 계약</div></div>
+          <span class="st ing">이전 진행</span></div>
+        <div class="rc"><span class="pl2">56다 1122</span>
+          <div><div class="nm2">아반떼 CN7</div><div class="dt">최O민 · 8/10(월) 계약</div></div>
+          <span class="st ing">서류 준비</span></div>
+      </div>
+      <div class="lk-hint" style="padding:18px 10px 0">차량번호를 입력하거나 위에서 고르면
+        그 계약의 기록이 바로 나옵니다.</div>
+    </div>
 
     <div class="lk-res" id="lkRes">
       <div class="lk-top">
         <svg style="width:40px;height:26px;flex-shrink:0" viewBox="0 0 120 78"><g fill="none" stroke="#2453D9" stroke-width="4.4" stroke-linejoin="round" stroke-linecap="round"><path d="M6 53c0-7 3-11 9-12l25-3 17-21c3-4 7-6 12-6h16c5 0 10 2 13 6l11 15 11 3c4 1 7 5 7 10v8c0 2-2 4-4 4H10c-2 0-4-2-4-4z"/><path d="M62 20h16v17"/><path d="M62 20 47 37h31"/><path d="M84 20h2l14 17H84z"/><circle cx="32" cy="59" r="10"/><circle cx="90" cy="59" r="10"/></g></svg>
         <div>
           <div class="vt">그랜저 IG 2.5</div>
-          <div class="vs2">이O진 님 · 2026. 8. 9 계약 · 인도 완료</div>
+          <div class="vs2">이O진 님 · 2026. 8. 8(토) 계약 · 인도 완료</div>
         </div>
         <span class="no">SD-2608-0142</span>
       </div>
@@ -686,11 +726,22 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
         <div class="lk-row">엔진오일·오일필터 교환 후 인도 <span class="tm2">이행 완료</span></div>
       </div>
 
+      <div class="lk-sec">손님에게 나간 알림톡</div>
+      <div class="sendlog">
+        <div class="sl-row"><span class="dot">✓</span>계약 확정<span class="tm3">8/8(토) 14:29</span></div>
+        <div class="sl-row"><span class="dot">✓</span>계약 서류 확정<span class="tm3">8/8(토) 15:42</span></div>
+        <div class="sl-row"><span class="dot">✓</span>인도 당일 보증 안내<span class="tm3">8/8(토) 19:00</span></div>
+        <div class="sl-row"><span class="dot">✓</span>이전등록 절차 진행<span class="tm3">8/10(월) 09:38</span></div>
+        <div class="sl-row"><span class="dot">✓</span>이전등록 완료 · 등록증 사본<span class="tm3">8/10(월) 14:51</span></div>
+        <div class="sl-foot">손님이 “연락 못 받았다”고 하실 때 발송 시각을 그대로 보여드릴 수 있습니다.
+          아래 버튼으로 같은 내용을 다시 보낼 수 있습니다.</div>
+      </div>
+
       <div class="lk-note"><span>💬</span><div>
-        <b>“8월 9일 14시 25분에 직접 확인하신 항목입니다.”</b><br>
+        <b>“8월 8일 14시 25분에 직접 확인하신 항목입니다.”</b><br>
         이 한 문장이면 통화가 끝납니다. 필요하면 아래에서 보증서 링크를 다시 보내세요.</div></div>
 
-      <button class="btn-line" style="margin-top:16px" onclick="go('s7')">보증서 다시 보내기</button>
+      <button class="btn-line" style="margin-top:16px" onclick="toast('데모 버전입니다 — 정식 버전에서 손님에게 알림톡이 재발송됩니다')">보증서 · 등록증 다시 보내기</button>
       <button class="btn-line" onclick="toast('데모 버전입니다 — 정식 버전에서 고지 확인 PDF가 열립니다')">고지 확인 PDF 열기</button>
       <span class="back-link" onclick="go('s0')">↺ 데모 처음으로</span>
     </div>
@@ -719,11 +770,13 @@ function runLookup(){
   box.classList.remove('done'); res.classList.remove('on'); hint.style.display='block'; txt.textContent='12가';
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce){ txt.textContent=full; box.classList.add('done'); hint.style.display='none'; res.classList.add('on'); return; }
+  setTimeout(()=>{
   const t=setInterval(()=>{
     i++; txt.textContent=full.slice(0,i);
     if(i>=full.length){ clearInterval(t); box.classList.add('done');
       setTimeout(()=>{ hint.style.display='none'; res.classList.add('on'); }, 420); }
   },110);
+  }, 1100);   /* 최근 계약 목록을 잠깐 보여준 뒤 타이핑 시작 */
 }
 function go(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
@@ -746,7 +799,7 @@ function sealAndGo(){
 }
 /* 보증서 D+ 카운터 (발급일 기준 자동 증가) */
 function updDplus(){
-  const issue=new Date(2026,7,9); /* 2026.8.9 */
+  const issue=new Date(2026,7,9); /* 2026.8.8 */
   const d=Math.max(0,Math.floor((Date.now()-issue.getTime())/86400000));
   const el=document.getElementById('dplusN');
   if(el)el.textContent=d===0?'오늘 시작':'D+'+d;
