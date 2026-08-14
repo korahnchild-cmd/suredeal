@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>대표님께 — 슈어딜 한 장 요약</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<style>
+:root{--ink:#131F38;--ink-2:#3A4763;--sub:#68738C;--faint:#98A2B8;--deep:#0C1730;
+--blue:#2453D9;--blue-d:#1B41B0;--line:#DFE4EE;--paper:#F3F5F9;--blue-soft:#EDF2FF;--blue-line:#C9D7FB;
+--green:#0B7A4B;--green-soft:#E8F5EE;--green-line:#B9E0CA;--seal:#B93227;--seal-soft:#FCEEEC;--seal-line:#EFCFCA}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Pretendard Variable',Pretendard,system-ui,sans-serif;background:#8A93A8;
+color:var(--ink);line-height:1.55;letter-spacing:-.28px;word-break:keep-all;padding:26px 14px}
+
+.bar{max-width:794px;margin:0 auto 14px;display:flex;gap:8px;align-items:center}
+.bar .t{font-size:12.5px;color:#EDF1F8;font-weight:650}
+.bar button{margin-left:auto;font-size:12.5px;font-weight:750;padding:8px 15px;border-radius:9px;
+border:0;background:#fff;color:var(--ink);cursor:pointer}
+
+.page{max-width:794px;margin:0 auto;background:#fff;padding:26px 32px 22px;
+box-shadow:0 8px 34px rgba(12,23,48,.28)}
+
+.hd{display:flex;align-items:flex-start;gap:11px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+.hd .sym{width:29px;height:33px;flex:none;margin-top:1px}
+.hd .nm{font-size:19px;font-weight:800;letter-spacing:-.6px;line-height:1.2}
+.hd .sl{font-size:11.5px;color:var(--sub);font-weight:650;margin-top:3px}
+.hd .rt{margin-left:auto;text-align:right;font-size:10.5px;color:var(--faint);line-height:1.65;padding-top:3px}
+
+h1{font-size:21px;font-weight:800;letter-spacing:-1px;line-height:1.32;margin:13px 0 0}
+h1 em{font-style:normal;color:var(--blue)}
+.sub{font-size:12.5px;color:var(--ink-2);margin-top:6px;line-height:1.66}
+
+h2{font-size:10.5px;font-weight:800;color:var(--blue);letter-spacing:.6px;margin:11px 0 5px}
+
+.pain{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pain .c{background:var(--paper);border-radius:9px;padding:10px 12px}
+.pain .c .n{font-size:10px;font-weight:800;color:var(--seal);letter-spacing:.3px}
+.pain .c .x{font-size:12.5px;font-weight:750;color:var(--ink);margin-top:4px;line-height:1.45}
+.pain .c .y{font-size:11px;color:var(--sub);margin-top:4px;line-height:1.55}
+
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.flow .s{border:1px solid var(--blue-line);background:var(--blue-soft);border-radius:9px;padding:10px 12px}
+.flow .s .k{display:inline-block;width:17px;height:17px;border-radius:50%;background:var(--blue);color:#fff;
+font-size:10px;font-weight:800;text-align:center;line-height:17px}
+.flow .s .x{font-size:12.5px;font-weight:800;color:var(--ink);margin-top:5px;letter-spacing:-.4px;line-height:1.4}
+.flow .s .y{font-size:11px;color:var(--ink-2);margin-top:4px;line-height:1.58}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:4px}
+
+.own{border:1px solid var(--line);border-radius:9px;padding:11px 13px}
+.own .h{font-size:12.8px;font-weight:800;letter-spacing:-.4px}
+.own ul{margin-top:6px}
+.own li{list-style:none;position:relative;padding-left:14px;font-size:11.3px;color:var(--ink-2);
+line-height:1.62;margin-top:3px}
+.own li:before{content:"";position:absolute;left:1px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--blue)}
+.own li b{color:var(--ink);font-weight:750}
+
+.money{border:1.5px solid var(--ink);border-radius:9px;padding:11px 13px}
+.money .big{font-size:19.5px;font-weight:800;letter-spacing:-1px;line-height:1.2}
+.money .big span{font-size:12.5px;font-weight:700;color:var(--sub);letter-spacing:-.3px}
+.money .free{display:inline-block;font-size:10.5px;font-weight:800;color:var(--green);
+background:var(--green-soft);border:1px solid var(--green-line);border-radius:6px;padding:3px 8px;margin-top:6px}
+.money table{width:100%;border-collapse:collapse;margin-top:7px;font-size:11.2px}
+.money td{padding:3px 0;color:var(--ink-2);border-bottom:1px solid #F0F2F7}
+.money td:last-child{text-align:right;font-weight:750;color:var(--ink)}
+.money tr:last-child td{border-bottom:0}
+.money .nt{font-size:10.8px;color:var(--sub);margin-top:7px;line-height:1.55}
+
+.cmp{background:var(--deep);color:#fff;border-radius:9px;padding:12px 14px;margin-top:9px}
+.cmp .x{font-size:13.8px;font-weight:800;letter-spacing:-.5px;line-height:1.45}
+.cmp .x em{font-style:normal;color:#8FB8FF}
+.cmp .y{font-size:11.2px;color:#B9C6E4;margin-top:6px;line-height:1.62}
+.cmp .row{display:flex;gap:8px;margin-top:9px}
+.cmp .row .b{flex:1;background:rgba(255,255,255,.07);border-radius:7px;padding:7px 10px}
+.cmp .row .b .l{font-size:10px;color:#8FA4CE;font-weight:700;letter-spacing:.2px}
+.cmp .row .b .v{font-size:14px;font-weight:800;margin-top:1px;letter-spacing:-.5px}
+.cmp .row .b.hi .v{color:#5BE39C}
+
+.qa{border:1px solid var(--seal-line);background:var(--seal-soft);border-radius:9px;padding:11px 13px;margin-top:9px}
+.qa .q{font-size:12.3px;font-weight:800;color:var(--seal);letter-spacing:-.4px}
+.qa .a{font-size:11.4px;color:var(--ink-2);line-height:1.68;margin-top:6px}
+.qa .a b{color:var(--ink);font-weight:750}
+
+.next{border-top:2px solid var(--ink);margin-top:11px;padding-top:9px;display:flex;gap:14px;align-items:flex-start}
+.next .l{flex:1}
+.next .l .h{font-size:12.5px;font-weight:800;letter-spacing:-.4px}
+.next .l .x{font-size:11.3px;color:var(--ink-2);line-height:1.66;margin-top:4px}
+.next .r{flex:none;text-align:right;font-size:10.5px;color:var(--sub);line-height:1.7}
+.next .r b{display:block;font-size:13px;color:var(--ink);font-weight:800;letter-spacing:-.3px}
+
+.fin{font-size:9.2px;color:var(--faint);line-height:1.55;margin-top:7px;border-top:1px solid var(--line);padding-top:6px}
+
+@media print{
+  @page{size:A4;margin:9mm}
+  body{background:#fff;padding:0}
+  .bar{display:none}
+  .page{box-shadow:none;max-width:none;padding:0}
+  .cmp{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media(max-width:700px){
+  .pain,.flow{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  .page{padding:22px 18px}
+  h1{font-size:19px}
+  .next{flex-direction:column;gap:9px}
+  .next .r{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <span class="t">A4 한 장 · 인쇄해서 대표님께 드리세요</span>
+  <button onclick="window.print()">인쇄 / PDF 저장</button>
+</div>
+
+<div class="page">
+
+  <div class="hd">
+    <svg class="sym" viewBox="0 0 60 68" aria-hidden="true">
+      <path d="M30 4l25 9.5v21.8C55 53 43.5 60.5 30 64.5 16.5 60.5 5 53 5 35.3V13.5z" fill="none" stroke="#2453D9" stroke-width="7.5" stroke-linejoin="round"/>
+      <path d="M17 35.5l11 11.5L57 12" fill="none" stroke="#0B7A4B" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div>
+      <div class="nm">슈어딜 SUREDEAL</div>
+      <div class="sl">중고차 계약 확인 시스템</div>
+    </div>
+    <div class="rt">아이제이컴퍼니<br>053-242-0061</div>
+  </div>
+
+  <h1>수기 계약서는 그대로 쓰고,<br><em>확정만 손님 폰으로 남깁니다.</em></h1>
+  <p class="sub">계약 방식을 바꾸지 않습니다. 지금 하시던 대로 계약서 쓰시고, 손님이 본인인증하고 직접 확인·서명한 기록이 남습니다.
+    <b>딜러 입력 30초, 손님 확인 2분.</b></p>
+
+  <h2>대표님이 이미 겪고 계신 것</h2>
+  <div class="pain">
+    <div class="c">
+      <div class="n">1</div>
+      <div class="x">계약해놓고 파기</div>
+      <div class="y">주변에서 “비싸게 샀다” 한마디에 다음 날 취소. 재상품화하고 광고를 다시 돌려야 합니다.</div>
+    </div>
+    <div class="c">
+      <div class="n">2</div>
+      <div class="x">출고 후 끊이지 않는 전화</div>
+      <div class="y">“등록증 언제 나와요” “이거 보증돼요”. 딜러가 신규 영업에 집중을 못 합니다.</div>
+    </div>
+    <div class="c">
+      <div class="n">3</div>
+      <div class="x">설명했는데 증거가 없다</div>
+      <div class="y">구두로 다 안내해도 석 달 뒤 “못 들었다”가 나오면 증명할 방법이 없습니다.</div>
+    </div>
+  </div>
+
+  <h2>슈어딜이 하는 일 — 세 가지</h2>
+  <div class="flow">
+    <div class="s">
+      <span class="k">1</span>
+      <div class="x">손님 본인인증</div>
+      <div class="y">손님 본인 휴대폰으로 인증하고 시작합니다. <b>명의를 빌린 계약이 걸러집니다.</b></div>
+    </div>
+    <div class="s">
+      <span class="k">2</span>
+      <div class="x">직접 확인 · 서명 · 보증서</div>
+      <div class="y">손님이 직접 눌러 확인하고 서명하면 <b>보증서가 발급</b>됩니다. 손님에게 드릴 것이 생깁니다.</div>
+    </div>
+    <div class="s">
+      <span class="k">3</span>
+      <div class="x">출고 후 진행 알림</div>
+      <div class="y">인도 당일 저녁부터 등록 완료까지 <b>손님 폰으로 자동 안내</b>됩니다.</div>
+    </div>
+  </div>
+
+  <div class="two">
+    <div class="own">
+      <div class="h">대표님 화면에서 보시는 것</div>
+      <ul>
+        <li>이번 달 <b>딜러별 판매 대수와 금액</b></li>
+        <li>계약이 어디까지 진행됐는지 <b>실시간</b></li>
+        <li>인도·등록이 밀린 건 <b>바로 표시</b></li>
+        <li>손님에게 나간 안내 내역과 <b>발송 시각</b></li>
+        <li>딜러가 <b>매번 보고하지 않아도</b> 대표님이 아십니다</li>
+      </ul>
+    </div>
+
+    <div class="money">
+      <div class="big">차 한 대에 15,000원 <span>(부가세 포함)</span></div>
+      <span class="free">첫 달 무료</span>
+      <table>
+        <tr><td>월 청구서</td><td>없음</td></tr>
+        <tr><td>최소 사용료 · 약정</td><td>없음</td></tr>
+        <tr><td>딜러 계정 수</td><td>제한 없음</td></tr>
+        <tr><td>안 판 달</td><td>0원</td></tr>
+      </table>
+      <div class="nt">계약이 확정되는 그 자리에서 결제됩니다. 월말 청구서가 없습니다.
+        <b>2,780만 원 거래에 붙는 0.05%입니다.</b></div>
+    </div>
+  </div>
+
+  <div class="cmp">
+    <div class="x">손님 <em>데려오는</em> 데 월 150만 원 쓰십니다.<br>
+      데려온 손님 <em>지키는</em> 값이 30만 원입니다.</div>
+    <div class="y">광고비는 손님을 <b style="color:#fff">데려오는</b> 돈입니다. 데려온 손님이 파기하면 그 돈이 날아갑니다.
+      <b style="color:#fff">파기 한 건 손실 150만 원 = 그 달 광고비 전액.</b></div>
+    <div class="row">
+      <div class="b"><div class="l">월 광고비 (유입)</div><div class="v">150만 원</div></div>
+      <div class="b hi"><div class="l">슈어딜 · 월 20대 (보존)</div><div class="v">30만 원</div></div>
+      <div class="b"><div class="l">파기 1건 손실</div><div class="v">150만 원</div></div>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="q">“괜히 긁어 부스럼 만드는 거 아닌가?”</div>
+    <div class="a"><b>그 질문은 어차피 나중에 나옵니다.</b> 석 달 뒤에 물어보면 분쟁이고, 계약 자리에서 물어보면 상담입니다.
+      <b>질문을 만드는 게 아니라 타이밍을 앞으로 당깁니다.</b> 2025년 9월 국토교통부도
+      <b>기록부를 전자문서로 고지하면 서면 고지로 본다</b>고 해석했습니다.</div>
+  </div>
+
+  <div class="next">
+    <div class="l">
+      <div class="h">다음 단계 — 대표님이 결정하실 것</div>
+      <div class="x">① 첫 달 무료로 <b>한 달 돌려보기</b> &nbsp;②&nbsp; 딜러 몇 명에게 계정을 열지
+        &nbsp;③&nbsp; 도입 전 최근 12개월 <b>판매 대수·파기 건수</b> 알려주시기<br>
+        딜러 계정 발급은 <b>대표님 승인 후에만</b> 가능합니다. 딜러가 임의로 가입할 수 없습니다.</div>
+    </div>
+    <div class="r">
+      <b>김성훈</b>
+      아이제이컴퍼니 대표<br>
+      053-242-0061<br>
+      korahnchild@gmail.com
+    </div>
+  </div>
+
+  <div class="fin">
+    슈어딜은 계약 확인 기록의 발급·보관 플랫폼이며 차량 매매계약의 당사자가 아닙니다. 보증·약속의 이행 주체는 판매 매매상사입니다.
+    슈어딜의 기록은 고지·확인·서명이 이루어진 사실에 관한 증빙 자료이며, 개별 분쟁에서의 법적 결과를 보장하지 않습니다.
+    국토교통부 중고차 소비자 보호 대책은 2026년 9월 법안 발의 예정, 시행 전망 2027년 하반기입니다.
+  </div>
+
+</div>
+</body>
+</html>

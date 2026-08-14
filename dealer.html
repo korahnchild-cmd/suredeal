@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0C1730">
+<meta name="robots" content="noindex,nofollow">
+<title>딜러 현장 카드 — 슈어딜</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<style>
+:root{--ink:#131F38;--ink-2:#3A4763;--sub:#68738C;--faint:#98A2B8;--deep:#0C1730;
+--blue:#2453D9;--blue-d:#1B41B0;--line:#E4E8F0;--paper:#F3F5F9;--blue-soft:#EDF2FF;--blue-line:#C9D7FB;
+--green:#0B7A4B;--green-soft:#E8F5EE;--green-line:#B9E0CA;
+--seal:#B93227;--seal-soft:#FCEEEC;--seal-line:#EFCFCA;--amber:#8A5B00;--amber-soft:#FFF6E3;--amber-line:#F0DDB0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Pretendard Variable',Pretendard,system-ui,sans-serif;background:var(--paper);
+color:var(--ink);line-height:1.68;letter-spacing:-.25px;word-break:keep-all;padding-bottom:60px;-webkit-text-size-adjust:100%}
+.wrap{max-width:660px;margin:0 auto;padding:0 16px}
+
+header{background:var(--deep);color:#fff;padding:20px 0 18px;position:sticky;top:0;z-index:20;
+box-shadow:0 2px 14px rgba(12,23,48,.22)}
+header .wrap{display:flex;align-items:center;gap:9px}
+header .sym{width:22px;height:25px;flex:none}
+header .tx{font-size:15px;font-weight:800;letter-spacing:-.3px}
+header .sub{font-size:11.5px;color:#8FA4CE;font-weight:600;margin-left:2px}
+
+.tabs{position:sticky;top:60px;z-index:19;background:var(--paper);border-bottom:1px solid var(--line);
+padding:9px 0 8px}
+.tabs .wrap{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs .wrap::-webkit-scrollbar{display:none}
+.tab{flex:none;font-size:12.5px;font-weight:700;padding:7px 13px;border-radius:999px;cursor:pointer;
+border:1px solid var(--line);background:#fff;color:var(--sub);white-space:nowrap;transition:.16s}
+.tab.on{background:var(--ink);border-color:var(--ink);color:#fff}
+
+main{padding-top:16px}
+
+.hero{background:var(--deep);color:#fff;border-radius:16px;padding:22px 20px;margin-bottom:16px}
+.hero h1{font-size:20px;font-weight:800;letter-spacing:-.8px;line-height:1.4}
+.hero h1 em{font-style:normal;color:#8FB8FF}
+.hero p{font-size:13.5px;color:#B9C6E4;margin-top:10px;line-height:1.8}
+
+.warn{background:#fff;border:2px solid var(--seal);border-radius:16px;padding:20px;margin-bottom:18px}
+.warn .k{display:inline-block;font-size:11px;font-weight:800;color:#fff;background:var(--seal);
+padding:3px 9px;border-radius:999px;letter-spacing:.3px}
+.warn h2{font-size:17.5px;font-weight:800;letter-spacing:-.6px;margin:11px 0 9px;line-height:1.45}
+.warn p{font-size:13.5px;color:var(--ink-2);line-height:1.82}
+.warn p+p{margin-top:9px}
+.warn .pt{background:var(--seal-soft);border-radius:11px;padding:13px 15px;margin-top:13px;
+font-size:13.5px;line-height:1.8;color:var(--ink-2)}
+.warn b{color:var(--ink);font-weight:800}
+
+.sec-h{font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.5px;margin:26px 0 10px;
+padding-left:2px}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:17px 18px 18px;margin-bottom:11px}
+.card.top{border-color:var(--blue-line);box-shadow:0 2px 12px rgba(36,83,217,.07)}
+.q{display:flex;gap:9px;align-items:flex-start}
+.q .ic{flex:none;width:21px;height:21px;border-radius:50%;background:var(--paper);color:var(--sub);
+font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.q .t{font-size:15px;font-weight:800;letter-spacing:-.5px;line-height:1.5}
+.badge{display:inline-block;font-size:10px;font-weight:800;padding:2px 7px;border-radius:5px;
+margin-left:6px;vertical-align:2px;letter-spacing:.2px}
+.badge.hot{background:var(--blue-soft);color:var(--blue-d);border:1px solid var(--blue-line)}
+.badge.mine{background:var(--seal-soft);color:var(--seal);border:1px solid var(--seal-line)}
+
+.a{margin-top:12px;background:var(--green-soft);border:1px solid var(--green-line);border-radius:11px;
+padding:13px 15px}
+.a .lb{font-size:10.5px;font-weight:800;color:var(--green);letter-spacing:.4px;display:block;margin-bottom:5px}
+.a .txt{font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.68;letter-spacing:-.4px}
+.more{font-size:13px;color:var(--ink-2);line-height:1.8;margin-top:11px}
+.more b{color:var(--ink);font-weight:750}
+
+.no{margin-top:11px;background:var(--seal-soft);border:1px solid var(--seal-line);border-radius:11px;
+padding:12px 15px}
+.no .lb{font-size:10.5px;font-weight:800;color:var(--seal);letter-spacing:.4px;display:block;margin-bottom:5px}
+.no .txt{font-size:13.5px;color:var(--ink-2);line-height:1.78}
+.no .txt b{color:var(--seal);font-weight:750}
+
+.tip{background:var(--amber-soft);border:1px solid var(--amber-line);border-radius:11px;padding:12px 15px;
+margin-top:11px;font-size:13px;color:var(--ink-2);line-height:1.78}
+.tip b{color:var(--amber);font-weight:800}
+
+.close{background:var(--deep);color:#fff;border-radius:16px;padding:22px 20px;margin-top:26px}
+.close h2{font-size:17px;font-weight:800;letter-spacing:-.6px}
+.close ul{margin-top:13px}
+.close li{list-style:none;position:relative;padding-left:17px;font-size:13.5px;color:#C6D2EC;
+line-height:1.8;margin-top:7px}
+.close li:before{content:"";position:absolute;left:1px;top:11px;width:5px;height:5px;border-radius:50%;background:#3D6BFF}
+.close li b{color:#fff;font-weight:750}
+
+footer{margin-top:22px;font-size:11.5px;color:var(--faint);line-height:1.85;text-align:center}
+
+.hide{display:none}
+
+@media print{
+  body{background:#fff;padding:0}
+  header,.tabs{position:static;box-shadow:none}
+  .hide{display:block !important}
+  .card{break-inside:avoid;page-break-inside:avoid;box-shadow:none}
+  .warn,.hero,.close{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <svg class="sym" viewBox="0 0 60 68" aria-hidden="true">
+    <path d="M30 4l25 9.5v21.8C55 53 43.5 60.5 30 64.5 16.5 60.5 5 53 5 35.3V13.5z" fill="none" stroke="#3D6BFF" stroke-width="7.5" stroke-linejoin="round"/>
+    <path d="M17 35.5l11 11.5L57 12" fill="none" stroke="#2FA85F" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <span class="tx">딜러 현장 카드</span>
+  <span class="sub">손님이 물어보면</span>
+</div></header>
+
+<div class="tabs"><div class="wrap">
+  <div class="tab on" data-f="all">전체</div>
+  <div class="tab" data-f="proc">절차</div>
+  <div class="tab" data-f="ins">보증</div>
+  <div class="tab" data-f="car">차량 상태</div>
+  <div class="tab" data-f="deal">거래 조건</div>
+  <div class="tab" data-f="after">출고 후</div>
+</div></div>
+
+<div class="wrap"><main>
+
+  <div class="hero">
+    <h1>손님이 물어봤을 때<br><em>1초 안에 답이 나와야 합니다.</em></h1>
+    <p>답이 막히면 손님이 불안해집니다. 불안해진 손님은 계약을 미룹니다.
+      아래 답변은 그대로 말씀하셔도 되게 다듬어 놓은 것입니다.</p>
+  </div>
+
+  <div class="warn">
+    <span class="k">먼저 이것부터</span>
+    <h2>손님 폰을 대신 눌러주면,<br>손해 보는 건 딜러님입니다.</h2>
+    <p>바쁘면 그냥 받아서 눌러주고 싶어집니다. 그런데 그렇게 하면
+      <b>딜러님을 지켜줄 기록이 사라집니다.</b></p>
+    <div class="pt">
+      석 달 뒤에 손님이 <b>“그런 설명 못 들었다”</b>고 합니다.<br><br>
+      손님이 <b>직접</b> 눌렀으면 → 그 시각이 남아 있습니다. 이야기가 거기서 끝납니다.<br>
+      딜러님이 <b>대신</b> 눌렀으면 → 남은 기록이 오히려 불리해집니다.
+      손님 본인이 확인한 게 아니니까요.
+    </div>
+    <p style="margin-top:13px">고지 확인은 손님을 위한 절차가 아니라 <b>딜러님을 위한 절차</b>입니다.
+      손님이 직접 누르는 30초가 딜러님의 방패입니다.</p>
+  </div>
+
+  <div class="sec-h">가장 많이 나오는 5개</div>
+
+  <div class="card top" data-g="proc">
+    <div class="q"><span class="ic">Q</span><span class="t">이게 뭐예요? 계약서 방금 썼잖아요<span class="badge hot">TOP</span></span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">계약서는 그대로예요. 이건 방금 설명드린 내용을 고객님이 직접 확인하셨다는 걸 남겨두는 겁니다. 2분이면 끝납니다.</div></div>
+    <div class="more">손님이 헷갈리는 건 <b>“계약을 또 하나?”</b>입니다. 첫 문장에서 <b>“계약서는 그대로”</b>를 먼저 말하면
+      경계가 풀립니다. 시간을 <b>먼저</b> 말해주는 것도 중요합니다.</div>
+    <div class="no"><span class="lb">이렇게는 말하지 마세요</span>
+      <div class="txt"><b>“요즘 다 이렇게 해요”</b> — 근거 없는 말이라 되물으면 막힙니다.<br>
+      <b>“그냥 형식이에요”</b> — 형식이면 왜 하냐는 말이 바로 돌아옵니다.</div></div>
+  </div>
+
+  <div class="card top" data-g="proc">
+    <div class="q"><span class="ic">Q</span><span class="t">본인인증은 왜 해요? 개인정보 넘어가는 거 아니에요?<span class="badge hot">TOP</span></span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">휴대폰 본인확인만 합니다. 주민등록번호는 받지 않습니다. 다른 사람 명의로 계약이 진행되는 걸 막는 절차예요.</div></div>
+    <div class="more">중고차에서 <b>명의 도용 계약</b>은 실제로 있는 일입니다. 손님도 그 얘기는 들어봤습니다.
+      <b>“고객님을 보호하는 절차”</b>로 말하면 대부분 바로 넘어갑니다.</div>
+    <div class="no"><span class="lb">이렇게는 말하지 마세요</span>
+      <div class="txt"><b>“저희가 다 관리하니까 괜찮아요”</b> — 무엇을 어떻게 관리하는지 못 대면 더 불안해집니다.</div></div>
+  </div>
+
+  <div class="card top" data-g="deal">
+    <div class="q"><span class="ic">Q</span><span class="t">혹시 취소하면 계약금은 못 받는 거예요?<span class="badge mine">지뢰</span><span class="badge hot">TOP</span></span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">계약금은 해약금 성격이라, 단순 변심으로 취소하시면 돌려받기 어렵습니다. 반대로 저희 쪽 사정으로 취소되면 두 배로 돌려드리고요.</div></div>
+    <div class="more"><b>양쪽을 같이 말하는 게 핵심</b>입니다. 손님 쪽 불이익만 말하면 “나만 손해네”가 됩니다.
+      쌍방에 똑같이 적용된다는 걸 알면 공정하게 받아들입니다.</div>
+    <div class="no"><span class="lb">이렇게는 말하지 마세요</span>
+      <div class="txt"><b>“무조건 못 받습니다”</b> — 사안에 따라 다릅니다. 단정하면 나중에 그 말이 문제가 됩니다.<br>
+      <b>“걱정 마세요, 취소하시면 돌려드릴게요”</b> — ★ 그 자리에서 나온 이 한마디가
+      <b>상사의 부담</b>이 됩니다. 약속은 반드시 <b>합의 조정 내역에 적고</b> 하세요.</div></div>
+  </div>
+
+  <div class="card top" data-g="ins">
+    <div class="q"><span class="ic">Q</span><span class="t">소모품 마모 확인… 이거 체크하면 나중에 아무 말 못 하는 거예요?<span class="badge mine">지뢰</span><span class="badge hot">TOP</span></span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">아니요. 지금 소모품이 어느 정도 닳아 있는지 확인하셨다는 뜻이지, 앞으로 문제가 생겨도 말씀 못 하신다는 뜻이 아닙니다.</div></div>
+    <div class="more">손님이 <b>“각서 쓰는 거 아니냐”</b>고 의심하는 지점입니다. 여기서 얼버무리면 계약 전체가 흔들립니다.
+      <b>확인 ≠ 포기</b>를 분명하게 말해주세요.</div>
+    <div class="no"><span class="lb">이렇게는 말하지 마세요</span>
+      <div class="txt"><b>“이거 체크하시면 나중에 이의 제기 못 하십니다”</b> — ★ <b>사실이 아닙니다.</b>
+      판매자의 하자담보책임은 법으로 정해져 있어서 체크 한 번으로 없어지지 않습니다.
+      이렇게 말했다가 나중에 알려지면 <b>속였다</b>가 됩니다.</div></div>
+  </div>
+
+  <div class="card top" data-g="car">
+    <div class="q"><span class="ic">Q</span><span class="t">성능점검기록부에 안 나온 사고가 나중에 나오면요?<span class="badge mine">지뢰</span><span class="badge hot">TOP</span></span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">기록부와 실제가 다르면 성능점검을 한 곳에서 책임집니다. 그래서 지금 직접 열어서 보시는 게 중요합니다. 궁금한 항목 있으면 지금 물어보세요.</div></div>
+    <div class="more">손님이 가장 두려워하는 지점이고, <b>실제 분쟁도 여기서 제일 많이 납니다.</b>
+      슈어딜은 손님이 기록부를 <b>몇 시 몇 분에 열어봤는지</b>를 남깁니다.
+      종이로 건네주기만 하던 때와 완전히 다릅니다.</div>
+    <div class="no"><span class="lb">이렇게는 말하지 마세요</span>
+      <div class="txt"><b>“그런 일 없습니다”</b> — 장담할 수 없습니다.<br>
+      <b>“나중에 문제 생기면 저희가 다 해드릴게요”</b> — ★ 범위 없는 약속입니다.
+      상사가 감당 못 할 말이 그 자리에서 계약 조건이 됩니다.</div></div>
+  </div>
+
+  <div class="sec-h">절차에 대한 질문</div>
+
+  <div class="card" data-g="proc">
+    <div class="q"><span class="ic">Q</span><span class="t">이거 꼭 해야 돼요? 안 하면 안 되나요?</span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">저희 상사는 전부 이렇게 진행하고 있습니다. 고객님도 나중에 보증 받으실 때 이 기록이 있어야 편하시고요. 2분이면 됩니다.</div></div>
+    <div class="more">거부하는 손님은 대개 <b>귀찮아서</b>지 반대해서가 아닙니다.
+      <b>“원래 다 이렇게 한다” + “고객님께 필요하다” + “2분”</b> 세 개면 거의 넘어갑니다.</div>
+    <div class="tip"><b>그래도 끝까지 거부하면</b> — 밀어붙이지 마세요. 계약 자체가 틀어집니다.
+      수기 계약서로 진행하시고, <b>대표님께 그 건은 따로 보고</b>하세요. 파일럿 기간에는
+      거부 건이 몇 건인지가 중요한 정보입니다.</div>
+  </div>
+
+  <div class="card" data-g="proc">
+    <div class="q"><span class="ic">Q</span><span class="t">손가락으로 그린 서명이 법적으로 효력이 있어요?</span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">전자서명은 법으로 서면 서명과 같은 효력을 인정받습니다. 게다가 방금 본인인증까지 하셨으니 누가 서명했는지가 더 분명하게 남습니다.</div></div>
+    <div class="more">종이 서명은 <b>필적 감정</b>을 해야 누가 썼는지 알 수 있습니다.
+      슈어딜은 <b>본인확인 기록이 서명에 붙어 있어서</b> 오히려 더 분명합니다.</div>
+    <div class="no"><span class="lb">이렇게는 말하지 마세요</span>
+      <div class="txt"><b>“이거 있으면 소송해도 무조건 이깁니다”</b> — 결과를 장담하는 말은 하지 않습니다.
+      <b>“기록으로 남는다”</b>까지만 말하세요.</div></div>
+  </div>
+
+  <div class="card" data-g="proc">
+    <div class="q"><span class="ic">Q</span><span class="t">슈어딜이 뭐예요? 처음 들어보는데</span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">저희가 쓰는 계약 확인 시스템입니다. 고객님 폰으로 확인하시면 보증서가 발급되고, 출고 후 진행 상황도 문자로 계속 안내됩니다.</div></div>
+    <div class="more">손님 입장에서 중요한 건 회사 소개가 아니라 <b>“나한테 뭐가 오냐”</b>입니다.
+      <b>보증서 + 진행 알림</b> 두 개만 말하면 충분합니다.</div>
+  </div>
+
+  <div class="card" data-g="proc">
+    <div class="q"><span class="ic">Q</span><span class="t">제 정보는 어디에 남아요? 나중에 지울 수 있어요?</span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">계약 기록으로 보관됩니다. 고객님도 언제든 본인인증하고 열어보실 수 있고요. 다른 상사에서는 이 계약을 볼 수 없습니다.</div></div>
+    <div class="more">보관 기간이나 상세한 내용을 물으면 <b>개인정보처리방침 링크</b>를 보여드리면 됩니다.
+      화면 안에 들어 있습니다.</div>
+    <div class="no"><span class="lb">이렇게는 말하지 마세요</span>
+      <div class="txt"><b>“원하시면 바로 다 지워드립니다”</b> — 계약 기록은 <b>쌍방의 증빙</b>이라
+      보관 기간 중에는 삭제가 제한됩니다. 지워준다고 했다가 못 지우면 그게 분쟁이 됩니다.</div></div>
+  </div>
+
+  <div class="sec-h">보증에 대한 질문</div>
+
+  <div class="card" data-g="ins">
+    <div class="q"><span class="ic">Q</span><span class="t">보증이 30일밖에 안 돼요? 2,000km는 너무 짧은데요</span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">성능보증보험 기준이 30일 또는 2,000km입니다. 둘 중 먼저 도달하는 쪽까지고요. 그 안에 이상이 느껴지시면 바로 연락 주세요.</div></div>
+    <div class="more"><b>“둘 중 먼저 오는 쪽”</b>을 빼먹으면 나중에 반드시 문제가 됩니다.
+      1,500km를 20일 만에 탄 손님이 “아직 30일 안 됐잖아요”라고 합니다.</div>
+    <div class="tip"><b>인도 당일 저녁에 손님 폰으로 보증 안내가 자동으로 갑니다.</b>
+      기간도 거기 적혀 있으니 <b>“오늘 저녁에 안내 문자 갈 거예요”</b>라고 미리 말해두면 문의가 줄어듭니다.</div>
+  </div>
+
+  <div class="card" data-g="ins">
+    <div class="q"><span class="ic">Q</span><span class="t">주요 장치가 뭐예요? 어디까지 되는 거예요?</span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">엔진, 변속기 같은 핵심 부품입니다. 화면에 보증 범위가 그대로 적혀 있으니 지금 같이 보시죠.</div></div>
+    <div class="more">외우려 하지 마세요. <b>화면을 같이 보는 게 답</b>입니다.
+      그리고 그 화면은 손님이 나중에 언제든 다시 열 수 있습니다 — <b>“나중에 또 보실 수 있어요”</b>를 붙이면 문의가 줄어듭니다.</div>
+  </div>
+
+  <div class="card" data-g="ins">
+    <div class="q"><span class="ic">Q</span><span class="t">소모품은 왜 보증이 안 돼요?</span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">타이어, 브레이크 패드, 오일처럼 쓰면서 닳는 부품은 보험 대상이 아닙니다. 새 차를 사도 마찬가지고요.</div></div>
+    <div class="more"><b>“새 차도 똑같다”</b>가 가장 잘 먹히는 설명입니다.
+      중고차라서 빠진 게 아니라 원래 그렇다는 걸 알면 납득합니다.</div>
+  </div>
+
+  <div class="card" data-g="ins">
+    <div class="q"><span class="ic">Q</span><span class="t">고장 나면 어디로 가요? 아무 데나 가면 돼요?</span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">먼저 저한테 연락 주세요. 지정된 곳으로 안내드립니다. 임의로 수리하시면 보험 처리가 안 될 수 있습니다.</div></div>
+    <div class="more">이걸 미리 말해두지 않으면 손님이 <b>동네 카센터에서 고치고 영수증을 들고 옵니다.</b>
+      그때는 이미 늦습니다. <b>계약 자리에서 반드시 짚고 넘어가세요.</b></div>
+  </div>
+
+  <div class="card" data-g="ins">
+    <div class="q"><span class="ic">Q</span><span class="t">(20만km 초과) 보험이 없다는 게 무슨 뜻이에요?</span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">주행거리가 기준을 넘어서 성능보증보험 가입이 안 되는 차량입니다. 대신 그 부분이 가격에 반영돼 있고요. 저희가 따로 약속드린 부분은 화면에 적어드립니다.</div></div>
+    <div class="more"><b>약속한 게 있으면 반드시 「합의 조정 내역」에 적으세요.</b>
+      보험이 없는 차는 <b>적힌 것만 효력이 있습니다.</b> 말로 한 약속은 나중에 아무도 증명 못 합니다 —
+      손님도, 딜러님도.</div>
+    <div class="no"><span class="lb">이렇게는 말하지 마세요</span>
+      <div class="txt"><b>“보험은 없지만 문제 생기면 다 봐드릴게요”</b> — ★ 범위도 기간도 없는 약속입니다.
+      정말 해드릴 생각이면 <b>범위와 기간을 정해서 화면에 적으세요.</b> 그게 딜러님도 지킵니다.</div></div>
+  </div>
+
+  <div class="sec-h">차량 상태에 대한 질문</div>
+
+  <div class="card" data-g="car">
+    <div class="q"><span class="ic">Q</span><span class="t">성능점검기록부, 이거 믿을 수 있는 거예요?</span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">법으로 정해진 점검업체에서 발급한 서류입니다. 여기 적힌 내용과 실제가 다르면 그 업체가 책임집니다. 지금 열어서 같이 보시죠.</div></div>
+    <div class="more">손님이 의심할 때 <b>“같이 보시죠”</b>가 가장 강한 대응입니다.
+      숨기지 않는다는 게 그 자리에서 증명됩니다.</div>
+  </div>
+
+  <div class="card" data-g="car">
+    <div class="q"><span class="ic">Q</span><span class="t">지금 어두워서 / 시간이 없어서 다 못 봤는데요</span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">그러면 지금 보신 데까지만 체크하시고, 마저 보고 진행하시죠. 급하게 넘어가면 나중에 서로 불편해집니다.</div></div>
+    <div class="more">★ <b>여기서 “대충 눌러주세요”가 나오면 안 됩니다.</b>
+      확인 안 한 걸 확인했다고 남기면, 나중에 문제가 생겼을 때
+      <b>그 기록이 딜러님을 지켜주지 못합니다.</b> 오히려 불리해집니다.</div>
+    <div class="tip"><b>비대면이라 실물을 못 본 경우</b> — 사진과 영상으로 확인하신 걸로 체크합니다.
+      대신 <b>보낸 사진이 실제 그 차인지</b> 확실히 해두세요.</div>
+  </div>
+
+  <div class="sec-h">거래 조건에 대한 질문</div>
+
+  <div class="card" data-g="deal">
+    <div class="q"><span class="ic">Q</span><span class="t">이거 말고 나중에 더 나올 돈은 없는 거죠?</span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">네, 차량 인도까지 추가로 청구되는 비용은 없습니다. 그 내용도 지금 확인하시는 항목에 들어 있습니다.</div></div>
+    <div class="more">손님이 가장 많이 하는 걱정입니다. 화면에 <b>그 문장이 그대로 있으니</b>
+      말로만 하지 말고 <b>화면을 가리키면서</b> 말하세요. 훨씬 강합니다.</div>
+    <div class="no"><span class="lb">이렇게는 말하지 마세요</span>
+      <div class="txt">확실하지 않은데 <b>“없습니다”</b>라고 먼저 말하기 — 나중에 뭔가 나오면
+      그때부터는 금액 문제가 아니라 <b>거짓말 문제</b>가 됩니다.</div></div>
+  </div>
+
+  <div class="card" data-g="deal">
+    <div class="q"><span class="ic">Q</span><span class="t">이전 등록 비용은 따로 내는 거예요?</span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">이전 등록에 들어가는 세금과 수수료 부분은 안내드린 대로입니다. 지금 확인하시는 항목에 그 내용이 들어 있습니다.</div></div>
+    <div class="more">상사마다 처리 방식이 다르므로 <b>딜러님 상사 기준으로 정확히</b> 답하세요.
+      애매하면 <b>“확인해서 바로 알려드리겠습니다”</b>가 낫습니다. 추측해서 답하면 그게 약속이 됩니다.</div>
+  </div>
+
+  <div class="sec-h">출고 후에 오는 전화</div>
+
+  <div class="card" data-g="after">
+    <div class="q"><span class="ic">Q</span><span class="t">등록증 언제 나와요?</span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">등록이 완료되면 바로 문자로 안내드립니다. 사본도 그때 확인하실 수 있고요.</div></div>
+    <div class="more">★ <b>이 전화가 앞으로 확 줄어듭니다.</b> 등록이 진행 중일 때도, 완료됐을 때도
+      손님 폰으로 자동 안내가 갑니다. <b>계약 자리에서 “문자로 계속 안내된다”를 미리 말해두면</b>
+      전화 자체가 안 옵니다.</div>
+    <div class="tip"><b>딜러 앱에서 차량번호만 넣으면</b> 손님에게 나간 안내 내역이 시각까지 그대로 나옵니다.
+      <b>“그런 연락 못 받았는데요”</b>에 바로 답할 수 있습니다.</div>
+  </div>
+
+  <div class="card" data-g="after">
+    <div class="q"><span class="ic">Q</span><span class="t">이거 보증돼요? 소리가 나는데요</span></div>
+    <div class="a"><span class="lb">이렇게 답합니다</span>
+      <div class="txt">보증 화면에 고객님이 계약 때 확인하신 보증 범위가 그대로 있습니다. 거기 먼저 보시고, 해당되면 저한테 연락 주세요.</div></div>
+    <div class="more">★ 이 대화가 <b>감정 싸움으로 가는 이유</b>는 딜러가 “그건 안 됩니다”를 말해야 하기 때문입니다.
+      슈어딜은 손님이 <b>자기가 직접 체크한 기록</b>에서 확인하게 만듭니다.
+      딜러가 거절하는 사람이 되지 않습니다.</div>
+    <div class="no"><span class="lb">이렇게는 말하지 마세요</span>
+      <div class="txt"><b>“그건 보증 안 됩니다”</b>를 먼저 말하기 — 판단은 보험사가 합니다.
+      <b>“확인해보겠습니다”</b>로 시작하세요.</div></div>
+  </div>
+
+  <div class="close">
+    <h2>정리 — 이것만 지키면 됩니다</h2>
+    <ul>
+      <li><b>손님 폰은 손님이 누른다.</b> 바빠도 대신 눌러주지 않는다</li>
+      <li><b>모르면 “확인해서 알려드리겠습니다”.</b> 추측해서 답하면 그게 약속이 된다</li>
+      <li><b>약속했으면 화면에 적는다.</b> 말로 한 건 아무도 증명 못 한다</li>
+      <li><b>“다 해드릴게요”는 하지 않는다.</b> 범위 없는 약속은 상사 부담이 된다</li>
+      <li><b>“문자로 계속 안내된다”를 미리 말해둔다.</b> 출고 후 전화가 줄어든다</li>
+    </ul>
+  </div>
+
+  <footer>
+    슈어딜 · 아이제이컴퍼니 &nbsp;|&nbsp; 문의 053-242-0061<br>
+    이 카드는 딜러 현장용 안내 자료입니다. 법률 자문이 아니며, 개별 사안은 상사 대표님께 확인하세요.
+  </footer>
+</main></div>
+
+<script>
+(function(){
+  var tabs=document.querySelectorAll('.tab'), cards=document.querySelectorAll('.card'), heads=document.querySelectorAll('.sec-h');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){x.classList.remove('on')});
+      t.classList.add('on');
+      var f=t.dataset.f;
+      cards.forEach(function(c){ c.style.display = (f==='all'||c.dataset.g===f) ? '' : 'none'; });
+      heads.forEach(function(h){
+        if(f==='all'){ h.style.display=''; return; }
+        var n=h.nextElementSibling, vis=false;
+        while(n && n.classList.contains('card')){ if(n.style.display!=='none') vis=true; n=n.nextElementSibling; }
+        h.style.display = vis ? '' : 'none';
+      });
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+})();
+</script>
+</body>
+</html>

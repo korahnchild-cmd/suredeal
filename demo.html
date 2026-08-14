@@ -6,23 +6,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#0C1730">
 <title>슈어딜 SUREDEAL — 계약 확정</title>
-<link rel="canonical" href="https://korahnchild-cmd.github.io/suredeal/demo.html">
+<link rel="canonical" href="https://suredeal.kr/demo.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="슈어딜 SUREDEAL">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:url" content="https://korahnchild-cmd.github.io/suredeal/demo.html">
+<meta property="og:url" content="https://suredeal.kr/demo.html">
 <meta property="og:title" content="슈어딜 데모 — 손님 화면 직접 체험해보기">
 <meta property="og:description" content="계약 등록부터 본인인증·고지 9항목 확인·전자서명·보증서까지, 손님이 보는 화면을 그대로 체험할 수 있습니다.">
-<meta property="og:image" content="https://korahnchild-cmd.github.io/suredeal/og.png">
-<meta property="og:image:secure_url" content="https://korahnchild-cmd.github.io/suredeal/og.png">
+<meta property="og:image" content="https://suredeal.kr/og.png">
+<meta property="og:image:secure_url" content="https://suredeal.kr/og.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="슈어딜 — 손님이 직접 체크하고 서명한 고지 확인 기록">
+<meta property="og:image:alt" content="슈어딜 — 수기계약서는 그대로, 확정만 디지털로">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="슈어딜 데모 — 손님 화면 직접 체험해보기">
 <meta name="twitter:description" content="계약 등록부터 본인인증·고지 9항목 확인·전자서명·보증서까지, 손님이 보는 화면을 그대로 체험할 수 있습니다.">
-<meta name="twitter:image" content="https://korahnchild-cmd.github.io/suredeal/og.png">
+<meta name="twitter:image" content="https://suredeal.kr/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
@@ -339,6 +339,97 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 /* 토글이 뜨는 화면에서는 DEMO 배지를 감춰 자리 충돌을 막는다 */
 #s2 .demo-tag,#s3 .demo-tag{visibility:hidden}
 
+/* ============ 첨부 서류 (딜러 전용) ============ */
+.doc-row{display:flex;align-items:center;gap:11px;background:#fff;border:1px solid var(--line);
+  border-radius:var(--r-md);padding:12px 13px;margin-bottom:7px;box-shadow:var(--shadow-card);cursor:pointer;
+  transition:transform .14s cubic-bezier(.34,1.4,.5,1)}
+.doc-row:active{transform:scale(.985)}
+.doc-row .dc-ic{width:30px;height:30px;border-radius:9px;background:var(--paper);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.doc-row .dc-ic svg{width:15px;height:15px}
+.doc-row .dc-t{flex:1;min-width:0}
+.doc-row .dc-t b{display:block;font-size:12.8px;font-weight:750;letter-spacing:-.3px}
+.doc-row .dc-t i{display:block;font-style:normal;font-size:10.5px;color:var(--faint);margin-top:2px}
+.doc-row .dc-b{font-size:10px;font-weight:800;padding:4px 8px;border-radius:6px;flex-shrink:0}
+.doc-row .dc-b.ok{background:var(--green-soft);color:var(--green)}
+.doc-row .dc-b.lock{background:var(--amber-bg);color:var(--amber)}
+.doc-note{font-size:10.5px;color:var(--faint);line-height:1.6;margin-top:8px}
+.doc-note b{color:var(--amber);font-weight:800}
+
+/* ============ 보증서 화면 = 손님 상시 허브 ============ */
+.hub{margin-top:18px}
+.hub-t{font-size:11px;font-weight:800;letter-spacing:1.2px;color:var(--faint);margin-bottom:9px}
+.hub-i{width:100%;display:flex;align-items:center;gap:12px;background:var(--card);
+  border:1px solid var(--line);border-radius:var(--r-md);padding:13px 14px;margin-bottom:8px;
+  font-family:inherit;text-align:left;box-shadow:var(--shadow-card);cursor:pointer;
+  transition:transform .14s cubic-bezier(.34,1.4,.5,1)}
+.hub-i:active{transform:scale(.985)}
+.hub-i .ic{width:32px;height:32px;border-radius:10px;background:var(--blue-soft);border:1px solid var(--blue-line);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hub-i .ic svg{width:16px;height:16px}
+.hub-i .ic.car svg{width:20px;height:14px}
+.hub-i .tx{flex:1;min-width:0}
+.hub-i .tx b{display:block;font-size:13.2px;font-weight:750;letter-spacing:-.3px;color:var(--ink)}
+.hub-i .tx i{display:block;font-style:normal;font-size:10.5px;color:var(--faint);margin-top:2px}
+.hub-i .ar{color:#B9C2D6;font-size:17px;font-weight:700;flex-shrink:0}
+
+/* ============ 차량에 남은 기록 ============ */
+.rec-c{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:4px 14px}
+.rec-r{display:flex;align-items:center;gap:9px;padding:11px 0;font-size:12.8px;color:var(--ink-2);font-weight:650}
+.rec-r + .rec-r{border-top:1px solid var(--line-2)}
+.rec-r .ck2{width:16px;height:16px;border-radius:5px;background:var(--green);color:#fff;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900}
+.rec-r i{margin-left:auto;font-style:normal;font-size:10.5px;color:var(--faint);flex-shrink:0}
+.rec-msg{margin-top:13px;background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:var(--r-md);
+  padding:14px 15px;font-size:12.8px;line-height:1.7;color:var(--blue-d);letter-spacing:-.2px}
+.rec-msg b{font-weight:850}
+.rec-sec{font-size:10.5px;font-weight:850;letter-spacing:1.4px;color:var(--faint);margin:18px 0 9px}
+.rec-g{display:grid;gap:9px}
+.rec-bar{display:grid;grid-template-columns:64px 1fr 68px;align-items:center;gap:9px}
+.rec-bar .l{font-size:11.5px;color:var(--sub);font-weight:700}
+.rec-bar i{display:block;height:9px;border-radius:5px}
+.rec-bar .b1{background:linear-gradient(90deg,#E2B4AF,var(--seal))}
+.rec-bar .b2{background:linear-gradient(90deg,#A8C4FF,var(--blue))}
+.rec-bar .v{font-size:11.5px;font-weight:800;text-align:right;color:var(--ink)}
+.rec-note{margin-top:13px;font-size:12px;line-height:1.7;color:var(--ink-2)}
+.rec-note b{font-weight:800;color:var(--ink)}
+.rec-note span{display:block;margin-top:7px;font-size:10.5px;color:var(--faint);line-height:1.6}
+
+/* ============ 성능·상태점검기록부 열람 ============ */
+.chk.lock{opacity:.96}
+.chk.lock .box{border-style:dashed;border-color:#B9C2D6}
+.doc-btn{display:flex;width:fit-content;align-items:center;gap:6px;margin-top:11px;font-family:inherit;
+  font-size:12px;font-weight:800;color:var(--blue-d);background:var(--blue-soft);
+  border:1px solid var(--blue-line);border-radius:9px;padding:8px 12px;letter-spacing:-.2px}
+.doc-btn svg{width:14px;height:14px}
+.doc-btn:active{transform:scale(.97)}
+.doc-hint{display:block;margin-top:7px;font-size:11px;color:var(--faint);font-weight:650}
+.doc-hint.done{color:var(--green);font-weight:750}
+.insp-ov{position:fixed;inset:0;z-index:120;background:rgba(9,16,32,.72);backdrop-filter:blur(3px);
+  display:flex;align-items:flex-end;justify-content:center;opacity:0;visibility:hidden;
+  transition:opacity .26s,visibility 0s linear .26s}
+.insp-ov.on{opacity:1;visibility:visible;transition-delay:0s,0s}
+.insp-sheet{width:100%;max-width:430px;background:var(--card);border-radius:20px 20px 0 0;
+  max-height:88vh;display:flex;flex-direction:column;transform:translateY(18px);transition:transform .3s cubic-bezier(.25,.9,.3,1)}
+.insp-ov.on .insp-sheet{transform:none}
+.insp-hd{display:flex;align-items:center;gap:10px;padding:16px 18px 13px;border-bottom:1px solid var(--line)}
+.insp-hd b{font-size:14.5px;font-weight:800;letter-spacing:-.3px}
+.insp-hd .x{margin-left:auto;width:30px;height:30px;border-radius:9px;background:var(--paper);
+  display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--sub);font-weight:700}
+.insp-bd{padding:16px 18px 10px;overflow:auto}
+.insp-paper{background:#FCFCFA;border:1px solid var(--cert-line);border-radius:8px;padding:14px 15px}
+.insp-ttl{font-family:'Noto Serif KR',serif;font-size:14px;font-weight:900;letter-spacing:2px;
+  text-align:center;padding-bottom:10px;border-bottom:2px solid #3A3E48;color:#2A2E38}
+.ir{display:flex;font-size:12px;border-bottom:1px solid #E2E0D6;color:#2A2E38}
+.ir span{padding:9px 8px;color:#6B6A62;width:38%;background:#F5F4EE;font-weight:650;flex-shrink:0}
+.ir b{padding:9px 10px;font-weight:750}
+.ir.ok b{color:var(--green)}
+.insp-ft{padding:12px 18px calc(16px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+.insp-ft .tm{font-size:11px;color:var(--faint);text-align:center;margin-bottom:10px}
+.insp-ft button{width:100%;background:var(--blue);color:#fff;font-family:inherit;font-size:14.5px;
+  font-weight:800;border-radius:13px;padding:14px;letter-spacing:-.2px}
+.insp-ft button:active{transform:scale(.985)}
+
 /* ============ S8 딜러 빠른 조회 (전화 받으면서 30초) ============ */
 #s8{background:var(--paper)}
 .lookup-head{background:var(--deep);color:#fff;padding:22px 22px 26px;
@@ -400,6 +491,53 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 .lk-note{display:flex;gap:9px;background:var(--blue-soft);border:1px solid var(--blue-line);
   border-radius:var(--r-md);padding:13px 14px;margin-top:14px;font-size:12px;line-height:1.65;color:var(--blue-d)}
 .lk-note b{font-weight:800}
+
+/* ============ S9 대표 화면 — 딜러 실적 ============ */
+#s9{background:var(--paper)}
+.owner-head{background:var(--deep);color:#fff;padding:22px 22px 24px;
+  background-image:radial-gradient(120% 160% at 100% 0%,#1A2E5C 0%,var(--deep) 55%)}
+.owner-head .lh-eye{font-size:10.5px;font-weight:800;letter-spacing:1.6px;color:#7FA0FF}
+.owner-head h2{font-size:20px;font-weight:800;letter-spacing:-.6px;margin-top:9px;line-height:1.4}
+.owner-head p{font-size:12.5px;color:#8DA3CC;margin-top:8px;line-height:1.6}
+.ov-sum{display:flex;gap:9px;margin-top:16px}
+.ov-c{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+  border-radius:13px;padding:12px 13px}
+.ov-c .k{font-size:10.5px;color:#9FB4DD;font-weight:700}
+.ov-c .v{font-size:19px;font-weight:850;letter-spacing:-.6px;margin-top:4px;font-variant-numeric:tabular-nums}
+.ov-c .v small{font-size:11.5px;font-weight:700;margin-left:2px;letter-spacing:0}
+.ow-body{padding:18px 22px 120px}
+
+.todo{background:#fff;border:1px solid #F0DFBC;border-left:3px solid var(--amber);
+  border-radius:var(--r-md);padding:6px 15px;box-shadow:var(--shadow-card)}
+.todo-h{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:850;letter-spacing:1.2px;
+  color:var(--amber);padding:11px 0 2px}
+.todo-h b{margin-left:auto;font-size:11.5px;letter-spacing:0}
+.td-row{display:flex;align-items:center;gap:9px;padding:10px 0;font-size:12.5px;color:var(--ink-2);line-height:1.45}
+.td-row + .td-row{border-top:1px solid var(--line-2)}
+.td-row .who{margin-left:auto;font-size:10.5px;color:var(--faint);flex-shrink:0}
+
+.dl{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:14px 16px;
+  margin-bottom:8px;box-shadow:var(--shadow-card)}
+.dl-top{display:flex;align-items:center;gap:10px}
+.dl-av{width:32px;height:32px;border-radius:10px;background:var(--blue-soft);border:1px solid var(--blue-line);
+  color:var(--blue-d);font-size:13px;font-weight:850;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dl-nm{font-size:14px;font-weight:800;letter-spacing:-.3px}
+.dl-sub{font-size:10.5px;color:var(--faint);margin-top:2px}
+.dl-amt{margin-left:auto;text-align:right;flex-shrink:0}
+.dl-amt b{font-size:15px;font-weight:850;letter-spacing:-.5px;font-variant-numeric:tabular-nums}
+.dl-amt b em{font-style:normal;font-size:11px;font-weight:750;margin-left:2px;letter-spacing:0}
+.dl-amt span{display:block;font-size:10.5px;color:var(--faint);margin-top:2px}
+.dl-bar{height:6px;border-radius:3px;background:var(--line-2);margin-top:12px;overflow:hidden}
+.dl-bar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--blue),#4A76F0);
+  width:0;transition:width .9s cubic-bezier(.25,.9,.3,1)}
+.dl-meta{display:flex;gap:14px;margin-top:10px;flex-wrap:wrap}
+.dl-meta span{font-size:11px;color:var(--sub);font-weight:650}
+.dl-meta span b{color:var(--ink);font-weight:800}
+.dl-meta .warn b{color:var(--amber)}
+
+.own-note{display:flex;gap:9px;background:var(--green-soft);border:1px solid #BFE3D0;
+  border-radius:var(--r-md);padding:13px 14px;margin-top:14px;font-size:12px;line-height:1.65;color:var(--green)}
+.own-note b{font-weight:850}
 
 /* ============ D+ 카운터 (보증서) ============ */
 .dplus{display:inline-flex;align-items:center;gap:7px;margin-top:11px;background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:999px;padding:6px 14px;font-size:11.5px;font-weight:700;color:var(--blue-d);letter-spacing:-.1px}
@@ -564,7 +702,12 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 
     <div class="group">
       <div class="group-title"><span class="gnum">B</span>차량 상태 확인<span class="gsub">2개 항목</span></div>
-      <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div><b>성능·상태점검기록부</b>를 열람하고 사고이력 · 침수여부 · 주행거리를 확인했습니다.</div></div>
+      <div class="chk lock" id="chkInsp" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div>
+        <div><b>성능·상태점검기록부</b>를 열람하고 사고이력 · 침수여부 · 주행거리를 확인했습니다.
+          <button type="button" class="doc-btn" id="inspBtn" onclick="event.stopPropagation();openInsp()">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-doc"/></svg>점검표 보기</button>
+          <span class="doc-hint" id="inspHint">열어보셔야 체크할 수 있습니다</span>
+        </div></div>
       <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>차량의 외관·실내 상태를 <b>직접 또는 사진·영상으로</b> 확인했습니다.</div></div>
     </div>
 
@@ -725,6 +868,24 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
           발급·기록 슈어딜 — 본 보증서의 보증·약속에 대한 책임은 판매 상사에 있습니다.</div>
       </div>
     </div></div>
+
+    <!-- 보증서 화면 = 손님의 상시 허브 (§2-13) -->
+    <div class="hub">
+      <div class="hub-t">이 화면에서 언제든 다시 보실 수 있습니다</div>
+      <button type="button" class="hub-i" onclick="openInsp()">
+        <span class="ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
+        <span class="tx"><b>성능·상태점검기록부</b><i>계약 시 열람 · 8. 8(토) 14:25</i></span>
+        <span class="ar">›</span></button>
+      <button type="button" class="hub-i" onclick="toast('데모 화면입니다 — 정식 버전에서 등록증 사본이 열립니다')">
+        <span class="ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
+        <span class="tx"><b>자동차등록증 사본</b><i>이전등록 완료 · 8. 10(월) 14:51</i></span>
+        <span class="ar">›</span></button>
+      <button type="button" class="hub-i" onclick="openRec()">
+        <span class="ic car"><svg viewBox="0 0 120 78"><g fill="none" stroke="#2453D9" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 53c0-7 3-11 9-12l25-3 17-21c3-4 7-6 12-6h16c5 0 10 2 13 6l11 15 11 3c4 1 7 5 7 10v8c0 2-2 4-4 4H10c-2 0-4-2-4-4z"/><circle cx="32" cy="59" r="9"/><circle cx="90" cy="59" r="9"/></g></svg></span>
+        <span class="tx"><b>차량에 남은 기록</b><i>나중에 파실 때 값을 지켜 줍니다</i></span>
+        <span class="ar">›</span></button>
+    </div>
+
     <button class="share-btn" onclick="shareCert()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><path d="M4 12v7a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 20 19v-7"/><path d="M12 15V3.5"/><path d="m7.5 7.5 4.5-4.5 4.5 4.5"/></svg>보증서 공유하기</button>
     <div class="toast" id="toast">데모 버전입니다 — 정식 버전에서 카카오톡·문자로 공유됩니다</div>
     <button class="btn-line" onclick="go('s8')">딜러 화면 — 전화 받았을 때 조회하기</button>
@@ -789,6 +950,21 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
         <div class="lk-row" style="font-weight:750;color:var(--ink)">입금 합계<span class="tm2" style="font-size:13px;color:var(--blue-d);font-weight:800">2,820만 원</span></div>
       </div>
 
+      <div class="lk-sec">첨부 서류</div>
+      <div class="doc-row" onclick="openInsp()">
+        <span class="dc-ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
+        <span class="dc-t"><b>성능·상태점검기록부</b><i>손님 열람 8. 8(토) 14:25</i></span>
+        <span class="dc-b ok">손님 확인</span></div>
+      <div class="doc-row" onclick="toast('데모 화면입니다 — 정식 버전에서 원본 사진이 열립니다')">
+        <span class="dc-ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
+        <span class="dc-t"><b>입금 확인 화면</b><i>8. 8(토) 14:05 · 8. 12(수)</i></span>
+        <span class="dc-b ok">손님 확인</span></div>
+      <div class="doc-row" onclick="toast('데모 화면입니다 — 정식 버전에서 원본 사진이 열립니다')">
+        <span class="dc-ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
+        <span class="dc-t"><b>자동차등록증 사본</b><i>8. 10(월) 14:51 발송</i></span>
+        <span class="dc-b ok">손님 확인</span></div>
+      <div class="doc-note">※ 서류에 <b>주민등록번호가 보이지 않게</b> 가리고 촬영해 주세요.</div>
+
       <div class="lk-sec">합의 기록</div>
       <div class="lk-card">
         <div class="lk-row">타이어 마모 → 차량가액 30만 원 할인 반영 · 추가 조치 없음</div>
@@ -812,8 +988,85 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 
       <button class="btn-line" style="margin-top:16px" onclick="toast('데모 버전입니다 — 정식 버전에서 손님에게 알림톡이 재발송됩니다')">보증서 · 등록증 다시 보내기</button>
       <button class="btn-line" onclick="toast('데모 버전입니다 — 정식 버전에서 고지 확인 PDF가 열립니다')">고지 확인 PDF 열기</button>
+      <button class="btn-line" onclick="go('s9')">대표 화면 — 딜러별 실적 보기</button>
       <span class="back-link" onclick="go('s0')">↺ 데모 처음으로</span>
     </div>
+  </div>
+</section>
+
+<!-- ============ 9. 대표 화면 — 딜러 실적 ============ -->
+<section class="screen" id="s9">
+  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>대표</small></div><div class="demo-tag" style="cursor:pointer" onclick="go('s8')">← 딜러 화면</div></div>
+
+  <div class="owner-head">
+    <div class="lh-eye">굿카닷컴</div>
+    <h2>딜러 실적은<br>계약하면 저절로 쌓입니다</h2>
+    <p>따로 적어 두실 필요가 없습니다.<br>딜러가 계약을 슈어딜로 하면 그대로 정리됩니다.</p>
+    <div class="ov-sum">
+      <div class="ov-c"><div class="k">이번 달 계약</div><div class="v" id="ovCnt">0<small>건</small></div></div>
+      <div class="ov-c"><div class="k">판매 금액</div><div class="v" id="ovAmt">0<small>만 원</small></div></div>
+    </div>
+  </div>
+
+  <div class="ow-body">
+    <div class="lk-sec" style="margin-top:2px">오늘 챙기실 것</div>
+    <div class="todo">
+      <div class="todo-h">확인이 필요합니다<b>2건</b></div>
+      <div class="td-row">이전등록 완료 · <b style="font-weight:800">등록증 사본 미발송</b><span class="who">이O진 · 김성훈</span></div>
+      <div class="td-row">내일 인도 예정 · 잔금 입금 확인 전<span class="who">박O수 · 박준호</span></div>
+    </div>
+
+    <div class="lk-sec">딜러별 실적 <span style="font-weight:700;letter-spacing:0;color:var(--faint)">· 8월 1~12일</span></div>
+
+    <div class="dl">
+      <div class="dl-top">
+        <div class="dl-av">김</div>
+        <div><div class="dl-nm">김성훈</div><div class="dl-sub">진행 2 · 완료 2</div></div>
+        <div class="dl-amt"><b>1억 1,240<em>만 원</em></b><span>4건</span></div>
+      </div>
+      <div class="dl-bar"><i data-w="100"></i></div>
+      <div class="dl-meta"><span>평균 <b>2,810만 원</b></span><span>할인 반영 <b>2건 · 55만</b></span></div>
+    </div>
+
+    <div class="dl">
+      <div class="dl-top">
+        <div class="dl-av">박</div>
+        <div><div class="dl-nm">박준호</div><div class="dl-sub">진행 2 · 완료 1</div></div>
+        <div class="dl-amt"><b>6,850<em>만 원</em></b><span>3건</span></div>
+      </div>
+      <div class="dl-bar"><i data-w="61"></i></div>
+      <div class="dl-meta"><span>평균 <b>2,283만 원</b></span><span>할인 반영 <b>1건 · 30만</b></span><span class="warn">미이행 약속 <b>1건</b></span></div>
+    </div>
+
+    <div class="dl">
+      <div class="dl-top">
+        <div class="dl-av">이</div>
+        <div><div class="dl-nm">이재민</div><div class="dl-sub">진행 1 · 완료 1</div></div>
+        <div class="dl-amt"><b>4,120<em>만 원</em></b><span>2건</span></div>
+      </div>
+      <div class="dl-bar"><i data-w="37"></i></div>
+      <div class="dl-meta"><span>평균 <b>2,060만 원</b></span><span>할인 반영 <b>없음</b></span></div>
+    </div>
+
+    <div class="lk-sec">최근 계약</div>
+    <div class="lk-recent">
+      <div class="rc"><span class="pl2">34나 5678</span>
+        <div><div class="nm2">소나타 DN8</div><div class="dt">박준호 · 8/12(수) 계약</div></div>
+        <span class="st ing">계약 확정</span></div>
+      <div class="rc"><span class="pl2">19바 2345</span>
+        <div><div class="nm2">K5 3세대</div><div class="dt">이재민 · 8/11(화) 계약</div></div>
+        <span class="st ing">서류 확정</span></div>
+      <div class="rc" onclick="go('s8')"><span class="pl2">12가 3456</span>
+        <div><div class="nm2">그랜저 IG 2.5</div><div class="dt">김성훈 · 8/8(토) 계약</div></div>
+        <span class="st ok">등록 완료</span></div>
+    </div>
+
+    <div class="own-note"><span>✓</span><div>
+      <b>딜러 본인도 자기 실적 화면을 봅니다.</b><br>
+      대표님만 보는 화면이 아닙니다. 감시가 아니라 각자의 기록입니다.</div></div>
+
+    <button class="btn-line" style="margin-top:16px" onclick="go('s8')">차량번호로 계약 조회하기</button>
+    <span class="back-link" onclick="go('s0')">↺ 데모 처음으로</span>
   </div>
 </section>
 
@@ -880,10 +1133,47 @@ function go(id){
   if(id==='s5')setTimeout(initSig,80);
   if(id==='s7')updDplus();
   if(id==='s8')runLookup();
+  if(id==='s9')runOwner();
   var sw=document.getElementById('demoSw');
   if(sw) sw.style.display = (id==='s2'||id==='s3') ? 'flex' : 'none';
   if(id==='s2'||id==='s3') applyKm();
 }
+/* 대표 화면 — 카운트업 + 실적 바 */
+var ownerRan = false;
+function runOwner(){
+  var c=document.getElementById('ovCnt'), a=document.getElementById('ovAmt');
+  if(!c||!a) return;
+  countTo(c, 9, '건', 700);
+  countTo(a, 22210, '만 원', 900, true);
+  var bars=document.querySelectorAll('#s9 .dl-bar i');
+  bars.forEach(function(b){ b.style.width='0'; });
+  setTimeout(function(){
+    bars.forEach(function(b,i){
+      setTimeout(function(){ b.style.width=b.getAttribute('data-w')+'%'; }, i*110);
+    });
+  }, 180);
+  ownerRan = true;
+}
+function countTo(el, target, unit, dur, eok){
+  var t0=null;
+  function fmt(n){
+    if(eok && n >= 10000){
+      var e = Math.floor(n/10000), r = n % 10000;
+      return e + '억 ' + (r ? r.toLocaleString('ko-KR') : '');
+    }
+    return n.toLocaleString('ko-KR');
+  }
+  function step(ts){
+    if(t0===null) t0=ts;
+    var p=Math.min(1,(ts-t0)/dur);
+    var e=1-Math.pow(1-p,3);
+    el.innerHTML = fmt(Math.round(target*e)) + '<small>'+unit+'</small>';
+    if(p<1) requestAnimationFrame(step);
+  }
+  el.innerHTML = '0<small>'+unit+'</small>';
+  requestAnimationFrame(step);
+}
+
 /* 확정 의식 — 봉인 시퀀스 */
 function sealAndGo(){
   const ov=document.getElementById('sealOv');
@@ -924,7 +1214,29 @@ function updChk(){
   btn.textContent = on===all.length ? '모두 확인했습니다' : '모두 확인했습니다 ('+on+'/'+all.length+')';
   btn.disabled = on!==all.length;
 }
-function tg(el){ el.classList.toggle('on'); updChk(); }
+function tg(el){
+  if(el.classList.contains('lock')){ toast('먼저 성능·상태점검기록부를 열어보셔야 합니다'); return; }
+  el.classList.toggle('on'); updChk();
+}
+function openRec(){ var o=document.getElementById('recOv'); if(o) o.classList.add('on'); }
+function closeRec(){ var o=document.getElementById('recOv'); if(o) o.classList.remove('on'); }
+/* 성능·상태점검기록부 — 열람해야 체크가 열린다 */
+function openInsp(){
+  var ov=document.getElementById('inspOv'); if(!ov) return;
+  ov.classList.add('on');
+  var t=document.getElementById('inspTime');
+  if(t && !t.dataset.set){ t.textContent='2026. 8. 8  14:25'; t.dataset.set=1; }
+}
+function closeInsp(){
+  var ov=document.getElementById('inspOv'); if(ov) ov.classList.remove('on');
+  var c=document.getElementById('chkInsp');
+  if(c && c.classList.contains('lock')){
+    c.classList.remove('lock');
+    var h=document.getElementById('inspHint');
+    if(h){ h.textContent='열람 완료 · 8. 8(토) 14:25'; h.classList.add('done'); }
+    if(!c.classList.contains('on')){ c.classList.add('on'); updChk(); }
+  }
+}
 function tgSingle(el){
   el.classList.toggle('on');
   document.getElementById('adjBtn').disabled=!el.classList.contains('on');
@@ -961,6 +1273,66 @@ function clearSig(){
   document.getElementById('sigBtn').disabled=true;
 }
 </script>
+<!-- 차량에 남은 기록 -->
+<div class="insp-ov" id="recOv">
+  <div class="insp-sheet">
+    <div class="insp-hd">
+      <svg style="width:18px;height:18px" viewBox="0 0 24 24"><use href="#i-doc"/></svg>
+      <b>고객님 차량에 남은 기록</b>
+      <span class="x" onclick="closeRec()">×</span>
+    </div>
+    <div class="insp-bd">
+      <div class="rec-c">
+        <div class="rec-r"><span class="ck2">✓</span>성능·상태점검기록부 확인<i>8. 8(토) 14:25</i></div>
+        <div class="rec-r"><span class="ck2">✓</span>무사고 · 41,820km<i>계약 시점</i></div>
+        <div class="rec-r"><span class="ck2">✓</span>본인인증 계약 · 전자서명<i>8. 8(토) 14:28</i></div>
+        <div class="rec-r"><span class="ck2">✓</span>합의 기록 1건<i>타이어 마모 → 30만 원 반영</i></div>
+      </div>
+      <div class="rec-msg"><b>나중에 이 차를 파실 때, 이 기록이 그대로 남아 있습니다.</b><br>
+        이력이 확인되는 차는 값을 지킵니다.</div>
+      <div class="rec-sec">참고 · 연식별 감가 구간</div>
+      <div class="rec-g">
+        <div class="rec-bar"><span class="l">신차 첫 해</span><i class="b1" style="width:100%"></i><span class="v">−20~30%</span></div>
+        <div class="rec-bar"><span class="l">3~5년차</span><i class="b2" style="width:38%"></i><span class="v">연 −8~12%</span></div>
+      </div>
+      <div class="rec-note">고객님 차량은 <b>가장 가파른 구간을 이미 지났습니다.</b><br>
+        <span>※ 일반적인 감가 흐름에 대한 참고 정보이며, 특정 금액을 예측하거나 보장하지 않습니다.</span></div>
+    </div>
+    <div class="insp-ft">
+      <button type="button" onclick="closeRec()">닫기</button>
+    </div>
+  </div>
+</div>
+
+<!-- 성능·상태점검기록부 열람 -->
+<div class="insp-ov" id="inspOv">
+  <div class="insp-sheet">
+    <div class="insp-hd">
+      <svg style="width:18px;height:18px" viewBox="0 0 24 24"><use href="#i-doc"/></svg>
+      <b>성능·상태점검기록부</b>
+      <span class="x" onclick="closeInsp()">×</span>
+    </div>
+    <div class="insp-bd">
+      <div class="insp-paper">
+        <div class="insp-ttl">중고자동차 성능·상태점검기록부</div>
+        <div class="ir"><span>차량번호</span><b>12가 3456</b></div>
+        <div class="ir"><span>차명 / 연식</span><b>그랜저 IG 2.5 · 2021</b></div>
+        <div class="ir"><span>주행거리</span><b>41,820 km</b></div>
+        <div class="ir ok"><span>사고이력</span><b>없음</b></div>
+        <div class="ir ok"><span>침수이력</span><b>없음</b></div>
+        <div class="ir"><span>주요장치</span><b>양호</b></div>
+        <div class="ir"><span>점검일</span><b>2026. 8. 5</b></div>
+        <div class="ir"><span>점검자</span><b>○○자동차성능시험소</b></div>
+      </div>
+      <div class="pay-note" style="margin-top:12px">※ 데모 화면입니다. 정식 버전에서는 딜러가 업로드한 <b>실제 기록부 원본</b>이 표시됩니다.</div>
+    </div>
+    <div class="insp-ft">
+      <div class="tm">열람 시각 <b id="inspTime">—</b></div>
+      <button type="button" onclick="closeInsp()">확인했습니다</button>
+    </div>
+  </div>
+</div>
+
 <button type="button" class="ins-sw" id="demoSw" onclick="toggleKm()" aria-pressed="true"
         aria-label="성능보증보험 가입 여부 전환">
   <span class="isw-dot" id="swDot" aria-hidden="true">✓</span>성능보증보험 <span class="isw-st" id="swLabel">가입</span>

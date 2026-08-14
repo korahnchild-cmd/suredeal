@@ -2,8 +2,11 @@ User-agent: *
 Allow: /$
 Allow: /index.html
 Allow: /privacy.html
+Allow: /terms.html
 Allow: /og.png
 Disallow: /demo.html
 Disallow: /alimtalk.html
+Disallow: /dealer.html
+Disallow: /onepager.html
 
-Sitemap: https://korahnchild-cmd.github.io/suredeal/sitemap.xml
+Sitemap: https://suredeal.kr/sitemap.xml
