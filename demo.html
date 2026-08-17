@@ -320,7 +320,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 .km-badge{display:inline-block;font-size:10.5px;font-weight:800;color:var(--amber);background:var(--amber-bg);
   border:1px solid #F0DFBC;border-radius:5px;padding:2px 7px;margin-left:6px;vertical-align:1px}
 /* 성능보증보험 단일 토글 — 우측 상단 (데모 전환용) */
-.ins-sw{position:fixed;z-index:40;right:14px;top:14px;white-space:nowrap;font-family:inherit;
+.ins-sw{position:fixed;z-index:40;right:14px;top:66px;white-space:nowrap;font-family:inherit;
   display:flex;align-items:center;gap:7px;border-radius:999px;padding:6px 11px 6px 9px;
   font-size:11px;font-weight:750;letter-spacing:-.2px;cursor:pointer;
   border:1px solid var(--green);background:var(--green-soft);color:var(--green);
@@ -338,6 +338,10 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 @media (max-width:360px){ .ins-sw{font-size:10.2px;padding:5px 9px 5px 8px} .ins-sw .isw-sw{display:none} }
 /* 토글이 뜨는 화면에서는 DEMO 배지를 감춰 자리 충돌을 막는다 */
 #s2 .demo-tag,#s3 .demo-tag{visibility:hidden}
+.home-btn{margin-left:10px;display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-weight:800;
+  letter-spacing:-.2px;color:#CFDBF5;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2);
+  border-radius:7px;padding:5px 10px;text-decoration:none;white-space:nowrap;transition:background .15s}
+.home-btn:hover{background:rgba(255,255,255,.17);color:#fff}
 
 /* ============ 첨부 서류 (딜러 전용) ============ */
 .doc-row{display:flex;align-items:center;gap:11px;background:#fff;border:1px solid var(--line);
@@ -477,8 +481,9 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 .rc .st{margin-left:auto;font-size:10px;font-weight:800;padding:4px 8px;border-radius:6px;flex-shrink:0}
 .rc .st.ok{background:var(--green-soft);color:var(--green)}
 .rc .st.ing{background:var(--blue-soft);color:var(--blue-d)}
-.sendlog{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:6px 16px;
-  box-shadow:var(--shadow-card)}
+.sendlog{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:12px 15px;
+  box-shadow:var(--shadow-card);font-size:12.5px;line-height:1.68;color:var(--ink-2);letter-spacing:-.2px;
+  display:flex;gap:8px;align-items:flex-start}
 .sl-row{display:flex;align-items:center;gap:9px;padding:10px 0;font-size:12.5px;color:var(--ink-2)}
 .sl-row + .sl-row{border-top:1px solid var(--line-2)}
 .sl-row .dot{width:16px;height:16px;border-radius:50%;background:var(--green);color:#fff;flex-shrink:0;
@@ -568,7 +573,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 
 <!-- ============ 0. 인트로 ============ -->
 <section class="screen active" id="s0">
-  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><div class="demo-tag">DEMO</div></div>
+  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><a class="home-btn" href="biz/">← 홈</a><div class="demo-tag">DEMO</div></div>
   <div class="body">
     <div class="halo"></div><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
     <div style="position:relative;z-index:1">
@@ -591,7 +596,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 
 <!-- ============ 1. PASS ============ -->
 <section class="screen" id="s1">
-  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><div class="demo-tag">DEMO</div></div>
+  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><a class="home-btn" href="biz/">← 홈</a><div class="demo-tag">DEMO</div></div>
   <div class="steps">
     <div class="step on"><div class="bar"></div><div class="nm">인증</div></div>
     <div class="step"><div class="bar"></div><div class="nm">계약</div></div>
@@ -619,7 +624,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 
 <!-- ============ 2. 계약 내용 ============ -->
 <section class="screen" id="s2">
-  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><div class="demo-tag">DEMO</div></div>
+  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><a class="home-btn" href="biz/">← 홈</a><div class="demo-tag">DEMO</div></div>
   <div class="steps">
     <div class="step on"><div class="bar"></div><div class="nm">인증</div></div>
     <div class="step on"><div class="bar"></div><div class="nm">계약</div></div>
@@ -667,7 +672,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 
 <!-- ============ 3. 고지 확인 ============ -->
 <section class="screen" id="s3">
-  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><div class="demo-tag">DEMO</div></div>
+  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><a class="home-btn" href="biz/">← 홈</a><div class="demo-tag">DEMO</div></div>
   <div class="steps">
     <div class="step on"><div class="bar"></div><div class="nm">인증</div></div>
     <div class="step on"><div class="bar"></div><div class="nm">계약</div></div>
@@ -723,7 +728,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 
 <!-- ============ 4. 합의 조정 ============ -->
 <section class="screen" id="s4">
-  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><div class="demo-tag">DEMO</div></div>
+  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><a class="home-btn" href="biz/">← 홈</a><div class="demo-tag">DEMO</div></div>
   <div class="steps">
     <div class="step on"><div class="bar"></div><div class="nm">인증</div></div>
     <div class="step on"><div class="bar"></div><div class="nm">계약</div></div>
@@ -755,7 +760,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 
 <!-- ============ 5. 전자서명 ============ -->
 <section class="screen" id="s5">
-  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><div class="demo-tag">DEMO</div></div>
+  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><a class="home-btn" href="biz/">← 홈</a><div class="demo-tag">DEMO</div></div>
   <div class="steps">
     <div class="step on"><div class="bar"></div><div class="nm">인증</div></div>
     <div class="step on"><div class="bar"></div><div class="nm">계약</div></div>
@@ -779,7 +784,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 
 <!-- ============ 6. 완료 ============ -->
 <section class="screen" id="s6">
-  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><div class="demo-tag">DEMO</div></div>
+  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><a class="home-btn" href="biz/">← 홈</a><div class="demo-tag">DEMO</div></div>
   <div class="body">
     <div class="done-hero">
       <div class="stamp">
@@ -787,7 +792,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
         <div class="in"><span class="st1">계약 확정</span><span class="st2">SUREDEAL</span></div>
       </div>
       <h1>계약이 확정되었습니다</h1>
-      <p class="own-line">오늘부터 <b>이O진님의 그랜저 IG 2.5</b>입니다 · 12가 3456</p>
+      <p class="own-line"><b>그랜저 IG 2.5</b> · 12가 3456</p>
       <div class="mng"><small>관리번호</small>SD-2608-0142</div>
     </div>
     <div class="verify-card rise" style="animation-delay:.15s">
@@ -812,7 +817,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 
 <!-- ============ 7. 보증서 ============ -->
 <section class="screen" id="s7">
-  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><div class="demo-tag">DEMO</div></div>
+  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><a class="home-btn" href="biz/">← 홈</a><div class="demo-tag">DEMO</div></div>
   <div class="body">
     <div class="cert-outer"><div class="cert">
       <span class="corner c-tl"><svg viewBox="0 0 22 22"><use href="#i-corner"/></svg></span>
@@ -835,7 +840,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
       <div class="cert-pre">
         이 보증의 <b>이행 주체는 판매 상사(굿카닷컴)</b>입니다. 슈어딜은 계약 확인·발급·기록
         플랫폼이며, <b>보증인이 아니고 수리비 등 어떠한 금전적 책임도 지지 않습니다.</b>
-        <span class="l2">본 문서는 자동차관리법상 성능·상태점검 책임보험과 무관한, 판매 상사의 자체 보증입니다.</span>
+        <span class="l2">본 문서는 자동차관리법상 성능·상태점검 책임보험과 무관한, 판매 상사의 자체 계약 보증입니다.</span>
       </div>
 
       <div class="cert-body">
@@ -894,7 +899,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 </section>
 <!-- ============ 8. 딜러 빠른 조회 ============ -->
 <section class="screen" id="s8">
-  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>딜러</small></div><div class="demo-tag" style="cursor:pointer" onclick="go('s0')">← 손님 화면</div></div>
+  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>딜러</small></div><a class="home-btn" href="biz/">← 홈</a><div class="demo-tag" style="cursor:pointer;visibility:visible" onclick="go('s0')">← 손님 화면</div></div>
 
   <div class="lookup-head">
     <div class="lh-eye">빠른 조회</div>
@@ -996,7 +1001,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 
 <!-- ============ 9. 대표 화면 — 딜러 실적 ============ -->
 <section class="screen" id="s9">
-  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>대표</small></div><div class="demo-tag" style="cursor:pointer" onclick="go('s8')">← 딜러 화면</div></div>
+  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>대표</small></div><a class="home-btn" href="biz/">← 홈</a><div class="demo-tag" style="cursor:pointer;visibility:visible" onclick="go('s8')">← 딜러 화면</div></div>
 
   <div class="owner-head">
     <div class="lh-eye">굿카닷컴</div>
