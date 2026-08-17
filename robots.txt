@@ -4,8 +4,9 @@ Allow: /index.html
 Allow: /privacy.html
 Allow: /terms.html
 Allow: /og.png
+Allow: /biz/
 Disallow: /demo.html
-Disallow: /alimtalk.html
+Allow: /alimtalk.html
 Disallow: /dealer.html
 Disallow: /onepager.html
 

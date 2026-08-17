@@ -2,27 +2,28 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0C1730">
-<title>슈어딜 — 계약한 내용이 그대로 남습니다</title>
-<meta name="description" content="슈어딜은 자동차 매매 계약 내용과 보증서를 본인확인 기반으로 기록하고 보관하는 서비스입니다.">
-<link rel="canonical" href="https://suredeal.kr/">
+<title>슈어딜 SUREDEAL — 중고차 계약 확정 시스템</title>
+<meta name="description" content="손님이 직접 체크하고 서명한 고지 기록이 계약 즉시 PDF로 남습니다. 딜러 입력 30초, 손님 확인 2분. 중고차 매매상사를 위한 계약 확정 시스템.">
+<link rel="canonical" href="https://suredeal.kr/biz/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="슈어딜 SUREDEAL">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:url" content="https://suredeal.kr/">
-<meta property="og:title" content="슈어딜 — 계약한 내용이 그대로 남습니다">
-<meta property="og:description" content="슈어딜은 자동차 매매 계약 내용과 보증서를 본인확인 기반으로 기록하고 보관하는 서비스입니다.">
-<meta property="og:image" content="https://suredeal.kr/og-home.png">
-<meta property="og:image:secure_url" content="https://suredeal.kr/og-home.png">
+<meta property="og:url" content="https://suredeal.kr/biz/">
+<meta property="og:title" content="슈어딜 — 수기계약서는 그대로, 확정만 디지털로.">
+<meta property="og:description" content="손님 본인인증 · 전자서명 · 보증서 발급, 인도 후 진행 알림까지. 딜러 입력 30초, 손님 확인 2분. 중고차 매매상사를 위한 계약 확정 시스템.">
+<meta property="og:image" content="https://suredeal.kr/og.png">
+<meta property="og:image:secure_url" content="https://suredeal.kr/og.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="슈어딜 — 수기계약서는 그대로, 확정만 디지털로">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="슈어딜 — 수기계약서는 그대로, 확정만 디지털로.">
-<meta name="twitter:description" content="슈어딜은 자동차 매매 계약 내용과 보증서를 본인확인 기반으로 기록하고 보관하는 서비스입니다.">
-<meta name="twitter:image" content="https://suredeal.kr/og-home.png">
+<meta name="twitter:description" content="손님 본인인증 · 전자서명 · 보증서 발급, 인도 후 진행 알림까지. 딜러 입력 30초, 손님 확인 2분. 중고차 매매상사를 위한 계약 확정 시스템.">
+<meta name="twitter:image" content="https://suredeal.kr/og.png">
 <meta name="format-detection" content="telephone=yes">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -216,7 +217,7 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
 .pdf-sign{font-family:'Noto Serif KR',serif;font-size:16px;color:var(--ink);opacity:.75;
   transform:rotate(-4deg);margin-top:2px}
 
-.phone{position:relative;z-index:3;width:258px;background:#B2C7DA;border-radius:34px;
+.phone{position:relative;z-index:3;width:258px;background:var(--paper);border-radius:34px;
   border:9px solid #05091A;box-shadow:0 34px 70px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08);
   overflow:hidden;color:var(--ink);transform:translateX(-38px)}
 @media(max-width:900px){.phone{width:238px;transform:translateX(-30px)}}
@@ -914,18 +915,17 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
 .pay-logic{font-size:22px;font-weight:750;letter-spacing:-1px;line-height:1.55;color:#fff}
 @media(min-width:860px){.pay-logic{font-size:25px;letter-spacing:-1.2px}}
 .pay-logic b{font-weight:800;color:#8FB4FF}
-.pay-calc{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:18px;
-  padding-top:15px;border-top:1px dashed rgba(255,255,255,.14);font-variant-numeric:tabular-nums}
-.pay-calc .u{display:flex;flex-direction:column;gap:3px}
-.pay-calc .u .k{font-size:10.5px;font-weight:700;letter-spacing:.4px;color:#7286AB}
-.pay-calc .u .v{font-size:16.5px;font-weight:800;letter-spacing:-.5px}
-.pay-calc .u.bad .v{color:#FF8A7A}
-.pay-calc .op{font-size:14px;font-weight:700;color:#5F7093;padding-top:12px}
-.pay-calc .eq{text-align:left;padding-left:4px}
 
-.pay-calc .eq .k{font-size:10.5px;font-weight:700;color:#7286AB;letter-spacing:.4px}
-.pay-calc .eq .v{font-size:22px;font-weight:800;letter-spacing:-.8px;color:#fff}
-.pay-calc .eq .v em{font-style:normal;font-size:13px;color:#93A5C6;font-weight:700;margin-left:2px}
+
+
+
+
+
+
+
+
+
+
 
 /* 요금 단계 램프 */
 .ramp{position:relative;z-index:1;margin-top:22px;padding-top:20px;
@@ -1035,35 +1035,6 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
 .fin{display:none!important}
 .qa-a{max-height:none!important}
 </style></noscript>
-<style>
-:root{
-  --deep:#0A1526; --deep-2:#152340;
-  --blue:#2E63E8; --blue-l:#4A78FF; --blue-d:#204FCC;
-}
-.veh-card .vprice .n{color:#7FA0FF}
-</style>
-<style>
-/* ── 히어로 폰: 카카오톡 알림톡 대화 ── */
-.kt{background:#B2C7DA;padding:11px 9px 14px;text-align:left;max-height:352px;overflow:hidden;
-    -webkit-mask-image:linear-gradient(#000 84%,transparent);mask-image:linear-gradient(#000 84%,transparent)}
-.kt-day{text-align:center;font-size:9px;color:#3F5468;background:rgba(0,0,0,.09);
-    border-radius:999px;padding:2px 9px;width:fit-content;margin:0 auto 9px;letter-spacing:-.2px}
-.kt-row{display:flex;gap:6px;margin-bottom:10px;align-items:flex-start}
-.kt-av{flex:0 0 auto;width:22px;height:22px;border-radius:7px;background:#0C1730;padding:3px;margin-top:1px}
-.kt-av svg{width:100%;height:100%;display:block}
-.kt-av-x{background:transparent}
-.kt-col{min-width:0;display:flex;flex-direction:column;align-items:flex-start}
-.kt-name{font-size:9.5px;color:#2E4055;margin:0 0 3px 1px;letter-spacing:-.2px}
-.kt-b{background:#fff;border-radius:11px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.09);width:172px}
-.kt-pad{padding:9px 10px 10px}
-.kt-sub{font-size:8.5px;color:#8A96A8;letter-spacing:-.1px;margin-bottom:2px}
-.kt-ttl{font-size:11.5px;font-weight:800;color:#17181A;letter-spacing:-.35px;line-height:1.36;margin-bottom:5px}
-.kt-tx{font-size:9.3px;color:#40454D;line-height:1.62;letter-spacing:-.2px;word-break:keep-all}
-.kt-btn{border-top:1px solid #EDEFF2;background:#F7F8FA;text-align:center;
-    font-size:9.8px;font-weight:700;color:#4A5568;padding:7px 6px;letter-spacing:-.2px}
-.kt-t{font-size:8px;color:#43586C;margin:3px 0 0 2px}
-@media(max-width:900px){.kt{max-height:326px}.kt-b{width:162px}}
-</style>
 </head>
 <body>
 
@@ -1098,7 +1069,39 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
       </svg>
       <div class="txt">SUREDEAL</div>
     </a>
+    <div class="nav-cta">
+      <a href="#how" class="nav-link">작동 방식</a>
+      <a href="#cust" class="nav-link">손님이 받는 것</a>
+      <a href="#versus" class="nav-link">무엇이 다른가</a>
+      <a href="#partner" class="nav-link">인증 상사</a>
+      <a href="#aftercall" class="nav-link">출고 후</a>
+      <a href="#sec" class="nav-link">보안</a>
+      <a href="#price" class="nav-link">요금</a>
+      <a href="#qa" class="nav-link">자주 묻는 질문</a>
+      <a href="../demo.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost nav-demo">체험해보기</a>
+      <a href="#contact" class="btn btn-sm btn-primary nav-ask">문의하기</a>
+      <button type="button" class="nav-burger" id="navBurger" aria-label="메뉴 열기"
+              aria-expanded="false" aria-controls="navPanel"><span></span><span></span><span></span></button>
     </div>
+  </div>
+  <div class="nav-panel" id="navPanel">
+    <div class="wrap">
+      <a href="#how" class="np-link">작동 방식</a>
+      <a href="#cust" class="np-link">손님이 받는 것</a>
+      <a href="#versus" class="np-link">무엇이 다른가</a>
+      <a href="#partner" class="np-link">인증 상사</a>
+      <a href="#aftercall" class="np-link">출고 후</a>
+      <a href="#sec" class="np-link">보안</a>
+      <a href="#price" class="np-link">요금</a>
+      <a href="#qa" class="np-link">자주 묻는 질문</a>
+      <div class="np-cta">
+        <a href="../demo.html" target="_blank" rel="noopener" class="btn btn-ghost">1분 체험해보기</a>
+        <a href="tel:0532420061" class="btn btn-primary np-tel">
+          <small>전화 한 통이면 됩니다</small>053-242-0061
+        </a>
+      </div>
+    </div>
+  </div>
 </header>
 
 <!-- ===================== 히어로 ===================== -->
@@ -1121,14 +1124,18 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
   <!-- 실제 매물 사진을 쓰려면: <img class="hero-photo" src="차량사진.jpg" alt=""> -->
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow on-dark">중고차 계약 기록·보증서</div>
-      <h1>계약한 내용이<br><span class="q">그대로 남습니다.</span></h1>
-      <p class="hero-claim">계약 내용과 보증서를 <b>본인확인</b> 기반으로 <b>기록</b>합니다.</p>
+      <div class="eyebrow on-dark">중고차 계약 확정 시스템</div>
+      <h1>수기계약서는 그대로.<br><span class="q">확정만 디지털로.</span></h1>
+      <p class="hero-claim">계약을 <b>바꾸는</b> 게 아니라, 계약을 <b>지키는</b> 장치입니다.</p>
       <p class="hero-lead">
-        <b>본인확인</b> 후 계약 내용을 확인하고 <b>서명</b>하면,<br>
-        <b>보증서</b>가 발급되고 인도까지 <b>진행 알림</b>이 이어집니다.<br>
-        앱 설치 없이 <b>문자 링크</b>로 진행됩니다.
+        손님이 <b>본인인증</b>하고 <b>직접 서명</b>하면,<br>
+        <b>보증서</b>가 발급되고 인도 후 <b>진행 알림</b>이 이어집니다.<br>
+        딜러 입력 <b>30초</b>, 손님 확인 <b>2분</b>.
       </p>
+      <div class="hero-btns">
+        <a href="../demo.html" target="_blank" rel="noopener" class="btn btn-lg btn-light">1분 체험해보기</a>
+        <a href="#contact" class="btn btn-lg btn-ghost">첫 달 무료 파일럿 문의</a>
+      </div>
       <div class="trust">
         <span>PASS 본인인증</span>
         <span>전자서명</span>
@@ -1144,7 +1151,7 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
           <div class="vt">그랜저 IG 2.5</div>
           <span class="vp">12가 3456</span>
         </div>
-        <div class="vprice"><div class="l">계약 확정</div><div class="n" style="font-size:17px;letter-spacing:-.4px">SD-2608-0142</div></div>
+        <div class="vprice"><div class="l">차량 매매금액</div><div class="n">2,780<em>만 원</em></div></div>
       </div>
 
       <div class="pdf-back" aria-hidden="true">
@@ -1169,72 +1176,130 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
           </svg>
           <span class="txt">슈어딜</span>
         </div>
-        <div class="kt">
-          <div class="kt-day">2026. 8. 8 토</div>
-
-          <div class="kt-row">
-            <div class="kt-av"><svg viewBox="0 0 60 68" aria-hidden="true">
-              <path d="M30 4l25 9.5v21.8C55 53 43.5 60.5 30 64.5 16.5 60.5 5 53 5 35.3V13.5z" fill="none" stroke="#3D6BFF" stroke-width="8" stroke-linejoin="round"/>
-              <path d="M17 35.5l11 11.5L57 12" fill="none" stroke="#2FA85F" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div class="kt-col">
-              <div class="kt-name">슈어딜</div>
-              <div class="kt-b">
-                <div class="kt-pad">
-                  <div class="kt-sub">자동차 매매계약</div>
-                  <div class="kt-ttl">계약이 확정되었습니다</div>
-                  <div class="kt-tx">이O진님, 굿카닷컴에서 계약하신 그랜저 IG 2.5(12가 3456) 매매계약이 확정되었습니다.<br><br>관리번호: SD-2608-0142<br>본인인증 및 전자서명 완료</div>
-                </div>
-                <div class="kt-btn">계약 내용 확인</div>
-              </div>
-              <div class="kt-t">오후 2:29</div>
-            </div>
+        <div class="ph-body">
+          <div class="stamp">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="50" r="45" fill="none" stroke="#B93227" stroke-width="4"/>
+              <circle cx="50" cy="50" r="37" fill="none" stroke="#B93227" stroke-width="1.6"/>
+              <text x="50" y="45" text-anchor="middle" font-family="'Noto Serif KR',serif"
+                    font-size="20" font-weight="900" fill="#B93227">계약</text>
+              <text x="50" y="68" text-anchor="middle" font-family="'Noto Serif KR',serif"
+                    font-size="20" font-weight="900" fill="#B93227">확정</text>
+            </svg>
           </div>
-
-          <div class="kt-day">2026. 8. 10 월</div>
-
-          <div class="kt-row">
-            <div class="kt-av kt-av-x"></div>
-            <div class="kt-col">
-              <div class="kt-b">
-                <div class="kt-pad">
-                  <div class="kt-tx">이O진님, 굿카닷컴에서 그랜저 IG 2.5(12가 3456) 이전등록 절차를 진행합니다.<br><br>접수일: 2026. 8. 10</div>
-                </div>
-                <div class="kt-btn">진행 상황 확인</div>
-              </div>
-              <div class="kt-t">오전 11:02</div>
-            </div>
-          </div>
-
-          <div class="kt-row">
-            <div class="kt-av kt-av-x"></div>
-            <div class="kt-col">
-              <div class="kt-b">
-                <div class="kt-pad">
-                  <div class="kt-sub">자동차 이전등록</div>
-                  <div class="kt-ttl">이전등록이 완료되었습니다</div>
-                  <div class="kt-tx">이O진님 명의로 소유권 이전등록이 완료되었습니다.</div>
-                </div>
-                <div class="kt-btn">등록증 사본 확인</div>
-              </div>
-              <div class="kt-t">오후 2:51</div>
-            </div>
+          <div class="ph-h">이O진님의 그랜저</div>
+          <div class="ph-sub">계약이 확정되었습니다</div>
+          <div class="ph-num">SD-2608-0142</div>
+          <div class="ph-card">
+            <div class="t">오늘 고객님이 직접 확인하셨습니다</div>
+            <div class="ph-chk">성능·상태점검기록부 <b>✓</b></div>
+            <div class="ph-chk">보증 범위와 제외 항목 <b>✓</b></div>
+            <div class="ph-chk">거래 조건 확인 <b>✓</b></div>
+            <div class="ph-chk">합의 조정 1건 <b>✓</b></div>
           </div>
         </div>
-      
       </div>
     </div>
   </div>
 </section>
 <!-- ===================== 문제 ===================== -->
+<section id="pain" class="pad">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">현장에서 측정한 숫자</div>
+      <h2 class="sec">출고가 끝이 아닙니다.</h2>
+        <p class="sec-lead" style="margin-top:14px"><b style="color:var(--ink)">없던 절차를 만드는 게 아닙니다. 하던 설명을 기록으로 남기는 것뿐입니다.</b></p>
+      <p class="sec-lead">
+        월 20대를 팔면 한 해 240대가 나갑니다. 그리고 그 뒤로, 전화가 옵니다.
+        대부분은 파기까지 가지 않습니다. 그래도 번호가 뜰 때마다 심장이 내려앉습니다.
+      </p>
+    </div>
+
+    <div class="stats">
+      <div class="stat lift reveal">
+        <div class="k">출고 후 걸려오는 전화</div>
+        <div class="v">연 <span class="cnt" data-to="300">0</span><em>통 이상</em></div>
+        <div class="ul"></div>
+        <div class="d">등록증 언제 오나요 · 이전 됐나요 · 보험은요 — 영업일마다 한 통꼴입니다.</div>
+      </div>
+      <div class="stat lift reveal">
+        <div class="k">그중 환불·클레임 성격</div>
+        <div class="v">연 <span class="cnt" data-to="20">0</span>~<span class="cnt" data-to="30">0</span><em>통</em></div>
+        <div class="ul"></div>
+        <div class="d">“그거 얘기 안 하셨잖아요” — 기억을 더듬어야 하는 전화입니다.</div>
+      </div>
+      <div class="stat hot lift reveal">
+        <div class="k">실제 파기로 이어지는 건</div>
+        <div class="v">연 <span class="cnt" data-to="11">0</span>~<span class="cnt" data-to="16">0</span><em>건</em></div>
+        <div class="ul"></div>
+        <div class="d">한 건이 깨지면 그 차는 처음부터 다시 팔아야 합니다. 그 기간 매입 회전이 멈춥니다.</div>
+      </div>
+    </div>
+
+    <p class="note reveal">
+      월 20대 출고 상사 기준입니다. 문의 전화는 출고 대당 1~2통으로 추정했고,
+      환불·클레임 통화와 파기 건수는 2026년 8월 대구권 중고차 매매상사 대표 2인 인터뷰를 근거로 했습니다.
+      상사 규모·차종 구성·거래 방식에 따라 달라질 수 있습니다.
+    </p>
+  </div>
+</section>
 <!-- ===================== 왜 못 막았나 ===================== -->
+<section id="law" class="pad">
+  <div class="wrap law-grid">
+    <div class="reveal">
+      <div class="eyebrow on-dark">지금까지 못 막은 이유</div>
+      <h2 class="sec">조항만으로는<br>지켜지지 않습니다.</h2>
+      <p class="law-body">
+        계약서에 조항을 더 넣는 방식으로는 한계가 있습니다.
+        조항을 아무리 촘촘히 써도 손님이 “그건 설명 못 들었다”고 하면 다시 원점입니다.
+        다툼이 생기면 결국 <b>“무엇을 설명했고, 손님이 무엇을 확인했는가”</b>로 돌아옵니다.
+      </p>
+      <div class="law-punch">
+        <p>조항만으로 부족하다면,<br>남은 방법은 하나뿐입니다.<br>계약 자리에서 손님이 스스로 납득할 수 있게 하는 것.</p>
+        <div class="s">슈어딜은 그 납득의 근거를 절차 안에 남깁니다.</div>
+      </div>
+    </div>
+
+    <!-- 수기 계약서 샘플 — 이것만으로는 부족하다 -->
+    <div class="nodoc reveal" id="noDoc">
+      <div class="paper">
+        <div class="p-title">자동차 매매계약서</div>
+        <div class="p-tbl">
+          <div class="p-row"><span class="k">차량번호</span><span class="v">12가 3456</span></div>
+          <div class="p-row"><span class="k">차 명</span><span class="v">그랜저 IG 2.5 (2021)</span></div>
+          <div class="p-row"><span class="k">매매금액</span><span class="v">일금 이천칠백팔십만원정</span></div>
+          <div class="p-row"><span class="k">인 도 일</span><span class="v">2026. 8. 8.</span></div>
+        </div>
+        <div class="p-memo">
+          <div class="k">특약사항</div>
+          <div class="hand">타이어 마모 확인, 30만원 할인</div>
+          <div class="hand strike">기타 사항은 구두 협의함</div>
+        </div>
+        <div class="p-sign">매수인 <span class="hand">이O진</span> (인)</div>
+      </div>
+
+      <svg class="no-stamp" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="53" fill="none" stroke="#D93025" stroke-width="6"/>
+        <circle cx="60" cy="60" r="45" fill="none" stroke="#D93025" stroke-width="2"/>
+        <text x="60" y="72" text-anchor="middle" font-size="40" font-weight="900"
+              fill="#D93025" letter-spacing="1">NO</text>
+      </svg>
+
+      <p class="nodoc-cap">
+        상사가 작성하고 손님이 사인한 문서.<br>
+        손님이 <b>무엇을 읽고 이해했는지</b>는 남지 않습니다.
+      </p>
+    </div>
+  </div>
+</section>
 <!-- ===================== 작동 방식 (자동 재생 시연) ===================== -->
 <section id="how" class="pad">
   <div class="wrap">
     <div class="reveal">
       <div class="eyebrow">작동 방식</div>
-      <h2 class="sec">계약하는 그 자리에서 진행됩니다.</h2>
+      <h2 class="sec">계약하는 그 자리에서 끝납니다.</h2>
       <p class="sec-lead">
-        매매상사가 계약 내용을 등록하면 문자로 링크가 전달됩니다. 나머지는 본인 폰에서 진행됩니다.
+        딜러는 세 가지만 입력하고 링크를 보냅니다. 나머지는 손님이 자기 폰에서 진행합니다.
         앱 설치도, 별도 프로그램도 없습니다.
       </p>
     </div>
@@ -1243,14 +1308,14 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
     <div class="step-cards reveal" id="stepCards">
       <button class="sc on" type="button" data-go="0">
         <span class="n">1</span>
-        <h3>계약 등록</h3>
-        <p>매매상사가 차량과 계약 정보를 등록하고 링크를 보냅니다.</p>
+        <h3>딜러 입력</h3>
+        <p>차량번호 · 매매금액 · 손님 휴대폰번호를 넣고 링크를 보냅니다.</p>
         <span class="tm">30초</span>
       </button>
       <button class="sc" type="button" data-go="1">
         <span class="n">2</span>
         <h3>본인인증</h3>
-        <p>PASS 본인확인. 명의 사기로부터 고객님을 보호하는 절차입니다.</p>
+        <p>PASS로 손님 본인 확인. 명의 사기로부터 손님을 보호하는 절차입니다.</p>
         <span class="tm">20초</span>
       </button>
       <button class="sc" type="button" data-go="2">
@@ -1262,13 +1327,13 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
       <button class="sc" type="button" data-go="3">
         <span class="n">4</span>
         <h3>합의 내용 기록</h3>
-        <p>조정된 금액과 판매자가 약속한 내용을 그대로 문서에 남깁니다.</p>
+        <p>깎아준 이유, 해주기로 한 약속을 그대로 문서에 남깁니다.</p>
         <span class="tm">30초</span>
       </button>
       <button class="sc" type="button" data-go="4">
         <span class="n">5</span>
         <h3>서명 · 보증서</h3>
-        <p>서명 즉시 관리번호가 발급되고 보증서가 전송됩니다.</p>
+        <p>서명 즉시 관리번호가 발급되고, 손님 폰으로 보증서가 갑니다.</p>
         <span class="tm">즉시</span>
       </button>
     </div>
@@ -1285,38 +1350,41 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
         <div class="pin-copy">
           <div class="pc on" data-i="0">
             <div class="no">1</div>
-            <h3>매매상사가 계약을 등록합니다.</h3>
-            <p>차량 정보와 계약 조건이 등록되고, 확인 링크가 문자로 전달됩니다.</p>
-            <span class="tag">약 30초</span>
+            <h3>딜러는 30초면 끝납니다.</h3>
+            <p>차량번호 · 매매금액 · 손님 휴대폰번호. 세 가지를 넣고 링크를 보내면 딜러의 일은 끝입니다.
+               손님이 커피를 마시는 동안 나머지가 진행됩니다.</p>
+            <span class="tag">딜러 화면 · 30초</span>
           </div>
           <div class="pc" data-i="1">
             <div class="no">2</div>
             <h3>본인 확인부터 시작합니다.</h3>
-            <p>PASS로 차량이 다른 사람 명의로 등록되는 것을 막습니다.</p>
-            <span class="tag">약 20초</span>
+            <p>“확인 절차입니다”가 아니라 <b>“명의 사기로부터 고객님을 보호하는 절차입니다”</b>로 안내합니다.
+               이 한 문장이 거부감을 크게 줄입니다.</p>
+            <span class="tag">손님 화면 · 20초</span>
           </div>
           <div class="pc" data-i="2">
             <div class="no">3</div>
-            <h3>직접 확인하고 체크합니다.</h3>
-            <p>보증 범위 · 차량 상태 · 거래 조건. 고지 항목을 전부 체크해야 다음으로 넘어갑니다. 확인한 항목과 시각이 함께 기록됩니다.</p>
-            <span class="tag">약 1분</span>
+            <h3>손님이 직접 체크합니다.</h3>
+            <p>보증 범위 · 차량 상태 · 거래 조건. 아홉 항목을 전부 체크해야 다음으로 넘어갑니다.
+               지금도 딜러가 말로 하던 설명을, 손님의 행위 기록으로 바꾸는 지점입니다.</p>
+            <span class="tag">손님 화면 · 1분</span>
           </div>
           <div class="pc" data-i="3">
             <div class="no">4</div>
-            <h3>합의한 내용을 그대로 남깁니다.</h3>
-            <p>합의한 내용을 말한 그대로 문서에 옮깁니다.
-               그리고 <b>“기재된 내용 외 구두 약속 없음”</b>을 함께 확인합니다.</p>
-            <span class="tag">약 30초</span>
+            <h3>깎아준 이유를 증거로 남깁니다.</h3>
+            <p>합의된 내용만 그대로 기재합니다. 예시나 선택지는 띄우지 않습니다.
+               그리고 <b>“기재된 내용 외 구두 약속 없음”</b>을 손님이 확인합니다.</p>
+            <span class="tag">손님 화면 · 30초</span>
           </div>
           <div class="pc" data-i="4">
             <div class="no">5</div>
             <h3>서명하는 순간 봉인됩니다.</h3>
-            <p>본인확인 기록과 서명이 결합되고, 관리번호가 발급되고, 보증서가 전송됩니다.
-               </p>
+            <p>본인인증 기록과 서명이 결합되고, 관리번호가 발급되고, 보증서가 손님 폰으로 갑니다.
+               확정 문서를 손에 쥔 손님은 그 뒤로 <b>흔들릴 일이 줄어듭니다.</b></p>
             <span class="tag">즉시 확정</span>
           </div>
         </div>
-        <p class="dm-foot">앱을 설치하지 않습니다. 문자로 받은 링크를 열기만 하면 됩니다.</p>
+        <p class="dm-foot">손님은 앱을 설치하지 않습니다. 문자로 받은 링크를 열기만 하면 됩니다.</p>
       </div>
 
       <div class="dm-phone">
@@ -1329,13 +1397,13 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
                     stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <span class="txt">슈어딜</span>
-            <span class="tag" id="scrTag">매매상사</span>
+            <span class="tag" id="scrTag">딜러</span>
           </div>
 
           <!-- 1. 딜러 입력 -->
           <div class="scr on" data-s="0">
             <div class="s-lab">계약 등록</div>
-            <div class="s-h">차량과 계약 정보를<br>입력해주세요</div>
+            <div class="s-h">차량과 손님 정보를<br>입력해주세요</div>
             <div class="veh-row">
               <svg class="veh-ic" viewBox="0 0 120 78" aria-hidden="true"><use href="#i-car"/></svg>
               <div>
@@ -1344,8 +1412,8 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
               </div>
             </div>
             <div class="fld"><div class="l">매매금액</div><div class="v">2,780만 원</div></div>
-            <div class="fld"><div class="l">매수인 연락처</div><div class="v">010-****-1234</div></div>
-            <div class="s-btn">확인 링크 보내기</div>
+            <div class="fld"><div class="l">매수인 휴대폰</div><div class="v">010-****-1234</div></div>
+            <div class="s-btn">손님에게 링크 보내기</div>
             <div class="s-note">문자로 링크가 발송됩니다</div>
           </div>
 
@@ -1424,14 +1492,15 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
     </div>
   </div>
 </section>
-<section id="cert" class="pad">
+<!-- ===================== 손님이 받는 것 ===================== -->
+<section id="cust" class="pad">
   <div class="wrap">
     <div class="reveal">
-      <div class="eyebrow">발급되는 보증서</div>
-      <h2 class="sec">계약이 끝나면<br>이 문서가 남습니다.</h2>
+      <div class="eyebrow">손님이 받는 것</div>
+      <h2 class="sec">손님에겐 확신을.</h2>
       <p class="sec-lead">
-        서명이 끝나면 보증서가 발급되어 안내 문자로 전달됩니다.
-        계약 후에도 같은 링크에서 언제든 열립니다.
+        파기의 뿌리는 “대충 결정한 건 아닐까”라는 자기 의심입니다.
+        보증서와 진행 알림이 그 의심이 자라기 전에 답을 줍니다.
       </p>
     </div>
 
@@ -1446,10 +1515,10 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
       </div>
     </div>
 
-    <div class="cust-grid" style="grid-template-columns:1fr;max-width:520px;margin:0 auto">
+    <div class="cust-grid">
       <!-- 보증서 -->
       <div class="reveal">
-        
+        <div class="cust-cap">발급되는 보증서</div>
         <div class="cert-outer"><div class="cert" id="certCard">
           <span class="corner c-tl"><svg viewBox="0 0 22 22"><use href="#i-corner"/></svg></span>
           <span class="corner c-tr"><svg viewBox="0 0 22 22"><use href="#i-corner"/></svg></span>
@@ -1510,22 +1579,200 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
               <div class="seal-area">
                 <div class="seal"><span class="s-ring"></span><span class="s-in">굿카<br>닷&nbsp;컴</span></div>
                 <div class="seal-name">굿카닷컴 대표 김성훈</div>
-                <div class="seal-date">2026. 8. 8</div>
+                <div class="seal-date">SUREDEAL 발급 시스템 · 2026. 8. 8</div>
               </div>
             </div>
             <div class="cert-legal">보증 이행 주체 <b style="color:var(--ink)">굿카닷컴</b> · 사업자등록번호 698-26-01844<br>
               발급·기록 슈어딜 — 본 보증서의 보증·약속에 대한 책임은 판매 상사에 있습니다.</div>
           </div>
         </div></div>
-        
+        <p class="note">손님이 다시 확인하고 싶을 때 혼자 열어보는 문서입니다.
+          “왜 샀냐”는 말에 손님이 근거를 가지고 답할 수 있습니다.</p>
       </div>
 
+      <!-- 카카오 알림톡 -->
+      <div class="reveal">
+        <div class="cust-cap">손님 카카오톡에 도착하는 알림</div>
+        <div class="kk" id="ktBox">
+          <div class="kk-head">
+            <div class="kk-av"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+            <div>
+              <div class="kk-nm">슈어딜<span class="ch">ch</span></div>
+              <div class="kk-sub">카카오 알림톡 · 광고 아님</div>
+            </div>
+          </div>
+          <div class="kk-body">
+            <div class="day-chip"><span>8월 8일 토요일</span></div>
+            <div class="scene"><span>오후 2시 — 계약·전자서명 완료 직후</span></div>
+
+            <div class="msg">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">계약이 확정되었습니다</div>
+                      이O진님, <b>그랜저 IG 2.5(12가 3456)</b> 매매계약이 확정되었습니다.
+                      <div class="at-list">
+                        <div>관리번호: SD-2608-0142</div>
+                        <div>차량 대금 입금 완료 — 잔금 없음</div>
+                        <div>본인인증 · 전자서명 완료</div>
+                      </div>
+                      <div class="at-btn">보증서 확인하기</div>
+                    </div>
+                  </div>
+                  <span class="m-time">14:29</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="scene alert"><span>저녁 — 주변의 한마디 “그거 왜 샀어” “비싸게 준 거 아냐?”<br>
+              이런 말을 듣는 시간</span></div>
+
+            <div class="msg">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">보증이 적용 중입니다</div>
+                      이O진님, 굿카닷컴에서 8월 10일에 인도해 드린 그랜저 IG 2.5(12가 3456) 차량은 <b>성능보증보험 적용 차량</b>입니다.<br><br>
+                      계약 시 확인하신 성능·상태점검기록부와 보증 내용은 아래 버튼에서 언제든 다시 확인하실 수 있습니다.
+                      <div class="at-btn">내 보증 내용 확인</div>
+                    </div>
+                  </div>
+                  <span class="m-time">19:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="me"><div class="me-row"><span class="m-time">19:12</span>
+              <div class="me-bubble">(보증서를 다시 열어본다) 확인할 거 다 확인하고 산 건데, 뭐</div></div></div>
+
+            <div class="day-chip"><span>8월 10일 월요일</span></div>
+            <div class="scene"><span>오후 — 딜러가 등록증 수령, 버튼 한 번</span></div>
+
+            <div class="msg" style="margin-bottom:0">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">이전등록이 완료되었습니다</div>
+                      이O진님, <b>그랜저 IG 2.5(12가 3456)</b>의 이전등록이 완료되었습니다.<br>
+                      이제 완전히 고객님의 차량입니다.
+                      <div class="at-list">
+                        <div><b>자동차등록증 사본</b> 첨부</div>
+                        <div>원본은 굿카닷컴에서 전달드립니다</div>
+                      </div>
+                      <div class="at-btn">등록증 · 보증서 확인하기</div>
+                    </div>
+                  </div>
+                  <span class="m-time">14:51</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="note">
+          모든 알림은 실제 진행 상태와 일치할 때만 발송됩니다. 아직 되지 않은 일을 되었다고 알리지 않습니다.
+          등록 완료 알림은 <b>딜러가 등록증을 받은 뒤 직접 누를 때만</b> 나갑니다.
+        </p>
       </div>
+    </div>
   </div>
 </section>
-<!-- ===================== 손님이 받는 것 ===================== -->
 <!-- ===================== 법적 근거 ===================== -->
+<section id="legal" class="pad">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">법적 근거</div>
+      <h2 class="sec">법이 인정하는 방식으로 남깁니다.</h2>
+      <p class="sec-lead">
+        전자서명은 종이 서명과 같은 효력을 가집니다. 다툼이 생기는 곳은 효력이 아니라
+        <b>“그 사람이 정말 확인했는가”</b>입니다. 슈어딜은 정확히 그 지점을 남깁니다.
+      </p>
+    </div>
+
+    <div class="lg-grid reveal">
+      <div class="lg-c">
+        <div class="lg-n">전자서명법</div>
+        <p>전자서명은 <b>전자적 형태라는 이유만으로</b> 서명·기명날인으로서의 효력이 부인되지 않습니다.</p>
+      </div>
+      <div class="lg-c">
+        <div class="lg-n">실지명의 확인</div>
+        <p>법이 말하는 것은 <b>서명자의 실지명의를 확인할 수 있는</b> 전자서명입니다. 슈어딜은 <b>PASS 본인확인</b>을 서명에 결합합니다.</p>
+      </div>
+      <div class="lg-c hl">
+        <div class="lg-n">국토교통부 해석 · 2025. 9</div>
+        <p>성능·상태점검기록부를 <b>전자문서로 고지하면 서면 고지로 봅니다.</b> 손님이 화면에서 열어보고, 그 시각이 남습니다.</p>
+      </div>
+    </div>
+
+    <div class="lg-tbl reveal">
+      <div class="lg-hd"><span></span><span>종이 수기계약서</span><span class="me2">슈어딜</span></div>
+      <div class="lg-r"><span class="k">서명한 사람 확인</span><span class="v">필적으로 다툼</span><span class="v me2">PASS 본인확인 결합</span></div>
+      <div class="lg-r"><span class="k">확인한 시각</span><span class="v">손으로 적은 날짜</span><span class="v me2">서버 시각, 초 단위</span></div>
+      <div class="lg-r big"><span class="k">무엇을 확인했는지</span><span class="v none">계약서 전체에 서명 1회</span><span class="v me2">항목마다 개별 기록</span></div>
+      <div class="lg-r"><span class="k">나중에 찾기</span><span class="v">서류철을 뒤진다</span><span class="v me2">차량번호로 즉시</span></div>
+    </div>
+
+    <p class="lg-note reveal">
+      슈어딜은 계약 확인 기록을 남기는 도구입니다. 법적 효력이나 분쟁의 결과를 보장하지 않으며,
+      분쟁 시 <b>증빙 자료</b>로 활용하실 수 있습니다.
+    </p>
+  </div>
+</section>
 <!-- ===================== 카테고리 비교 ===================== -->
+<section id="versus" class="pad">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">무엇이 다른가</div>
+      <h2 class="sec">전자계약은 서명을 남깁니다.<br>슈어딜은 이해를 남깁니다.</h2>
+      <p class="sec-lead">
+        계약서에 사인을 받는 것과, 손님이 각 항목을 읽고 확인했다는 기록을 남기는 것은 다른 일입니다.
+        분쟁에서 갈리는 지점이 정확히 여기입니다.
+      </p>
+    </div>
+
+    <div class="vs-wrap reveal">
+      <table class="vs">
+        <thead><tr>
+          <th class="lbl" style="text-align:left">비교 항목</th>
+          <th>종이 계약서</th>
+          <th>일반 전자계약</th>
+          <th class="sdcol">슈어딜</th>
+        </tr></thead>
+        <tbody>
+        <tr><td class="lbl"><b>무엇을 확인했는지</b>가 항목별로 남는다</td><td><span class="mk n">—</span><span class="sub">종이로는 불가능</span></td><td><span class="mk n">—</span></td><td class="sdcol"><span class="mk y">✓</span><span class="sub">항목마다 확인 시각</span></td></tr>
+        <tr><td class="lbl">문서에 서명이 남는다</td><td><span class="mk p">△</span><span class="sub">종이 서명</span></td><td><span class="mk y">✓</span></td><td class="sdcol"><span class="mk y">✓</span><span class="sub">전자서명</span></td></tr>
+        <tr><td class="lbl">중고차 <b>고지 항목이 기본으로 내장</b></td><td><span class="mk n">—</span><span class="sub">양식마다 다름</span></td><td><span class="mk n">—</span><span class="sub">직접 만들어야</span></td><td class="sdcol"><span class="mk y">✓</span><span class="sub">9항목 표준</span></td></tr>
+        
+        <tr><td class="lbl">할인·약속 등 <b>합의 사유 기재란</b></td><td><span class="mk p">△</span><span class="sub">수기 특약</span></td><td><span class="mk n">—</span></td><td class="sdcol"><span class="mk y">✓</span><span class="sub">표준 제공</span></td></tr>
+        <tr><td class="lbl">본인인증(PASS) 결합</td><td><span class="mk n">—</span></td><td><span class="mk p">△</span><span class="sub">별도 설정</span></td><td class="sdcol"><span class="mk y">✓</span><span class="sub">기본 포함</span></td></tr>
+        <tr><td class="lbl">손님에게 <b>보증서 발급</b></td><td><span class="mk n">—</span></td><td><span class="mk n">—</span></td><td class="sdcol"><span class="mk y">✓</span></td></tr>
+        <tr><td class="lbl">인도 후 <b>단계별 알림톡</b></td><td><span class="mk n">—</span></td><td><span class="mk n">—</span></td><td class="sdcol"><span class="mk y">✓</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note reveal">
+      ‘일반 전자계약’은 범용 전자서명 도구를 가리키는 <b>서비스 유형</b>이며, 특정 사업자를 지칭하지 않습니다.
+      개별 서비스는 설정에 따라 위 기능 중 일부를 별도로 구현할 수 있습니다.
+      2026년 8월 기준 슈어딜이 정리한 내용입니다.
+    </p>
+
+    <div class="vs-punch reveal">
+      <p>사인은 <em>“동의했다”</em>를 남기고,<br>슈어딜은 <b>“무엇을 알고 동의했다”</b>를 남깁니다.</p>
+    </div>
+  </div>
+</section>
 <!-- ===================== 슈어딜 인증 상사 ===================== -->
 <section id="partner" class="pad" style="padding-top:64px;padding-bottom:64px">
   <div class="wrap pt-grid">
@@ -1536,35 +1783,222 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
       <div class="eyebrow on-dark">슈어딜 인증 상사</div>
       <h2>슈어딜은 <br class="mo-br">슈어딜 인증 상사와 함께합니다.</h2>
       <p class="pt-lead">
-        아래 세 가지를 약속한 매매상사에게 인증 표식이 부여됩니다.
-        인증 상사에는 명판 · 차량 스티커 · 매물 광고에 이 표식이 함께 표시됩니다.
+        모든 계약에 고지 확인과 기록 절차를 거치기로 약속한 상사에게 인증 표식을 드립니다.
+        명판 · 차량 스티커 · 매물 광고에 사용하실 수 있고, 손님은 이 표식으로
+        “여기는 기록을 남기는 상사구나”를 한눈에 알아봅니다.
       </p>
       <div class="pt-list">
         <div class="pt-item lift-d"><div class="k">01</div>
-          <p>모든 계약에서 고지 항목을 직접 확인하시게 됩니다.</p></div>
+          <p>모든 계약에서 손님이 직접 고지 항목을 확인합니다.</p></div>
         <div class="pt-item lift-d"><div class="k">02</div>
           <p>합의한 내용을 문서로 남기고, 남긴 대로 이행합니다.</p></div>
         <div class="pt-item lift-d"><div class="k">03</div>
-          <p>계약 기록은 발급 시 받으신 링크에 그대로 남아 있습니다.</p></div>
+          <p>계약 기록을 손님이 언제든 조회할 수 있게 합니다.</p></div>
       </div>
       <div class="pt-cta">
-        
+        <a href="#contact" class="btn btn-lg btn-primary">인증 상사 신청하기</a>
       </div>
     </div>
   </div>
 </section>
+<!-- ===================== 증빙 ===================== -->
+<section id="proof" class="pad">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">상사가 받는 것</div>
+      <h2 class="sec">“들었다 / 못 들었다”로<br>다투지 않는 기록.</h2>
+      <p class="sec-lead">
+        누가 언제 무엇을 확인했는지가 본인인증·서명과 함께 한 장에 묶입니다.
+        구두로 설명한 것과 기록으로 남은 것의 차이는, 분쟁이 생겼을 때 드러납니다.
+      </p>
+    </div>
+
+    <div class="proof-grid">
+      <div class="doc reveal" id="docCard">
+        <div class="doc-h">
+          <svg class="sym" viewBox="0 0 60 68" aria-hidden="true">
+            <path d="M30 4l25 9.5v21.8C55 53 43.5 60.5 30 64.5 16.5 60.5 5 53 5 35.3V13.5z"
+                  fill="none" stroke="#2453D9" stroke-width="7.5" stroke-linejoin="round"/>
+            <path d="M17 35.5l11 11.5L57 12" fill="none" stroke="#0B7A4B" stroke-width="9"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <div class="ti">고지 확인 기록</div>
+            <div class="su">관리번호 SD-2608-0142 · 2026-08-08 14:21</div>
+          </div>
+        </div>
+        <div class="doc-b">
+          <div class="doc-row"><span class="ck">✓</span>성능보증보험 가입(30일·2,000km 중 먼저 도래) 안내<span class="tm">14:23</span></div>
+          <div class="doc-row"><span class="ck">✓</span>주요 장치 무상 수리 범위 확인<span class="tm">14:23</span></div>
+          <div class="doc-row"><span class="ck">✓</span>소모성 부품 보증 제외 확인<span class="tm">14:24</span></div>
+          <div class="doc-row"><span class="ck">✓</span>성능·상태점검기록부 열람<span class="tm">14:25</span></div>
+          <div class="doc-row"><span class="ck">✓</span>외관·실내 직접 확인<span class="tm">14:26</span></div>
+          <div class="doc-row"><span class="ck">✓</span>추가 청구 비용 없음 확인<span class="tm">14:27</span></div>
+          <div class="doc-row"><span class="ck">✓</span>기재된 내용 외 구두 약속 없음<span class="tm">14:28</span></div>
+          <div class="doc-meta">
+            <span>PASS 본인인증 완료</span>
+            <span>합의 조정 1건</span>
+            <span>총 9항목 확인</span>
+          </div>
+        </div>
+        <div class="doc-f">
+          <div class="l">매수인 확인·서명<br>2026. 8. 8.</div>
+          <div class="sign">이 O 진</div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="quote">
+          <p>“깎아준 걸로 나중에 말이 나온 적 있으시죠?<br>그 할인을 기록으로 남겨드립니다.”</p>
+          <div class="who">깎아준 금액과 그 이유가 손님 서명과 함께 남습니다</div>
+        </div>
+        <div style="margin-top:26px">
+          <div class="mini lift"><div class="n">A</div><div>
+            <h3>수기 계약서와 무엇이 다른가</h3>
+            <p>수기 계약서는 <b>상사가 쓴 문서</b>입니다. 슈어딜 기록은 <b>손님이 직접 체크한 기록</b>입니다.
+               분쟁에서 무게가 다른 지점이 여기입니다.</p>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===================== 대표 화면 ===================== -->
+<section id="owner" class="pad">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">대표가 보는 것</div>
+      <h2 class="sec">딜러 실적은<br>계약하면 저절로 쌓입니다.</h2>
+      <p class="sec-lead">따로 적어 두실 필요가 없습니다. 딜러가 계약을 슈어딜로 하면 그대로 정리됩니다.
+        판매관리 시스템을 따로 사시는 게 아닙니다.</p>
+    </div>
+
+    <div class="ow-grid">
+      <div class="ow-vis reveal">
+        <div class="ow-sum">
+          <div><span>이번 달 계약</span><b>9<em>건</em></b></div>
+          <div><span>판매 금액</span><b>2억 2,210<em>만 원</em></b></div>
+        </div>
+        <div class="ow-todo"><i>!</i>등록증 사본 미발송 <b>1건</b> · 잔금 확인 전 <b>1건</b></div>
+        <div class="ow-dl"><span class="av">김</span><span class="nm">김성훈</span><span class="am">1억 1,240만</span>
+          <span class="bar"><i style="width:100%"></i></span><span class="ct">4건</span></div>
+        <div class="ow-dl"><span class="av">박</span><span class="nm">박준호</span><span class="am">6,850만</span>
+          <span class="bar"><i style="width:61%"></i></span><span class="ct">3건</span></div>
+        <div class="ow-dl"><span class="av">이</span><span class="nm">이재민</span><span class="am">4,120만</span>
+          <span class="bar"><i style="width:37%"></i></span><span class="ct">2건</span></div>
+      </div>
+
+      <div class="ow-txt reveal">
+        <ul class="ow-list">
+          <li><b>딜러별 건수·판매 금액</b>이 기간별로 쌓입니다</li>
+          <li>계약 → 인도 → 이전등록 <b>진행 상태</b>가 한눈에 보입니다</li>
+          <li>딜러별 <b>가격 조정 내역</b> — 어떤 사유로 얼마나 조정됐는지</li>
+          <li><b>오늘 챙기실 것</b> — 등록증 미발송, 잔금 확인 전 건이 먼저 뜹니다</li>
+        </ul>
+        <div class="ow-note"><span>✓</span><div><b>딜러 본인도 자기 실적 화면을 봅니다.</b><br>
+          대표님만 보는 화면이 아닙니다. 감시가 아니라 각자의 기록입니다.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 출고 후 전화 ===================== -->
+<section id="aftercall" class="pad">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">출고 후</div>
+      <h2 class="sec">전화를 없애드릴 순 없습니다.<br>받아도 되게 만들어드립니다.</h2>
+      <p class="sec-lead">
+        출고하고 며칠 뒤 손님 번호가 뜰 때, 그 30초가 어떻게 흘러가는지가 달라집니다.
+      </p>
+    </div>
+
+    <div class="call-grid">
+      <div class="call now lift reveal">
+        <span class="tag">기록이 없을 때</span>
+        <div class="talk">
+          <div><div class="who">손님</div><div class="b cust">“여기 누유 있는데,<br>얘기 안 하셨잖아요.”</div></div>
+          <div style="align-self:flex-end;text-align:right"><div class="who">대표님</div>
+            <div class="b me2">“…말씀드렸을 텐데요.”</div></div>
+          <div><div class="who">손님</div><div class="b cust">“저는 못 들었는데요.”</div></div>
+        </div>
+        <div class="out">기억을 더듬고, 딜러에게 확인하고, 손님과 감정이 오갑니다.
+          결국 그 통화의 결말은 <b>기억 싸움</b>으로 정해집니다.<br>
+          그리고 이 통화는 <b>한 번으로 끝나지 않습니다.</b> 그동안 새 손님을 못 봅니다.</div>
+        <span class="stampx">평균 며칠</span>
+      </div>
+
+      <div class="call sd lift reveal">
+        <span class="tag">슈어딜 기록이 있을 때</span>
+        <div class="talk">
+          <div><div class="who">손님</div><div class="b cust">“여기 누유 있는데,<br>얘기 안 하셨잖아요.”</div></div>
+          <div style="align-self:flex-end;text-align:right"><div class="who">대표님</div>
+            <div class="b me2">“8월 8일 14시 25분에 직접 확인하신 항목입니다.<br>보증서 링크 다시 보내드릴게요.”</div></div>
+          <div><div class="who">손님</div><div class="b cust">“…아, 그게 그거였구나.”</div></div>
+        </div>
+        <div class="out">차량번호만 넣으면 그날의 기록과 <b>손님에게 나간 알림톡 발송 시각</b>까지 함께 뜹니다.
+          감정 소모 없이, 근거로 끝납니다.</div>
+        <span class="stampx">1분</span>
+      </div>
+    </div>
+
+    <div class="prevent reveal">
+      <div>
+        <h3>“등록증 언제 오나요?”<br>이 전화부터 사라집니다.</h3>
+        <p>단계마다 알림톡이 먼저 안내하고, <b>명의이전이 끝나면 등록증 사본을 바로 보내드립니다.</b>
+           손님이 궁금해서 전화할 이유가 하나씩 줄어듭니다.
+           원본 등록증은 기존대로 상사에서 전달하시면 됩니다.</p>
+      </div>
+      <div class="regcard">
+        <div class="h"><i>✓</i>이전등록 완료 · 등록증 사본 첨부</div>
+        <div class="doc2">
+          <div class="t">자동차등록증</div>
+          <div class="r"><span>차량번호</span><b>12가 3456</b></div>
+          <div class="r"><span>소유자</span><b>이O진</b></div>
+          <div class="r"><span>등록일</span><b>2026. 8. 10.</b></div>
+        </div>
+        <div class="note2">사본은 본인인증된 손님에게만 전송됩니다.<br>원본은 굿카닷컴에서 전달드립니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===================== 보안·개인정보 ===================== -->
 <section id="sec" class="pad">
   <div class="wrap">
     <div class="reveal">
       <div class="eyebrow">데이터 처리 원칙</div>
-      <h2 class="sec">맡기신 정보를<br>이렇게 다룹니다.</h2>
+      <h2 class="sec">손님 정보를<br>맡기실 수 있어야 합니다.</h2>
       <p class="sec-lead">
-        계약 기록에는 개인정보가 담깁니다. 그래서 슈어딜은 “무엇을 얼마나 가지고 있는가”를
+        계약 기록에는 손님의 개인정보가 담깁니다. 그래서 슈어딜은 “무엇을 얼마나 가지고 있는가”를
         먼저 밝히는 것을 원칙으로 설계했습니다.
       </p>
     </div>
 
     <div class="sec-grid">
+      <div class="scard lift reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1B41B0" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/>
+          <path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3>최소 수집 원칙</h3>
+        <p>본인 확인은 본인확인기관(PASS)을 통해 처리하고, 슈어딜은 인증 결과와 계약에 필요한
+           최소 식별정보만 보관합니다. 인증 과정의 원본 정보를 저장하지 않습니다.</p>
+      </div>
+      <div class="scard lift reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1B41B0" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6z"/>
+          <path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>전 구간 암호화</h3>
+        <p>통신 구간은 TLS로, 저장 데이터는 암호화해 보관합니다. 서명 이미지와 고지 확인 기록은
+           위·변조 확인이 가능한 형태로 함께 봉인됩니다.</p>
+      </div>
+      <div class="scard lift reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1B41B0" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/>
+          <path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></svg></div>
+        <h3>보관 위치·위탁 현황 공개</h3>
+        <p>데이터 보관을 맡기는 클라우드 사업자와 보관 위치를 개인정보처리방침에 공개합니다.
+           수탁자에게는 보호 지시 준수와 재위탁 제한을 문서로 정합니다.</p>
+      </div>
       <div class="scard lift reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1B41B0" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/>
@@ -1579,7 +2013,7 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
           <path d="M12 7v5l3 2"/></svg></div>
         <h3>보관 기간 명시</h3>
         <p>수집 항목과 보관 기간을 개인정보처리방침에 명시하고, 기간이 지난 기록은 파기합니다.
-           본인 계약 기록의 처리 내역은 언제든 확인하실 수 있습니다.</p>
+           손님은 본인 계약 기록의 처리 내역을 확인하실 수 있습니다.</p>
       </div>
       <div class="scard lift reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1B41B0" stroke-width="2"
@@ -1593,52 +2027,229 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
 
     <p class="note reveal">
       위 내용은 슈어딜의 데이터 처리 설계 원칙입니다.
-      실제 수집 항목·보관 기간·위탁 현황은 <a href="privacy.html">개인정보처리방침</a>에 구체적으로 명시하며,
+      실제 수집 항목·보관 기간·위탁 현황은 <a href="../privacy.html">개인정보처리방침</a>에 구체적으로 명시하며,
       본인확인 서비스는 본인확인기관과의 계약 체결 후 제공됩니다.
     </p>
   </div>
 </section>
-<!-- ===================== 증빙 ===================== -->
-<!-- ===================== 대표 화면 ===================== -->
-<!-- ===================== 출고 후 전화 ===================== -->
-<!-- ===================== 보안·개인정보 ===================== -->
 <!-- ===================== 정책 ===================== -->
+<section id="policy" class="pad">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow on-dark">지금 시작해야 하는 이유</div>
+      <h2 class="sec">법이 가는 방향과<br>같은 방향입니다.</h2>
+      <p class="law-body">
+        2026년 8월 6일, 국무총리 주재 제12회 국가정책조정회의를 거쳐 국토교통부가
+        <b>중고차 소비자 보호 대책</b>을 발표했습니다.
+      </p>
+    </div>
+    <div class="pol-grid">
+      <div class="pol lift-d reveal"><div class="n">01</div><h3>광고 총액 표시 의무화</h3>
+        <p>차량 가격뿐 아니라 모든 수수료를 합한 총액을 표시해야 합니다.</p></div>
+      <div class="pol lift-d reveal"><div class="n">02</div><h3>하자보증 책임 매매업자로 명확화</h3>
+        <p>성능보험을 매매업자 의무보험으로 통폐합하고 보장 범위를 넓히는 방향입니다.</p></div>
+      <div class="pol lift-d reveal"><div class="n">03</div><h3>신뢰도 정보 공시 · 우수사업자 지정</h3>
+        <p>매매업자·성능점검자의 하자 발생률 등 신뢰도 정보가 매년 공개됩니다.</p></div>
+      <div class="pol lift-d reveal span"><div class="n">04</div><h3>성능·상태점검기록부 개편</h3>
+        <p>점검 가이드라인이 정비되고, 침수·사고 이력 등 주요 항목을 잘못 점검한 경우 행정처분이 강화됩니다.
+           — 손님이 기록부를 열람했다는 사실 자체가 기록으로 남아야 하는 이유입니다.</p></div>
+    </div>
+    <div class="pol-note reveal">
+      ※ 위 내용은 2026년 8월 6일 발표된 정부 대책의 요약입니다.
+      관련 법령 개정안은 <b>2026년 9월까지 발의 예정</b>이고, 시행은 <b>2027년 하반기(7~12월)</b>로 전망됩니다.
+      다만 <b>시행 시점과 최종 내용은 아직 확정되지 않았습니다.</b>
+      슈어딜은 법 시행 여부와 무관하게 현행법 안에서 작동하는 서비스입니다.
+      원문은 <a href="https://www.molit.go.kr/USR/NEWS/m_71/lst.jsp?search_section=p_sec_12"
+      target="_blank" rel="noopener">국토교통부 보도자료</a>에서 확인하실 수 있습니다.
+      <!-- TODO: 해당 보도자료 상세 페이지 permalink 확인되면 위 링크를 그것으로 교체 -->
+    </div>
+    <p class="pol-punch reveal">
+      환불 분쟁의 쟁점은 결국 <span style="color:#7FA0FF">“법정 하자냐, 변심이냐”</span>로 모입니다.<br>
+      그 판단의 근거가 되는 것이 계약 당시의 기록입니다.
+    </p>
+  </div>
+</section>
 <!-- ===================== 요금 ===================== -->
-<!-- ===================== Q&A ===================== -->
-<!-- ===================== 고지 ===================== -->
-<!-- ===================== 문의 ===================== -->
-<!-- ===================== 푸터 ===================== -->
+<section id="price" class="pad">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">요금</div>
+      <h2 class="sec">매달 나가는 돈이 없습니다.</h2>
+      <p class="sec-lead">계약이 확정되는 그 자리에서 <b>차 한 대에 15,000원</b>. 그게 전부입니다.<br>
+        월 청구서도, 최소 사용료도, 약정도 없습니다.</p>
+    </div>
 
-<section id="ally" style="background:var(--deep);color:#fff">
-  <div class="wrap" style="max-width:760px;text-align:center;padding:56px 22px 8px">
-    <div style="border:1px dashed rgba(255,255,255,.16);border-radius:16px;padding:26px 24px;background:rgba(255,255,255,.02)">
-      <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:9px;flex-wrap:wrap">
-        <span style="font-size:16px;font-weight:700;color:#A9B8D6;letter-spacing:-.4px">슈어딜 제휴점</span>
-        <span style="font-size:11px;font-weight:700;color:#7C8CAB;border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:3px 10px">추후 서비스 예정</span>
+    <div class="pay reveal">
+      <div class="pay-grid">
+        <div>
+          <span class="pay-badge">첫 달 무료</span>
+          <div class="kicker">종량형</div>
+          <div class="price">15,000<em>원 / 판매 건당</em></div>
+          <ul class="feat">
+            <li>계약 확정 <b>그 자리에서 결제</b> — 월말 청구서가 오지 않습니다</li>
+            <li>안 판 달은 <b>0원</b> — 최소 사용료도, 약정도 없습니다</li>
+            <li>딜러 계정 수 <b>제한 없음</b></li>
+            <li>대표 화면 <b>딜러별 실적</b> 기본 제공</li>
+            <li>고지 확인서 · 보증서 · 알림톡 <b>전 기능 포함</b></li>
+          </ul>
+          <p style="margin:14px 0 0;font-size:13px;opacity:.68;line-height:1.6">표시 금액은 <b>부가가치세 별도</b>입니다. 세금계산서를 발행해 드립니다.</p>
+        </div>
+
+        <span class="pay-rule" aria-hidden="true"></span>
+
+        <div>
+          <div class="pay-scale"><span>2,780만 원 거래에</span><b>15,000원</b><span>차량가의 0.05%</span></div>
+          <p class="pay-logic">파기 한 건만 막아도<br><b>100건분 이용료</b>가 나옵니다.</p><p style="font-size:12px;color:#8894AE;line-height:1.7;margin-top:10px">※ 파기 1건의 손실은 그 차량에서 남길 이익과 재판매에 다시 드는 비용을 합해 산정했습니다. 상사 규모·차종에 따라 달라집니다.</p>
+          </div>
       </div>
-      <p style="margin:0;font-size:14.5px;color:#7C8CAB;line-height:1.72">차량 관리와 관련된 제휴 서비스를 준비하고 있습니다.</p>
+
+      <div class="ramp">
+        <div class="rp free">
+          <span class="k">첫 달</span>
+          <span class="v">무료</span>
+          <span class="d">0원 · 딜러가 손에 익는 기간입니다</span>
+        </div>
+        <span class="rarw">›</span>
+        <div class="rp on">
+          <span class="k">그 다음부터</span>
+          <span class="v">건당 15,000원</span>
+          <span class="d">판매한 건수만큼 · 약정 없음</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="price-note reveal">
+      요금제는 <b>하나</b>입니다. 등급도, 옵션도, 약정도 없습니다.<br>
+      첫 달 무료는 <b>2026년 안에 도입하는 인증 상사</b>에 한합니다.<br>
+      프리랜서 딜러 개인 사용은 <b>따로 문의</b>해 주세요.
+    </p>
+  </div>
+</section>
+<!-- ===================== Q&A ===================== -->
+<section id="qa" class="pad">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">자주 나오는 이야기</div>
+      <h2 class="sec">이런 말씀, 많이 하십니다.</h2>
+    </div>
+    <div class="qa reveal">
+
+      <div class="qa-item"><button class="qa-q">괜히 긁어 부스럼 만드는 거 아닙니까?</button>
+        <div class="qa-a"><p><b>그 질문은 어차피 나중에 나옵니다.</b> 지금 안 물어본 손님은 출고하고 나서 전화로 물어봅니다. 그때는 이미 돈을 냈고, 감정이 실려 있습니다.</p>
+        <p>계약 자리에서는 딜러가 옆에 있습니다. <b>그 자리에서 끝납니다.</b> 슈어딜은 질문을 만드는 게 아니라 <b>질문의 타이밍을 앞으로 당깁니다.</b></p>
+        <p>그리고 계약 자리에서 답한 것은 기록이 남지만, 전화로 답한 것은 남지 않습니다. 고지는 이미 법이 요구하는 절차입니다 — 없던 의무를 만드는 게 아니라, 있는 의무를 증거로 만듭니다.</p></div></div>
+
+      <div class="qa-item"><button class="qa-q">전자서명이 종이 계약서만큼 효력이 있습니까?</button>
+        <div class="qa-a"><p>전자서명법상 전자서명은 <b>전자적 형태라는 이유만으로 효력이 부인되지 않습니다.</b> 효력 자체는 법이 이미 인정하고 있습니다.</p>
+        <p>다툼이 생기는 곳은 <b>“그 사람이 정말 서명했는가”</b>입니다. 법은 <b>서명자의 실지명의를 확인할 수 있는</b> 전자서명을 말하고, 슈어딜은 PASS 본인확인을 서명에 결합합니다.</p>
+        <p>다만 슈어딜은 계약 확인 기록을 남기는 도구이며, 분쟁의 결과를 보장하지 않습니다. <b>증빙 자료</b>로 활용하실 수 있습니다.</p></div></div>
+
+      <div class="qa-item"><button class="qa-q">계약서 쓰고 사인받는데, 굳이 이게 필요합니까?</button>
+        <div class="qa-a"><p>계약서는 <b>상사가 작성한 문서</b>입니다. 손님이 서명한 건 맞지만, 손님이 각 항목을 실제로 읽고 이해했는지는 남지 않습니다.</p>
+        <p>슈어딜은 손님이 자기 폰에서 항목마다 직접 체크한 기록입니다. “설명 안 들었다”는 주장에 대해 <b>손님 본인의 행위 기록</b>으로 답할 수 있습니다.</p></div></div>
+
+      <div class="qa-item"><button class="qa-q">고지를 이렇게 다 하면 손님이 겁먹고 안 사지 않겠습니까?</button>
+        <div class="qa-a"><p>새로 겁주는 내용을 추가하는 게 아닙니다. 지금도 딜러가 말로 하고 있는 설명을 <b>화면으로 옮긴 것</b>뿐입니다.</p>
+        <p>오히려 반대 효과가 큽니다. 따져보고 결정한 손님은 나중에 흔들리지 않습니다. 변심의 뿌리는 “대충 사인했나”라는 자기 의심입니다.</p></div></div>
+
+      <div class="qa-item"><button class="qa-q">본인인증까지 시키면 손님이 귀찮아하지 않습니까?</button>
+        <div class="qa-a"><p>PASS 인증은 20초 남짓이고, 손님이 이미 은행·보험에서 매일 하는 절차입니다.</p>
+        <p>중요한 건 프레임입니다. “확인 절차입니다”가 아니라 <b>“명의 사기로부터 고객님을 보호하는 절차입니다”</b>로 안내합니다. 이 문장 하나로 거부감이 크게 줄어듭니다.</p></div></div>
+
+      <div class="qa-item"><button class="qa-q">딜러들이 바쁜데 이걸 쓰겠습니까?</button>
+        <div class="qa-a"><p>딜러가 하는 일은 차량번호·금액·손님 번호 입력, 30초입니다. 나머지는 손님이 진행합니다.</p>
+        <p>그리고 딜러에게 돌아오는 건 <b>파기 전화가 줄어드는 것</b>입니다. 출고 후 환불 요구 통화가 연 20~30건 걸려오는 일이 이 업계의 현실이고, 그 전화를 받는 사람이 딜러입니다.</p></div></div>
+
+      <div class="qa-item"><button class="qa-q">딜러가 현장에서 해준 약속은 어떻게 됩니까?</button>
+        <div class="qa-a"><p>“기재되지 않은 사항은 계약 조건에 포함되지 않습니다”라는 문구를 손님이 직접 확인합니다. 지금까지 구두로 흘러다니던 약속이 오히려 통제 가능해집니다.</p>
+        <p>기재된 약속은 <b>상사 이행 사항인지 담당자 개인 편의인지 구분해 표기</b>됩니다. 딜러가 좋은 뜻으로 해준 약속이 나중에 “그런 말 한 적 없다”로 뒤집히는 일도 막아줍니다.</p></div></div>
+
+      <div class="qa-item"><button class="qa-q">손님 개인정보는 어떻게 관리됩니까?</button>
+        <div class="qa-a"><p>본인 확인은 본인확인기관을 통해 처리하고, 슈어딜은 계약에 필요한 최소 정보만 국내 서버에 암호화해 보관합니다.</p>
+        <p>다른 상사의 기록은 조회할 수 없고, 딜러 계정 권한은 대표님이 직접 발급·회수하십니다. 자세한 내용은 <b>보안 섹션</b>과 개인정보처리방침에 정리되어 있습니다.</p></div></div>
+
+      <div class="qa-item"><button class="qa-q">우리는 파기당한 적이 없는데요?</button>
+        <div class="qa-a"><p>파기가 없어도 <b>전화는 옵니다.</b> 월 20대를 파시면 한 해 240대가 나가고, 그 뒤로 등록증·이전 진행·보증 문의가 계속 이어집니다.</p>
+        <p>슈어딜은 그중 상당수를 <b>알림톡이 먼저 답하게</b> 만들고, 그래도 걸려오는 전화에는 <b>1분 안에 근거를 꺼낼 수 있게</b> 합니다. 그리고 지금까지 없었다는 것이 앞으로도 없다는 뜻은 아닙니다.</p></div></div>
+
+      <div class="qa-item"><button class="qa-q">요즘 경기에 새 고정비를 늘리기가 부담스럽습니다.</button>
+        <div class="qa-a"><p><b>고정비가 아닙니다.</b> 월 청구서도, 최소 사용료도, 약정도 없습니다. 차가 팔릴 때 그 자리에서 한 대에 15,000원이고, <b>안 판 달은 0원</b>입니다.</p>
+        <p>2,780만 원 거래에 붙는 <b>0.05%</b>입니다. 첫 달은 무료이니 써보시고 판단하셔도 됩니다.</p></div></div>
+
+    </div>
+  </div>
+</section>
+<!-- ===================== 고지 ===================== -->
+<section id="disc" class="pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="disc-box reveal">
+      <h3><span class="i">!</span>서비스의 범위와 한계</h3>
+      <p>슈어딜이 발급하는 보증서에 기재된 <b>보증·약속의 법적 이행 주체는 판매 상사</b>이며,
+         슈어딜은 계약 확인 및 발급·기록 플랫폼입니다.
+         <b>슈어딜은 보증인이 아니며, 수리비·환불금 등 어떠한 금전적 책임도 부담하지 않습니다.</b></p>
+      <p>슈어딜이 발급하는 보증서는 <b>자동차관리법상 성능·상태점검 책임보험과 무관</b>한,
+         판매 상사의 자체 보증 내용을 기록한 문서입니다. 보험 상품이 아니며 보험사가 인수하는 위험이 아닙니다.</p>
+      <p>슈어딜이 생성하는 기록은 분쟁 발생 시 <b>증빙 자료</b>로 활용될 수 있으나,
+         특정한 법적 효력이나 분쟁 결과를 보장하지 않습니다.</p>
+      <p>슈어딜은 계약 파기를 원천적으로 차단하는 서비스가 아닙니다.
+         명의이전 완료 전 매수인의 환불 청구권은 현행법상 유지되며,
+         슈어딜은 그 권리를 제한하지 않습니다.</p>
+    </div>
+  </div>
+</section>
+<!-- ===================== 문의 ===================== -->
+<section id="contact" class="pad">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow on-dark">파일럿 문의</div>
+      <h2 class="sec">첫 달 무료로<br>먼저 써보십시오.</h2>
+      <p class="law-body">
+        설명보다 대표님 폰으로 직접 한 번 해보시는 게 빠릅니다.
+        연락 주시면 방문해서 시연해드립니다.
+      </p>
+    </div>
+
+    <div class="ct-grid">
+      <div class="tel-box reveal">
+        <div class="l">전화 주시면 가장 빠릅니다</div>
+        <a class="t" href="tel:0532420061">053-242-0061</a>
+        <div class="h">평일 · 주말 09:00 ~ 20:00<br>대구·경북 지역은 직접 방문 시연 가능합니다.</div>
+        <div style="margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12)">
+          <div class="l">이메일</div>
+          <div style="font-size:16px;font-weight:700;color:#fff;margin-top:6px">
+            <a href="mailto:korahnchild@gmail.com">korahnchild@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="form reveal">
+        <form id="inq" novalidate>
+          <label class="fl" for="f1">상사명</label>
+          <input id="f1" name="shop" type="text" placeholder="예) 대구중앙자동차매매" required>
+          <label class="fl" for="f2">대표자명</label>
+          <input id="f2" name="name" type="text" placeholder="성함" required>
+          <label class="fl" for="f3">연락처</label>
+          <input id="f3" name="tel" type="tel" inputmode="numeric" placeholder="010-0000-0000" required>
+          <label class="fl" for="f4">지역</label>
+          <select id="f4" name="area">
+            <option>대구</option><option>경북</option><option>부산·경남</option>
+            <option>수도권</option><option>기타</option>
+          </select>
+          <button type="submit" class="btn btn-lg btn-primary">파일럿 문의하기</button>
+          <p class="priv">입력하신 정보는 파일럿 상담 목적으로만 사용되며, 상담 종료 후 파기합니다.
+            자세한 내용은 <a href="../privacy.html">개인정보처리방침</a>을 확인해주세요.</p>
+        </form>
+        <div class="form-done" id="done">
+          <div class="ic">✓</div>
+          <h4>메일 작성창이 열립니다</h4>
+          <p>보내기를 눌러주시면 접수됩니다.<br>바로 연결을 원하시면 053-242-0061로 전화 주세요.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="ask" style="background:var(--deep);color:#fff">
-  <div class="wrap" style="max-width:760px;padding:44px 22px 56px">
-    <h2 style="font-size:22px;font-weight:800;letter-spacing:-.6px;margin:0 0 20px">문의</h2>
-    <div style="border-top:1px solid rgba(255,255,255,.09);padding:15px 0">
-      <div style="font-size:12.5px;font-weight:700;color:#7C8CAB;margin-bottom:3px">계약 · 차량 문의</div>
-      <div style="font-size:15.5px;color:#C3CFE6">구매하신 매매상사에서 안내해 드립니다</div>
-    </div>
-    <div style="border-top:1px solid rgba(255,255,255,.09);padding:15px 0">
-      <div style="font-size:12.5px;font-weight:700;color:#7C8CAB;margin-bottom:3px">서비스 도입 문의 (매매상사)</div>
-      <div style="font-size:15.5px"><a href="mailto:korahnchild@gmail.com" style="color:#7FA0FF;text-decoration:none">korahnchild@gmail.com</a></div>
-    </div>
-    <div style="border-top:1px solid rgba(255,255,255,.09);padding:15px 0">
-      <div style="font-size:12.5px;font-weight:700;color:#7C8CAB;margin-bottom:3px">제휴 문의</div>
-      <div style="font-size:15.5px"><a href="mailto:korahnchild@gmail.com" style="color:#7FA0FF;text-decoration:none">korahnchild@gmail.com</a></div>
-    </div>
-  </div>
-</section>
-
+<!-- ===================== 푸터 ===================== -->
 <footer>
   <div class="wrap">
     <div class="ft-top">
@@ -1652,9 +2263,10 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
         <div class="txt" style="font-size:17px">SUREDEAL</div>
       </div>
       <div class="ft-links">
-        <a href="terms.html">이용약관</a>
-        <a href="privacy.html">개인정보처리방침</a>
-        
+        <a href="../terms.html">이용약관</a>
+        <a href="../privacy.html">개인정보처리방침</a>
+        <a href="#sec">보안</a>
+        <a href="#contact">문의</a>
       </div>
     </div>
     <div class="ft-biz">
@@ -1907,18 +2519,17 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
   });
 
   /* ---------- 연락처 하이픈 ---------- */
-  var tel = document.getElementById('f3'); if(tel){
+  var tel = document.getElementById('f3');
   tel.addEventListener('input', function(){
     var v = this.value.replace(/\D/g,'').slice(0,11);
     this.value = v.length < 4 ? v
       : v.length < 8 ? v.slice(0,3)+'-'+v.slice(3)
       : v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);
-  }); }
+  });
 
   /* ---------- 문의 폼 ----------
      서버가 붙기 전까지는 메일 작성창으로 넘겨 문의가 유실되지 않게 한다. */
-  var inq = document.getElementById('inq');
-  if (inq) inq.addEventListener('submit', function(e){
+  document.getElementById('inq').addEventListener('submit', function(e){
     e.preventDefault();
     var f = e.target;
     if (!f.shop.value.trim() || !f.name.value.trim() || f.tel.value.replace(/\D/g,'').length < 10){
