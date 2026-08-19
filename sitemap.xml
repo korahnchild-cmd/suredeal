@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 전 페이지 noindex 상태이므로 등재할 주소가 없습니다 (2026.08.18~) -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://suredeal.kr/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://suredeal.kr/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://suredeal.kr/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

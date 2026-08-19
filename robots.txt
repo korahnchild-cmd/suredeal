@@ -1,13 +1,11 @@
-User-agent: *
-Allow: /$
-Allow: /index.html
-Allow: /privacy.html
-Allow: /terms.html
-Allow: /og.png
-Allow: /biz/
-Disallow: /demo.html
-Allow: /alimtalk.html
-Disallow: /dealer.html
-Disallow: /onepager.html
+# 전 페이지 «검색 노출 차단» 상태입니다 (2026.08.18~)
+#
+# ★ Disallow 로 막지 않는 이유
+#   Disallow 하면 크롤러가 페이지를 열지 못해 <meta robots="noindex"> 를 읽지 못합니다.
+#   그러면 이미 색인된 주소가 «내용 없이» 검색 결과에 남습니다.
+#   지우려면 크롤링은 허용하고 noindex 로 막아야 합니다.
+#
+# 정식 오픈 시 → 각 파일의 <meta name="robots"> 한 줄만 지우면 됩니다.
 
-Sitemap: https://suredeal.kr/sitemap.xml
+User-agent: *
+Allow: /
