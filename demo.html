@@ -484,6 +484,10 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 .sendlog{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:12px 15px;
   box-shadow:var(--shadow-card);font-size:12.5px;line-height:1.68;color:var(--ink-2);letter-spacing:-.2px;
   display:flex;gap:8px;align-items:flex-start}
+/* ⚠️ .sendlog 는 「💬 + 안내문」 가로 배치용이라 display:flex 다.
+   발송 로그처럼 «줄을 쌓는» 카드에 그대로 쓰면 자식들이 가로 flex 아이템이 되어
+   글자가 한 자씩 세로로 쪼개진다. 그 경우 .stack 을 함께 준다. */
+.sendlog.stack{display:block}
 .sl-row{display:flex;align-items:center;gap:9px;padding:10px 0;font-size:12.5px;color:var(--ink-2)}
 .sl-row + .sl-row{border-top:1px solid var(--line-2)}
 .sl-row .dot{width:16px;height:16px;border-radius:50%;background:var(--green);color:#fff;flex-shrink:0;
@@ -968,7 +972,6 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
         <span class="dc-ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
         <span class="dc-t"><b>자동차등록증 사본</b><i>8. 10(월) 14:51 발송</i></span>
         <span class="dc-b ok">손님 확인</span></div>
-      <div class="doc-note">※ 서류에 <b>주민등록번호가 보이지 않게</b> 가리고 촬영해 주세요.</div>
 
       <div class="lk-sec">합의 기록</div>
       <div class="lk-card">
@@ -977,7 +980,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
       </div>
 
       <div class="lk-sec">손님에게 나간 알림톡</div>
-      <div class="sendlog">
+      <div class="sendlog stack">
         <div class="sl-row"><span class="dot">✓</span>계약 확정<span class="tm3">8/8(토) 14:29</span></div>
         <div class="sl-row"><span class="dot">✓</span>계약 서류 확정<span class="tm3">8/8(토) 15:42</span></div>
         <div class="sl-row"><span class="dot">✓</span>인도 당일 보증 안내<span class="tm3">8/8(토) 19:00</span></div>
