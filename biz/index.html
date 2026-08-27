@@ -242,7 +242,42 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
 
 /* ---------- 지표 ---------- */
 #pain{background:var(--paper)}
-.stats{display:grid;gap:13px;margin-top:38px}
+/* ---------- 판매 대수 계산기 ---------- */
+.calc{margin-top:34px}
+.calc-panel{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:18px 20px 17px;box-shadow:var(--shadow-card)}
+.calc-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+.calc-q{font-size:15.5px;font-weight:800;letter-spacing:-.5px;color:var(--ink)}
+.calc-in{display:flex;align-items:baseline;gap:5px}
+.calc-in input{width:104px;font-family:inherit;font-size:30px;font-weight:850;letter-spacing:-1.4px;
+  color:var(--blue);text-align:right;border:0;border-bottom:2px solid var(--blue-line);
+  background:transparent;padding:0 4px 2px;font-variant-numeric:tabular-nums;-moz-appearance:textfield}
+.calc-in input::-webkit-outer-spin-button,.calc-in input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.calc-in input:focus{outline:none;border-bottom-color:var(--blue)}
+.calc-in .u{font-size:16px;font-weight:750;color:var(--sub)}
+.calc-range{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:2px;
+  background:var(--line-2,#E7EAF0);margin:18px 0 0;cursor:pointer;display:block}
+.calc-range::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;
+  background:var(--blue);border:3px solid #fff;box-shadow:0 1px 6px rgba(27,65,176,.4);cursor:pointer}
+.calc-range::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--blue);
+  border:3px solid #fff;box-shadow:0 1px 6px rgba(27,65,176,.4);cursor:pointer}
+.calc-range:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+.calc-presets{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+.calc-presets button{font-family:inherit;font-size:12.5px;font-weight:700;letter-spacing:-.2px;
+  color:var(--sub);background:#F7F8FB;border:1px solid var(--line);border-radius:999px;
+  padding:6px 14px;cursor:pointer;transition:all .16s}
+.calc-presets button:hover{border-color:var(--blue-line);color:var(--blue-d)}
+.calc-presets button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.calc-zero{margin-top:16px;background:var(--deep);color:#fff;border-radius:var(--r-lg);
+  padding:20px 22px;box-shadow:var(--shadow-card)}
+.cz-k{font-size:11px;font-weight:800;letter-spacing:1.6px;color:#8FB4FF}
+.calc-zero p{font-size:16px;line-height:1.72;margin-top:9px;letter-spacing:-.4px;color:#D7E0F2}
+.calc-zero p b{color:#fff;font-weight:800}
+.calc-zero p b.z{color:#FF8E76;font-size:23px;font-weight:850;letter-spacing:-1px}
+.cz-d{display:block;font-size:12.2px;color:#8DA3CC;margin-top:11px;line-height:1.6}
+@media(min-width:760px){.calc-zero{display:flex;align-items:center;gap:26px}
+  .calc-zero .cz-body{flex:1}.cz-k{flex:none;writing-mode:horizontal-tb}}
+.stats{display:grid;gap:13px;margin-top:18px}
 @media(min-width:760px){.stats{grid-template-columns:repeat(3,1fr);gap:18px}}
 .stat{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:26px 24px;
   box-shadow:var(--shadow-card)}
@@ -959,6 +994,11 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
 .pay-scale span{font-size:12.5px;color:#8FA9E0;font-weight:650;letter-spacing:-.2px}
 .pay-scale b{font-size:24px;font-weight:850;letter-spacing:-1px;color:#fff;font-variant-numeric:tabular-nums}
 .pay-scale span:last-child{width:100%;font-size:11.5px;color:#6E86BC}
+.pay-mine{background:rgba(143,180,255,.1);border:1px solid rgba(143,180,255,.26);border-radius:12px;
+  padding:13px 15px;margin-bottom:18px;font-size:14px;line-height:1.65;color:#C9D8F5;letter-spacing:-.3px}
+.pay-mine b{color:#fff;font-weight:850;font-variant-numeric:tabular-nums}
+.pay-mine b.big{font-size:20px;letter-spacing:-.8px;color:#8FB4FF}
+.pay-mine > span{display:block;font-size:11.5px;color:#7D93C6;margin-top:4px}
 .pay-logic{font-size:22px;font-weight:750;letter-spacing:-1px;line-height:1.55;color:#fff}
 @media(min-width:860px){.pay-logic{font-size:25px;letter-spacing:-1.2px}}
 .pay-logic b{font-weight:800;color:#8FB4FF}
@@ -1257,34 +1297,66 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
       <h2 class="sec">출고가 끝이 아닙니다.</h2>
         <p class="sec-lead" style="margin-top:14px"><b style="color:var(--ink)">없던 절차를 만드는 게 아닙니다. 하던 설명을 기록으로 남기는 것뿐입니다.</b></p>
       <p class="sec-lead">
-        월 20대를 팔면 한 해 240대가 나갑니다. 그리고 그 뒤로, 전화가 옵니다.
-        대부분은 파기까지 가지 않습니다. 그래도 번호가 뜰 때마다 심장이 내려앉습니다.
+        차를 넘기고 나면 그 뒤로 전화가 옵니다. 대부분은 파기까지 가지 않습니다.
+        그래도 번호가 뜰 때마다 심장이 내려앉습니다.
+        <b style="color:var(--ink)">대표님 숫자를 넣어 보십시오 — 아래가 그대로 바뀝니다.</b>
       </p>
     </div>
+
+    <div class="calc reveal" id="calcBox">
+      <div class="calc-panel">
+        <div class="calc-top">
+          <label class="calc-q" for="calcN">대표님은 한 해에 몇 대 파십니까?</label>
+          <div class="calc-in">
+            <input id="calcN" type="number" min="12" max="2400" step="1" value="240"
+                   inputmode="numeric" aria-label="연 판매 대수"><span class="u">대</span>
+          </div>
+        </div>
+        <input id="calcR" class="calc-range" type="range" min="12" max="1200" step="12" value="240"
+               aria-label="연 판매 대수 슬라이더">
+        <div class="calc-presets">
+          <button type="button" data-n="120">120대</button>
+          <button type="button" data-n="240" class="on">240대</button>
+          <button type="button" data-n="360">360대</button>
+          <button type="button" data-n="600">600대</button>
+        </div>
+      </div>
 
     <div class="stats">
       <div class="stat lift reveal">
         <div class="k">출고 후 걸려오는 전화</div>
-        <div class="v">연 <span class="cnt" data-to="480">0</span><em>통 <i style="font-style:normal;font-size:13px;font-weight:650;opacity:.72">이상</i></em></div>
+        <div class="v">연 <span class="cnt" id="oCall" data-to="480">0</span><em>통 <i style="font-style:normal;font-size:13px;font-weight:650;opacity:.72">이상</i></em></div>
         <div class="ul"></div>
         <div class="d">등록증 언제 오나요 · 이전 됐나요 · 보험은요 — 영업일마다 두 통꼴입니다.</div>
       </div>
       <div class="stat lift reveal">
         <div class="k">그중 환불·클레임 성격</div>
-        <div class="v">연 <span class="cnt" data-to="100">0</span><em>통 <i style="font-style:normal;font-size:13px;font-weight:650;opacity:.72">이상</i></em></div>
+        <div class="v">연 <span class="cnt" id="oClaim" data-to="100">0</span><em>통 <i style="font-style:normal;font-size:13px;font-weight:650;opacity:.72">이상</i></em></div>
         <div class="ul"></div>
         <div class="d">“그거 얘기 안 하셨잖아요” — 기억을 더듬어야 하는 전화입니다.</div>
       </div>
       <div class="stat hot lift reveal">
         <div class="k">실제 파기로 이어지는 건</div>
-        <div class="v">연 <span class="cnt" data-to="8">0</span>~<span class="cnt" data-to="17">0</span><em>건 <i style="font-style:normal;font-size:13px;font-weight:650;opacity:.72">이상</i></em></div>
+        <div class="v">연 <span class="cnt" id="oLo" data-to="8">0</span>~<span class="cnt" id="oHi" data-to="17">0</span><em>건 <i style="font-style:normal;font-size:13px;font-weight:650;opacity:.72">이상</i></em></div>
         <div class="ul"></div>
         <div class="d">한 건이 깨지면 그 차는 처음부터 다시 팔아야 합니다. 그 기간 매입 회전이 멈춥니다.</div>
       </div>
     </div>
 
+      <div class="calc-zero">
+        <div class="cz-k">그리고 이미 지나간 것</div>
+        <div class="cz-body">
+          <p>지난 한 해 <b><span id="oZero">240</span>대</b>의 계약서에 손님 서명은 남았습니다.
+             그중 손님이 <b>항목별로 무엇을 확인했는지</b> 남은 건은 <b class="z">0건</b>입니다.</p>
+          <span class="cz-d">종이 계약서는 “동의했다”를 남깁니다. “무엇을 알고 동의했다”는 남지 않습니다.
+            그리고 지나간 계약은 소급해서 기록할 수 없습니다.</span>
+        </div>
+      </div>
+    </div>
+
     <p class="note reveal">
-      월 20대 출고 상사 기준입니다. 문의 전화는 출고 대당 2통(월 40통), 환불·클레임 통화는 월 8통,
+      연 240대(월 20대) 출고 상사에서 관찰된 값을 기준으로, 입력하신 대수에 비례해 계산합니다.
+      문의 전화는 출고 대당 2통(월 40통), 환불·클레임 통화는 월 8통,
       파기 건수는 2026년 8월 대구권 중고차 매매상사 대표 2인 인터뷰를 근거로 추정했습니다.
       <b style="color:var(--ink-2)">파기는 상사에 따라 편차가 큽니다 — 월 2~4건이 발생하는 곳도 있습니다.</b>
       상사 규모·차종 구성·거래 방식에 따라 달라질 수 있습니다.
@@ -2456,6 +2528,9 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
 
         <div>
           <div class="pay-scale"><span>2,780만 원 거래에</span><b>15,000원</b><span>차량가의 0.05%</span></div>
+          <div class="pay-mine">한 해 <b><span id="oFeeN">240</span>대</b>를 파시면 이용료는
+            <b class="big"><span id="oFee">360</span>만 원</b>입니다.
+            <span>부가세 별도 · 첫 달은 0원 · 안 판 달은 0원 · 월 청구서 없음</span></div>
           <p class="pay-logic">파기 한 건만 막아도<br><b>100건분 이용료</b>가 나옵니다.<br><span style="font-size:.62em;font-weight:700;opacity:.72;letter-spacing:-.2px">— 한 해 이용료로 치면 150만 원어치입니다</span></p><p style="font-size:12px;color:#8894AE;line-height:1.7;margin-top:10px">※ 파기 1건의 손실은 그 차량에서 남길 이익과 재판매에 다시 드는 비용을 합해 산정했습니다. 상사 규모·차종에 따라 달라집니다.</p>
           </div>
       </div>
@@ -2721,6 +2796,57 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:12.5px}
       })(performance.now());
     });
   }
+  /* ---------- 판매 대수 계산기 ----------
+     기준값은 랜딩 각주 그대로다. 연 240대에서 관찰된 값을 대수에 «비례»시킬 뿐이고,
+     새로 만드는 주장이 없다. 240을 넣으면 원래 화면과 같은 숫자가 나온다. */
+  (function(){
+    var box = document.getElementById('calcBox'); if (!box) return;
+    var num = document.getElementById('calcN'), rng = document.getElementById('calcR');
+    var presets = [].slice.call(box.querySelectorAll('.calc-presets button'));
+    var cards = [].slice.call(box.querySelectorAll('.stat'));
+    var BASE = 240;
+    var R = { call: 480/BASE, claim: 100/BASE, lo: 8/BASE, hi: 17/BASE };
+    var el = {
+      call: document.getElementById('oCall'),  claim: document.getElementById('oClaim'),
+      lo:   document.getElementById('oLo'),    hi:    document.getElementById('oHi'),
+      zero: document.getElementById('oZero'),  fee:   document.getElementById('oFee'),
+      feeN: document.getElementById('oFeeN')
+    };
+    var touched = false;
+    function fmt(n){ return Math.round(n).toLocaleString('ko-KR'); }
+    function set(node, v){ if(!node) return; node.dataset.to = Math.round(v);
+      if (touched) node.textContent = fmt(v); }
+    function paint(n, writeInput){
+      n = Math.round(n); if (!isFinite(n) || n < 1) n = 1;
+      if (n > 2400) n = 2400;
+      /* 타이핑 중에는 입력칸을 되받아쓰지 않는다 — 커서가 튀고 숫자가 덧붙는다 */
+      if (writeInput && +num.value !== n) num.value = n;
+      var rv = Math.max(12, Math.min(1200, n));
+      if (+rng.value !== rv) rng.value = rv;
+      presets.forEach(function(b){ b.classList.toggle('on', +b.getAttribute('data-n') === n); });
+      if (touched) cards.forEach(function(c){ c.dataset.counted = '1'; c.classList.add('done'); });
+      set(el.call,  n * R.call);
+      set(el.claim, n * R.claim);
+      set(el.lo,    Math.max(1, n * R.lo));
+      set(el.hi,    Math.max(1, n * R.hi));
+      if (el.zero) el.zero.textContent = fmt(n);
+      if (el.feeN) el.feeN.textContent = fmt(n);
+      if (el.fee)  el.fee.textContent  = fmt(n * 15000 / 10000);
+    }
+    function edit(v, writeInput){ touched = true; paint(v, writeInput); }
+    num.addEventListener('input', function(){
+      if (num.value === '') return;          /* 지우는 중 — 기다린다 */
+      edit(+num.value, false);
+    });
+    num.addEventListener('blur', function(){ edit(+num.value || BASE, true); });
+    num.addEventListener('keydown', function(e){ if (e.key === 'Enter') num.blur(); });
+    rng.addEventListener('input', function(){ edit(+rng.value, true); });
+    presets.forEach(function(b){
+      b.addEventListener('click', function(){ edit(+b.getAttribute('data-n'), true); });
+    });
+    paint(BASE, true);
+  })();
+
   var stats = [].slice.call(document.querySelectorAll('.stat'));
   if (hasIO){
     var io2 = new IntersectionObserver(function(es){
