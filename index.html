@@ -782,8 +782,11 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
 .cert-pre .l2{display:block;margin-top:5px;padding-top:5px;border-top:1px dashed var(--cert-line);color:#6E6A5C}
 
 /* 카카오 알림톡 */
-.kk{background:#B2C7D9;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-pop);max-width:430px;
-  margin:0 auto;width:100%}
+.kk{background:#B2C7D9;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-pop);max-width:456px;
+  margin:0 auto;width:100%;position:relative}
+.kk:after{content:"";position:absolute;left:0;right:0;bottom:0;height:34px;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(178,199,217,0),rgba(178,199,217,.92));border-radius:0 0 20px 20px}
+@media(max-width:959px){.kk:after{display:none}}
 .kk-head{background:#A9BFD3;padding:12px 16px;display:flex;align-items:center;gap:11px;
   border-bottom:1px solid rgba(0,0,0,.06)}
 .kk-av{width:37px;height:37px;border-radius:13px;background:linear-gradient(135deg,#3D6BFF,#1B41B0);
@@ -828,6 +831,38 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
 .me-row{display:flex;align-items:flex-end;gap:6px;max-width:82%}
 .me-bubble{background:#FFEB33;border-radius:16px 4px 16px 16px;padding:10px 14px;font-size:14px;
   line-height:1.6;letter-spacing:-.15px;box-shadow:0 1px 2px rgba(0,0,0,.08);color:#1A1A1A}
+/* 인도 후 알림 — 상황별 탭 */
+.alim-grid{display:grid;gap:30px;margin-top:38px}
+@media(min-width:960px){.alim-grid{grid-template-columns:456px 1fr;gap:46px;align-items:start}}
+.alim-side{display:grid;gap:14px;align-content:start}
+.alim-pt{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:19px 21px;box-shadow:var(--shadow-card)}
+.alim-pt h3{font-size:15.5px;font-weight:800;letter-spacing:-.5px;color:var(--ink)}
+.alim-pt p{font-size:13.6px;color:var(--sub);line-height:1.72;margin-top:8px;letter-spacing:-.2px}
+.alim-pt b{color:var(--ink);font-weight:750}
+.cap-hint{font-style:normal;font-size:12px;font-weight:700;letter-spacing:0;color:#8D97A8;
+  background:#fff;border:1px solid #E3E7EE;border-radius:999px;padding:2px 9px;margin-left:2px}
+.kt-tabs{display:flex;gap:4px;padding:8px 9px;background:#A9BFD3;flex:none;
+  border-bottom:1px solid rgba(0,0,0,.06)}
+.kt-tab{flex:1;min-width:0;border:0;background:rgba(255,255,255,.42);color:#3B4A5C;
+  font-family:inherit;font-size:12px;font-weight:750;letter-spacing:-.4px;line-height:1.25;
+  padding:7px 3px;border-radius:9px;cursor:pointer;transition:background .18s,color .18s,box-shadow .18s}
+.kt-tab:hover{background:rgba(255,255,255,.72)}
+.kt-tab.is-on{background:#fff;color:var(--blue-d);box-shadow:0 1px 3px rgba(0,0,0,.14)}
+.kt-tab:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.kt-pane{display:none}
+.kt-pane.is-on{display:block}
+.at-sig{margin-top:9px;padding-top:8px;border-top:1px dashed #EDEFF3;font-size:12.4px;
+  line-height:1.55;color:#78828F;letter-spacing:-.1px}
+.at-sig + .at-btn{margin-top:9px}
+@media(min-width:960px){
+  .kk{display:flex;flex-direction:column;height:660px}
+  .kk-body{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;
+    scrollbar-width:thin;scrollbar-color:rgba(0,0,0,.22) transparent}
+  .kk-body::-webkit-scrollbar{width:6px}
+  .kk-body::-webkit-scrollbar-thumb{background:rgba(0,0,0,.22);border-radius:3px}
+  .kk-body::-webkit-scrollbar-track{background:transparent}
+}
 .msg,.me,.day-chip,.scene{opacity:0;transform:translateY(10px);
   transition:opacity .4s ease,transform .4s var(--sp)}
 .msg.pop,.me.pop,.day-chip.pop,.scene.pop{opacity:1;transform:none}
@@ -1537,6 +1572,418 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
       </div>
   </div>
 </section>
+<!-- ===================== 인도 후 알림 ===================== -->
+<section id="alim" class="pad">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">인도 후에 오는 알림</div>
+      <h2 class="sec">차를 받고 나서도<br>진행 상황이 옵니다.</h2>
+      <p class="sec-lead">
+        계약이 확정된 순간부터 이전등록이 끝날 때까지, 지금 어디까지 왔는지 카카오톡으로 도착합니다.
+        궁금해서 전화하실 일이 하나씩 줄어듭니다.
+      </p>
+    </div>
+
+    <div class="alim-grid">
+      <div class="reveal">
+        <div class="cust-cap">손님 카카오톡에 도착하는 알림 <em class="cap-hint">상황을 눌러 보세요</em></div>
+        <div class="kk" id="ktBox">
+          <div class="kk-head">
+            <div class="kk-av"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+            <div>
+              <div class="kk-nm">슈어딜<span class="ch">ch</span></div>
+              <div class="kk-sub">카카오 알림톡 · 광고 아님</div>
+            </div>
+          </div>
+          <div class="kt-tabs" role="tablist" aria-label="상황별 알림 흐름">
+            <button type="button" class="kt-tab is-on" data-p="std" role="tab" aria-selected="true">당일 전액</button>
+            <button type="button" class="kt-tab" data-p="pre" role="tab" aria-selected="false">가계약 · 잔금</button>
+            <button type="button" class="kt-tab" data-p="hol" role="tab" aria-selected="false">연휴에 걸린 계약</button>
+            <button type="button" class="kt-tab" data-p="prm" role="tab" aria-selected="false">약속 이행</button>
+          </div>
+          <div class="kk-body">
+            <div class="kt-pane is-on" data-pane="std" role="tabpanel">
+            <div class="day-chip"><span>8월 8일 토요일</span></div>
+
+            <div class="scene"><span>오후 2시 — 매매상사가 계약 내용을 등록하고 링크 발송</span></div>
+
+            <div class="msg">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">계약 확인 요청</div>
+                      이O진님, 굿카닷컴에서 작성한 <b>그랜저 IG 2.5(12가 3456)</b> <b>매매계약서</b>가 도착했습니다.<br><br>아래 버튼에서 본인인증 후 계약 내용과 차량 정보를 확인하고 서명해 주세요.
+                      <div class="at-sig">담당 김성훈 · 010-1234-5678</div>
+                      <div class="at-btn">계약 확인하기</div>
+                    </div>
+                  </div>
+                  <span class="m-time">14:21</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="scene"><span>직접 확인하고 서명 — 8분 뒤</span></div>
+
+            <div class="msg">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">계약이 확정되었습니다</div>
+                      이O진님, 굿카닷컴에서 계약하신 <b>그랜저 IG 2.5(12가 3456)</b> 매매계약이 확정되었습니다.
+                      <div class="at-list">
+                        <div>관리번호: SD-2608-0142</div>
+                        <div>잔금: 없음</div>
+                        <div>본인인증 및 전자서명 완료</div>
+                      </div>
+                      <div class="at-btn">계약 내용 확인</div>
+                    </div>
+                  </div>
+                  <span class="m-time">14:29</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="scene alert"><span>저녁 — 주변의 한마디 “그거 왜 샀어” “비싸게 준 거 아냐?”<br>이런 말을 듣는 시간</span></div>
+
+            <div class="msg">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">보증이 적용 중입니다</div>
+                      이O진님, 굿카닷컴에서 8월 8일에 인도해 드린 <b>그랜저 IG 2.5(12가 3456)</b> 차량은 <b>성능보증보험 적용 차량</b>입니다.<br><br>계약 시 확인하신 성능·상태점검기록부와 보증 내용은 아래 버튼에서 언제든 다시 확인하실 수 있습니다.
+                      <div class="at-sig">담당 김성훈 · 010-1234-5678</div>
+                      <div class="at-btn">내 보증 내용 확인</div>
+                    </div>
+                  </div>
+                  <span class="m-time">19:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="me"><div class="me-row"><span class="m-time">19:12</span>
+              <div class="me-bubble">(보증서를 다시 열어본다) 확인할 거 다 확인하고 산 건데, 뭐</div></div></div>
+
+            <div class="day-chip"><span>8월 10일 월요일</span></div>
+
+            <div class="scene"><span>오후 — 매매상사가 등록증을 받은 뒤</span></div>
+
+            <div class="msg" style="margin-bottom:0">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">이전등록이 완료되었습니다</div>
+                      이O진님, 굿카닷컴에서 진행한 <b>그랜저 IG 2.5(12가 3456)</b> <b>소유권 이전등록이 이O진님 명의로 완료</b>되었습니다.
+                      <div class="at-list">
+                        <div>자동차등록증 사본 첨부</div>
+                        <div>원본은 굿카닷컴에서 전달드립니다</div>
+                      </div>
+                      <div class="at-sig">담당 김성훈 · 010-1234-5678</div>
+                      <div class="at-btn">등록증 사본 확인</div>
+                    </div>
+                  </div>
+                  <span class="m-time">14:51</span>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <div class="kt-pane" data-pane="pre" role="tabpanel">
+            <div class="day-chip"><span>8월 10일 월요일</span></div>
+
+            <div class="scene"><span>차는 마음에 드는데 잔금은 수요일 — 계약금 300만 원만 입금</span></div>
+
+            <div class="msg">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">계약 확인 요청</div>
+                      이O진님, 굿카닷컴에서 작성한 <b>그랜저 IG 2.5(12가 3456)</b> <b>매매계약서</b>가 도착했습니다.<br><br>아래 버튼에서 본인인증 후 계약 내용과 차량 정보를 확인하고 서명해 주세요.
+                      <div class="at-sig">담당 김성훈 · 010-1234-5678</div>
+                      <div class="at-btn">계약 확인하기</div>
+                    </div>
+                  </div>
+                  <span class="m-time">15:58</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="msg">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">계약금 입금이 확인되었습니다</div>
+                      이O진님, 굿카닷컴에서 계약하신 <b>그랜저 IG 2.5(12가 3456)</b> 계약금 <b>300만 원</b> 입금이 확인되어 가계약이 접수되었습니다.
+                      <div class="at-list">
+                        <div>관리번호: SD-2608-0143</div>
+                        <div>잔금 2,480만 원 — 입금 예정 8/12(수)</div>
+                        <div>인도 예정일: 8/12(수)</div>
+                      </div>
+                      <div class="at-sig">잔금 입금이 확인되면 본 계약으로 전환되며 다시 안내드리겠습니다.</div>
+                      <div class="at-btn">계약 확인하기</div>
+                    </div>
+                  </div>
+                  <span class="m-time">16:05</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="scene"><span>계약금만 낸 단계와 본계약을 구분해서 알려드립니다</span></div>
+
+            <div class="day-chip"><span>8월 12일 수요일</span></div>
+
+            <div class="msg">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">잔금 입금 확인 · 계약 확정</div>
+                      이O진님, 굿카닷컴에서 계약하신 <b>그랜저 IG 2.5(12가 3456)</b> 잔금 <b>2,480만 원</b> 입금이 확인되어 매매계약이 확정되었습니다.
+                      <div class="at-list">
+                        <div>관리번호: SD-2608-0143</div>
+                        <div>차량 대금 입금 완료</div>
+                        <div>본인인증 및 전자서명 완료</div>
+                      </div>
+                      <div class="at-btn">계약 내용 확인</div>
+                    </div>
+                  </div>
+                  <span class="m-time">10:41</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="scene"><span>오후 인도 — 그날 저녁 7시</span></div>
+
+            <div class="msg" style="margin-bottom:0">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">보증이 적용 중입니다</div>
+                      이O진님, 굿카닷컴에서 8월 12일에 인도해 드린 <b>그랜저 IG 2.5(12가 3456)</b> 차량은 <b>성능보증보험 적용 차량</b>입니다.<br><br>계약 시 확인하신 성능·상태점검기록부와 보증 내용은 아래 버튼에서 언제든 다시 확인하실 수 있습니다.
+                      <div class="at-sig">담당 김성훈 · 010-1234-5678</div>
+                      <div class="at-btn">내 보증 내용 확인</div>
+                    </div>
+                  </div>
+                  <span class="m-time">19:00</span>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <div class="kt-pane" data-pane="hol" role="tabpanel">
+            <div class="day-chip"><span>8월 14일 금요일</span></div>
+
+            <div class="scene"><span>금요일 오후 인도 — 다음 등록사업소 영업일은 화요일(8/18)입니다</span></div>
+
+            <div class="msg">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">보증이 적용 중입니다</div>
+                      이O진님, 굿카닷컴에서 8월 14일에 인도해 드린 <b>그랜저 IG 2.5(12가 3456)</b> 차량은 <b>성능보증보험 적용 차량</b>입니다.<br><br>계약 시 확인하신 성능·상태점검기록부와 보증 내용은 아래 버튼에서 언제든 다시 확인하실 수 있습니다.
+                      <div class="at-sig">담당 김성훈 · 010-1234-5678</div>
+                      <div class="at-btn">내 보증 내용 확인</div>
+                    </div>
+                  </div>
+                  <span class="m-time">19:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="scene alert"><span>토요일 — 차는 집에 있는데 등록증은 아직 전 명의입니다.<br>“지금 이 차 타도 되나” 싶어지는 자리입니다</span></div>
+
+            <div class="day-chip"><span>8월 16일 일요일</span></div>
+
+            <div class="msg">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">등록 접수 대기 안내</div>
+                      이O진님, 굿카닷컴에서 진행하는 <b>그랜저 IG 2.5(12가 3456)</b> 이전등록 일정을 안내드립니다.
+                      <div class="at-list">
+                        <div>완료 예정: 2026. 8. 18(화)</div>
+                        <div>등록사업소 휴무로 그때까지는 진행되지 않습니다</div>
+                        <div>자동차보험 가입을 확인한 뒤 차량을 인도해 드렸습니다</div>
+                      </div>
+                      <div class="at-sig">완료되면 등록증 사본과 함께 안내드리겠습니다.</div>
+                      <div class="at-btn">진행 상황 확인</div>
+                    </div>
+                  </div>
+                  <span class="m-time">10:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="me"><div class="me-row"><span class="m-time">10:03</span>
+              <div class="me-bubble">아, 화요일에 끝나는구나. 그럼 기다리면 되겠네</div></div></div>
+
+            <div class="day-chip"><span>8월 18일 화요일</span></div>
+
+            <div class="msg" style="margin-bottom:0">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">이전등록이 완료되었습니다</div>
+                      이O진님, 굿카닷컴에서 진행한 <b>그랜저 IG 2.5(12가 3456)</b> <b>소유권 이전등록이 이O진님 명의로 완료</b>되었습니다.
+                      <div class="at-list">
+                        <div>자동차등록증 사본 첨부</div>
+                        <div>원본은 굿카닷컴에서 전달드립니다</div>
+                      </div>
+                      <div class="at-sig">담당 김성훈 · 010-1234-5678</div>
+                      <div class="at-btn">등록증 사본 확인</div>
+                    </div>
+                  </div>
+                  <span class="m-time">13:22</span>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <div class="kt-pane" data-pane="prm" role="tabpanel">
+            <div class="day-chip"><span>8월 9일 일요일</span></div>
+
+            <div class="scene"><span>인도 다음 날 — 기록이 어디 있는지 한 번 더 알려 드립니다</span></div>
+
+            <div class="msg">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">차량에 남은 기록</div>
+                      이O진님, 굿카닷컴에서 구매하신 <b>그랜저 IG 2.5(12가 3456)</b> 차량에 남은 기록을 확인하실 수 있습니다.<br><br>성능·상태점검기록부, 계약 시 확인하신 항목, 본인인증 전자서명 기록이 함께 보관되어 있습니다.
+                      <div class="at-sig">담당 김성훈 · 010-1234-5678</div>
+                      <div class="at-btn">기록 확인하기</div>
+                    </div>
+                  </div>
+                  <span class="m-time">10:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="scene"><span>계약서에 “엔진오일·오일필터 교환 — 8/12까지”가 적혀 있습니다</span></div>
+
+            <div class="day-chip"><span>8월 12일 수요일</span></div>
+
+            <div class="msg">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">약속드린 사항이 완료되었습니다</div>
+                      이O진님, 굿카닷컴에서 계약하신 <b>그랜저 IG 2.5(12가 3456)</b> 약속 사항이 완료되었습니다.
+                      <div class="at-list">
+                        <div>완료 항목: 엔진오일·오일필터 교환</div>
+                        <div>완료일: 2026. 8. 12</div>
+                      </div>
+                      <div class="at-sig">어떤 내용이었는지는 아래 버튼에서 확인하실 수 있습니다.</div>
+                      <div class="at-btn">합의 내용 확인</div>
+                    </div>
+                  </div>
+                  <span class="m-time">15:30</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="me"><div class="me-row"><span class="m-time">15:44</span>
+              <div class="me-bubble">말만 하고 넘어가는 데도 있던데, 여긴 기록으로 오네</div></div></div>
+
+            <div class="scene"><span>“해주기로 했는데 안 해줬다”가 될 자리가 사라집니다</span></div>
+
+            <div class="msg" style="margin-bottom:0">
+              <div class="m-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield-w"/></svg></div>
+              <div class="m-col">
+                <div class="m-name">슈어딜</div>
+                <div class="m-row">
+                  <div class="atalk">
+                    <div class="at-band">알림톡 도착</div>
+                    <div class="at-body">
+                      <div class="at-title">차량에 남은 기록</div>
+                      이O진님, 굿카닷컴에서 구매하신 <b>그랜저 IG 2.5(12가 3456)</b> 차량에 남은 기록을 확인하실 수 있습니다.<br><br>합의·이행 기록도 계약 기록과 함께 같은 링크에 남습니다.
+                      <div class="at-sig">담당 김성훈 · 010-1234-5678</div>
+                      <div class="at-btn">기록 확인하기</div>
+                    </div>
+                  </div>
+                  <span class="m-time">15:45</span>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alim-side reveal">
+        <div class="alim-pt">
+          <h3>아직 안 된 일을 됐다고 알리지 않습니다</h3>
+          <p>이전등록 완료 알림은 <b>매매상사가 등록증을 실제로 받은 뒤</b>에만 나갑니다.
+             날짜를 미리 찍어 보내지 않습니다.</p>
+        </div>
+        <div class="alim-pt">
+          <h3>광고는 오지 않습니다</h3>
+          <p>계약 · 인도 · 이전등록의 <b>진행 상태만</b> 알려드립니다.
+             다른 상품 안내나 재구매 권유는 보내지 않습니다.</p>
+        </div>
+        <div class="alim-pt">
+          <h3>버튼은 늘 같은 곳으로</h3>
+          <p>계약 내용과 보증서, 성능·상태점검기록부, 등록증 사본이
+             <b>한 링크에 모여</b> 있습니다. 앱을 설치하실 필요가 없습니다.</p>
+        </div>
+        <p class="note" style="margin-top:2px">
+          위에 보이는 것 외에 성능보증보험 미가입 차량 안내 등을 포함해 <b>승인된 알림은 모두 12종</b>입니다.
+          거래 상황에 해당하는 것만 발송됩니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- ===================== 손님이 받는 것 ===================== -->
 <!-- ===================== 법적 근거 ===================== -->
 <!-- ===================== 카테고리 비교 ===================== -->
@@ -1780,6 +2227,29 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
   once(doc, function(){ stagger('.doc-row','lit',110,doc); }, .25);
   var kt = document.getElementById('ktBox');
   once(kt, function(){ stagger('.day-chip, .scene, .msg, .me','pop',210,kt); }, .15);
+  if (kt) {
+    var ktTabs  = kt.querySelectorAll('.kt-tab');
+    var ktPanes = kt.querySelectorAll('.kt-pane');
+    var ktBody  = kt.querySelector('.kk-body');
+    Array.prototype.forEach.call(ktTabs, function(tab){
+      tab.addEventListener('click', function(){
+        var key = tab.getAttribute('data-p');
+        Array.prototype.forEach.call(ktTabs, function(x){
+          var on = (x === tab);
+          x.classList.toggle('is-on', on);
+          x.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        Array.prototype.forEach.call(ktPanes, function(pn){
+          var on = (pn.getAttribute('data-pane') === key);
+          pn.classList.toggle('is-on', on);
+          if (on) Array.prototype.forEach.call(
+            pn.querySelectorAll('.day-chip, .scene, .msg, .me'),
+            function(e){ e.classList.add('pop'); });
+        });
+        if (ktBody) ktBody.scrollTop = 0;
+      });
+    });
+  }
   var noDoc = document.getElementById('noDoc');
   once(noDoc, function(){ setTimeout(function(){ noDoc.classList.add('stamped'); }, 420); }, .35);
   var cert = document.getElementById('certCard');
