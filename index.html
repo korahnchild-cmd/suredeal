@@ -750,6 +750,11 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
 .cert-foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:11px;padding-top:10px;
   border-top:1px solid var(--cert-line);position:relative;z-index:1}
 .qr{width:54px;height:54px;border-radius:5px;overflow:hidden;background:#fff;padding:4px;border:1px solid var(--cert-line)}
+/* ★ QR을 뺐다 — 인쇄본을 뽑는 흐름이 v1에 없어서 «스캔하면 열린다»가 아직 참이 아니다.
+   대신 실제로 참인 것을 적는다: 보증서 링크는 만료가 없다(§10). */
+.cert-keep{text-align:left;line-height:1.45}
+.cert-keep b{display:block;font-size:10.5px;font-weight:800;color:var(--blue-d);letter-spacing:-.1px}
+.cert-keep span{display:block;font-size:8.8px;color:var(--faint);margin-top:3px;font-weight:600}
 .qr svg{width:100%;height:100%;display:block}
 .qr-cap{font-size:9.4px;color:var(--faint);margin-top:4px;text-align:center;letter-spacing:.5px;font-weight:600}
 .seal-area{text-align:right;position:relative;padding-right:4px}
@@ -1552,9 +1557,9 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
             <div class="cert-li">전 항목 매수인 본인 확인 · 전자서명 (2026. 8. 8 14:28)</div>
 
             <div class="cert-foot">
-              <div>
-                <div class="qr"><svg viewBox="0 0 29 29" shape-rendering="crispEdges" aria-hidden="true"><path fill="#131F38" d="M0 0h7v7H0zM22 0h7v7h-7zM0 22h7v7H0zM2 2h3v3H2zM24 2h3v3h-3zM2 24h3v3H2zM9 0h2v2H9zM13 0h2v3h-2zM17 0h2v1h-2zM9 3h1v2H9zM11 4h2v1h-2zM16 2h2v2h-2zM19 4h1v2h-1zM9 7h3v1H9zM14 6h1v3h-1zM17 7h2v2h-2zM0 9h2v2H0zM3 9h2v1H3zM6 10h2v2H6zM9 10h2v2H9zM13 9h1v2h-1zM16 10h2v1h-2zM20 9h2v2h-2zM23 9h2v1h-2zM26 10h3v1h-3zM1 13h2v2H1zM5 13h1v2H5zM8 13h3v2H8zM12 13h3v1h-3zM16 13h1v2h-1zM19 14h2v2h-2zM23 13h2v2h-2zM27 13h2v2h-2zM0 17h1v2H0zM3 16h2v2H3zM7 17h2v1H7zM10 16h2v2h-2zM14 17h2v2h-2zM18 16h1v2h-1zM21 17h2v2h-2zM25 16h2v1h-2zM28 17h1v2h-1zM9 19h1v3H9zM12 20h2v2h-2zM16 20h2v1h-2zM19 20h1v2h-1zM22 22h2v2h-2zM25 20h2v2h-2zM9 24h2v2H9zM13 23h1v3h-1zM15 25h2v2h-2zM18 24h2v1h-2zM21 26h2v2h-2zM25 24h2v2h-2zM27 27h2v2h-2zM11 27h2v2h-2z"/></svg></div>
-                <div class="qr-cap">보증서 원본 조회</div>
+              <div class="cert-keep">
+                <b>만료 없음</b>
+                <span>나중에 차를 파실 때도<br>같은 주소로 열립니다</span>
               </div>
               <div class="seal-area">
                 <div class="seal"><span class="s-ring"></span><span class="s-in">굿카<br>닷&nbsp;컴</span></div>
