@@ -757,7 +757,7 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
 /* 보증서 */
 .cert-outer{background:linear-gradient(155deg,#1D3160 0%,#0C1730 70%);border-radius:22px;padding:8px;
   box-shadow:var(--shadow-pop);max-width:456px;margin:0 auto;width:100%}
-.cert{background:var(--cert-paper);border-radius:14px;padding:15px 18px 12px;position:relative;overflow:hidden}
+.cert{background:var(--cert-paper);border-radius:14px;padding:25px 18px 22px;position:relative;overflow:hidden}
 .cert:before{content:"";position:absolute;inset:8px;border:1px solid var(--cert-line);border-radius:9px;pointer-events:none}
 .cert:after{content:"";position:absolute;inset:11px;border:2.5px solid #E9E5D6;border-radius:7px;pointer-events:none}
 .wm{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:196px;height:196px;opacity:.05;pointer-events:none}
@@ -765,12 +765,12 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
 .corner svg{width:100%;height:100%}
 .c-tl{top:14px;left:14px}.c-tr{top:14px;right:14px;transform:rotate(90deg)}
 .c-br{bottom:14px;right:14px;transform:rotate(180deg)}.c-bl{bottom:14px;left:14px;transform:rotate(270deg)}
-.cert-head{text-align:center;padding-bottom:7px;margin-bottom:7px;position:relative;z-index:1}
+.cert-head{text-align:center;padding-bottom:11px;margin-bottom:11px;position:relative;z-index:1}
 .cert-head:after{content:"";display:block;width:64px;height:1px;
   background:linear-gradient(90deg,transparent,var(--cert-gold),transparent);margin:7px auto 0}
 .cert-brand{font-size:10px;letter-spacing:5px;color:var(--cert-gold);font-weight:800}
 /* 「보증서」(3자)에서 「계약 보증서」(6자)로 길어졌다 — 자간을 줄여 폭을 지킨다 */
-.cert-title{font-family:'Noto Serif KR',serif;font-size:19.5px;font-weight:900;letter-spacing:5px;
+.cert-title{font-family:'Noto Serif KR',serif;font-size:22px;font-weight:900;letter-spacing:5px;
   margin:4px 0 0 5px;color:var(--deep)}
 .cert-no{font-size:10.3px;color:var(--faint);margin-top:0;letter-spacing:1px;font-weight:600}
 .cert-meta{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:5px 10px;margin-top:6px}
@@ -780,7 +780,7 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
 .dplus b{font-weight:850;letter-spacing:.3px}
 .dplus svg{width:15px;height:11px;flex:none}
 /* 계약 확정 도장 — 보증서 우측 상단에 찍힌다 */
-.cstamp{position:absolute;right:11px;top:13px;width:70px;height:70px;z-index:3;
+.cstamp{position:absolute;right:11px;top:13px;width:58px;height:58px;z-index:3;
   opacity:0;transform:rotate(-26deg) scale(2.2);transform-origin:center;
   mix-blend-mode:multiply;pointer-events:none}
 .cert.stamped .cstamp{opacity:.94;transform:rotate(-11deg) scale(1);
@@ -791,14 +791,14 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
   .cstamp{opacity:.94;transform:rotate(-11deg);transition:none}
 }
 .cert-body{position:relative;z-index:1}
-.cert-row{display:flex;justify-content:space-between;align-items:baseline;font-size:12.4px;padding:3.2px 0;gap:10px}
+.cert-row{display:flex;justify-content:space-between;align-items:baseline;font-size:12.4px;padding:9.4px 0;gap:10px}
 .cert-row > span{color:#79808F;font-size:10.9px;letter-spacing:.3px;flex:none}
 .cert-row b{font-weight:720;text-align:right;letter-spacing:-.2px}
 .cert-ok{color:var(--green);font-size:10.7px;font-weight:800}
 .cert-sec{display:flex;align-items:center;gap:8px;font-size:10.1px;font-weight:850;letter-spacing:1.6px;
-  color:var(--blue-d);margin:8px 0 3px}
+  color:var(--blue-d);margin:13px 0 5px}
 .cert-sec:after{content:"";flex:1;height:1px;background:var(--cert-line)}
-.cert-li{font-size:11.6px;line-height:1.46;padding:1.6px 0 1.6px 13px;position:relative;letter-spacing:-.15px}
+.cert-li{font-size:11.6px;line-height:1.52;padding:3.4px 0 3.4px 13px;position:relative;letter-spacing:-.15px}
 .cert-li:before{content:"";position:absolute;left:1px;top:8px;width:4.5px;height:4.5px;border-radius:50%;background:var(--green)}
 .cert-li.ex:before{background:#C2C8D4}
 .cert-li b{font-weight:720}
@@ -823,7 +823,7 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
 .seal-name{font-size:12.3px;font-weight:750;letter-spacing:-.2px}
 .seal-date{font-size:9.9px;color:var(--faint);margin-top:3px;letter-spacing:.3px}
 .cert-legal b{font-weight:800}
-.cert-legal{font-size:9.5px;color:#9AA1B0;line-height:1.5;margin-top:7px;text-align:center;
+.cert-legal{font-size:9.5px;color:#9AA1B0;line-height:1.5;margin-top:12px;text-align:center;
   position:relative;z-index:1;letter-spacing:-.05px}
 
 
@@ -1644,7 +1644,7 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
         <p>보증서에 기재된 <b>보증·약속의 법적 이행 주체는 판매 상사</b>이며,
            슈어딜은 그 내용을 확인·발급·기록하는 플랫폼입니다.
            슈어딜은 보증인이 아니고, 수리비 등 <b>어떠한 금전적 책임도 지지 않습니다.</b>
-           보증서에도 같은 내용이 상사명과 함께 명시됩니다.</p>
+           보증서에도 <b>이행 주체가 상사명과 함께</b> 명시됩니다.</p>
       </div>
     </div>
 
@@ -1661,25 +1661,11 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
             <path fill="#131F38" d="M12 2 4.5 5v6c0 4.8 3.2 9.1 7.5 10.4 4.3-1.3 7.5-5.6 7.5-10.4V5L12 2Z"/></svg>
 
           <div class="cert-head">
-            <div class="cert-issuer">굿카닷컴 계약 보증서</div>
+            <div class="cert-issuer">굿카닷컴</div>
             <div class="cert-title">계약 보증서</div>
-            <div class="cert-party">
-              <span>보증 주체 <b>굿카닷컴</b></span>
-              <em>발급·기록 슈어딜</em>
-            </div>
             <div class="cert-meta">
               <div class="cert-no">NO. SD-2608-0142 &nbsp;·&nbsp; 2026. 8. 8</div>
-              <div class="dplus">
-                <svg viewBox="0 0 120 78" aria-hidden="true"><use href="#i-car"/></svg>
-                함께한 지 <b>D+2</b>
-              </div>
             </div>
-          </div>
-
-          <div class="cert-pre">
-            이 보증의 <b>이행 주체는 판매 상사(굿카닷컴)</b>입니다. 슈어딜은 확인·발급·기록 플랫폼이며
-            <b>보증인이 아니고 수리비 등 어떠한 금전적 책임도 지지 않습니다.</b>
-            <span class="l2">자동차관리법상 성능·상태점검 책임보험과 무관한, 판매 상사의 자체 계약 보증입니다.</span>
           </div>
 
           <svg class="cstamp" viewBox="0 0 100 100" aria-hidden="true">
@@ -1695,14 +1681,14 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
             <div class="cert-row"><span>차 량</span><b>그랜저 IG 2.5 (2021) · 12가 3456</b></div>
             <div class="cert-row"><span>매수인</span><b>이O진 <span class="cert-ok">· 본인인증 완료</span></b></div>
             <div class="cert-row"><span>판매 상사</span><b>굿카닷컴 · 담당 김성훈</b></div>
-            <div class="cert-row"><span>거래 조건</span><b>인도까지 <span class="cert-ok">추가 청구 비용 없음 확인</span></b></div>
 
-            <div class="cert-sec">보증 내용</div>
+            <div class="cert-sec">성능 보증 내용</div>
             <div class="cert-li">성능보증보험 가입 차량 — <b>주요 장치 무상 보증</b> <span style="opacity:.75">인도일부터 30일 또는 2,000km 중 <b>먼저 도래한 시점까지</b></span></div>
-            <div class="cert-li"><b>엔진오일·오일필터 교환</b> — 2026. 8. 12까지 이행</div>
+            <div class="cert-li">보증 범위는 <b>성능·상태점검기록부의 점검 항목</b>과 보험사 약관을 따릅니다</div>
             <div class="cert-li ex">소모성 부품은 보증 제외 — 계약 시 상호 확인</div>
 
             <div class="cert-sec">합의 기록</div>
+            <div class="cert-li"><b>엔진오일·오일필터 교환</b> — 2026. 8. 12까지 이행</div>
             <div class="cert-li">타이어 마모 → 차량가액 30만 원 할인 반영 · 추가 조치 없음 합의</div>
             <div class="cert-li">전 항목 매수인 본인 확인 · 전자서명 (2026. 8. 8 14:28)</div>
 
