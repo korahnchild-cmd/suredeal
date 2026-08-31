@@ -652,7 +652,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
         <div>
           <h2>그랜저 IG 2.5 가솔린</h2>
           <span class="plate">12가 3456</span>
-          <div class="meta" id="vehMeta">2021년식 · 41,820km · 무사고</div>
+          <div class="meta" id="vehMeta">2021년식 · 41,820km</div>
         </div>
       </div>
       <div class="kv"><span>차량 매매금액</span><b class="price">2,780<small style="font-size:13px;font-weight:700">만 원</small></b></div>
@@ -1117,8 +1117,8 @@ function applyKm(){
   var lab=document.getElementById('swLabel'), sw=document.getElementById('demoSw');
   var dot=document.getElementById('swDot');
   if(meta) meta.innerHTML = HIGH_KM
-    ? '2015년식 · 213,400km · 무사고<span class="km-badge">성능보증보험 미가입</span>'
-    : '2021년식 · 41,820km · 무사고';
+    ? '2015년식 · 213,400km<span class="km-badge">성능보증보험 미가입</span>'
+    : '2021년식 · 41,820km';
   var hide = HIGH_KM ? a1 : a2;
   if(hide) hide.querySelectorAll('.chk.on').forEach(function(c){ c.classList.remove('on'); });
   if(a1) a1.style.display = HIGH_KM ? 'none' : '';
@@ -1287,7 +1287,7 @@ function clearSig(){
     <div class="insp-bd">
       <div class="rec-c">
         <div class="rec-r"><span class="ck2">✓</span>성능·상태점검기록부 확인<i>8. 8(토) 14:25</i></div>
-        <div class="rec-r"><span class="ck2">✓</span>무사고 · 41,820km<i>계약 시점</i></div>
+        <div class="rec-r"><span class="ck2">✓</span>주행거리 41,820km<i>계약 시점</i></div>
         <div class="rec-r"><span class="ck2">✓</span>본인인증 계약 · 전자서명<i>8. 8(토) 14:28</i></div>
         <div class="rec-r"><span class="ck2">✓</span>합의 기록 1건<i>타이어 마모 → 30만 원 반영</i></div>
       </div>
