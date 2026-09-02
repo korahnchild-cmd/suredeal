@@ -39,6 +39,19 @@ main{padding-top:16px}
 .hero h1 em{font-style:normal;color:#8FB8FF}
 .hero p{font-size:13.5px;color:#B9C6E4;margin-top:10px;line-height:1.8}
 
+/* ★ 보여드리는 순서 — 홍보전략 §2 원칙 1. 경고(.warn·붉은색)와 성격이 달라 파란 톤으로 둔다 */
+.demo-order{background:var(--blue-soft);border:1.5px solid var(--blue-line);border-radius:16px;
+padding:20px;margin-bottom:18px}
+.demo-order .k{display:inline-block;font-size:11px;font-weight:800;color:#fff;background:var(--blue);
+padding:3px 9px;border-radius:999px;letter-spacing:.3px}
+.demo-order h2{font-size:17.5px;font-weight:800;letter-spacing:-.6px;margin:11px 0 9px;line-height:1.45}
+.demo-order h2 em{font-style:normal;color:var(--blue-d)}
+.demo-order p{font-size:13.5px;color:var(--ink-2);line-height:1.82}
+.demo-steps{margin:12px 0 10px;padding-left:20px;font-size:13.5px;color:var(--ink-2);line-height:1.7}
+.demo-steps li{margin:5px 0}
+.demo-steps li b{color:var(--ink)}
+.demo-tip{background:#fff;border:1px solid var(--blue-line);border-radius:11px;
+padding:11px 14px;font-size:13px}
 .warn{background:#fff;border:2px solid var(--seal);border-radius:16px;padding:20px;margin-bottom:18px}
 .warn .k{display:inline-block;font-size:11px;font-weight:800;color:#fff;background:var(--seal);
 padding:3px 9px;border-radius:999px;letter-spacing:.3px}
@@ -126,6 +139,22 @@ footer{margin-top:22px;font-size:11.5px;color:var(--faint);line-height:1.85;text
     <h1>손님이 물어봤을 때<br><em>1초 안에 답이 나와야 합니다.</em></h1>
     <p>답이 막히면 손님이 불안해집니다. 불안해진 손님은 계약을 미룹니다.
       아래 답변은 그대로 말씀하셔도 되게 다듬어 놓은 것입니다.</p>
+  </div>
+
+  <!-- ★ 홍보전략 §2 원칙 1 — 기능 설명이 아니라 «손님 화면»부터 연다.
+         상사 본인의 소비자 감각이 결론을 낸다. 순서를 바꾸면 설명이 길어지고 의심이 커진다. -->
+  <div class="demo-order">
+    <span class="k">보여드리는 순서</span>
+    <h2>설명하지 마시고, <em>손님 화면부터 여십시오.</em></h2>
+    <p>기능을 설명하면 길어집니다. 손님이 보는 것을 먼저 보여드리면
+      대표님이 스스로 결론을 내십니다.</p>
+    <ol class="demo-steps">
+      <li><b>손님 화면</b> — “손님이 이걸 받으면 어떻겠습니까” 한 마디면 됩니다</li>
+      <li><b>기록부 잠금</b> — 안 열면 체크가 안 됩니다. 이게 이 제품의 성격입니다</li>
+      <li><b>계약 보증서</b> — 손님이 나중에 다시 열어보는 문서</li>
+      <li><b>대표 화면</b> — “딜러도 같은 화면을 봅니다”</li>
+    </ol>
+    <p class="demo-tip">폰으로 여십시오. 그 자리에서 <b>초대 코드</b>까지 드리면 4분이면 끝납니다.</p>
   </div>
 
   <div class="warn">
