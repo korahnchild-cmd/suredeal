@@ -1500,7 +1500,10 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
       </div>
     </div>
 
-    <div class="cust-grid" style="grid-template-columns:1fr;max-width:520px;margin:0 auto">
+    <!-- ⚠️ margin 을 «단축 속성»으로 쓰지 않는다 — `margin:0 auto` 는 .cust-grid 의
+         `margin-top:42px` 를 0으로 덮어써서, 위 「보증의 주체는 상사입니다」 박스에
+         보증서가 그대로 달라붙었다 (2026.09.04 대표 지적). 위·아래를 따로 적는다. -->
+    <div class="cust-grid" style="grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto;margin-top:46px">
       <!-- 보증서 -->
       <div class="reveal">
         
