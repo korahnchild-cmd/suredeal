@@ -210,6 +210,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 /* ============ S7 보증서 ============ */
 #s7 .body{padding-top:16px}
 .cert-outer{background:linear-gradient(155deg,#1D3160 0%,#0C1730 70%);border-radius:22px;padding:9px;box-shadow:var(--shadow-pop)}
+.cert-img{display:block;width:100%;height:auto;border-radius:15px}
 .cert{background:var(--cert-paper);border-radius:15px;padding:26px 22px 22px;position:relative;overflow:hidden}
 .cert:before{content:"";position:absolute;inset:8px;border:1px solid var(--cert-line);border-radius:9px;pointer-events:none}
 .cert:after{content:"";position:absolute;inset:11px;border:2.5px solid #E9E5D6;border-radius:7px;pointer-events:none}
@@ -803,7 +804,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
       </div>
       <h1>계약이 확정되었습니다</h1>
       <p class="own-line"><b>그랜저 IG 2.5</b> · 12가 3456</p>
-      <div class="mng"><small>관리번호</small>SD-2608-0142</div>
+      <div class="mng"><small>관리번호</small>SD-2608-0002</div>
     </div>
     <div class="verify-card rise" style="animation-delay:.15s">
       <div class="vc-title">📋 오늘 고객님이 직접 확인하셨습니다</div>
@@ -829,49 +830,17 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 <section class="screen" id="s7">
   <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><a class="home-btn" href="biz/">← 홈</a><div class="demo-tag">DEMO</div></div>
   <div class="body">
-    <div class="cert-outer"><div class="cert">
-      <span class="corner c-tl"><svg viewBox="0 0 22 22"><use href="#i-corner"/></svg></span>
-      <span class="corner c-tr"><svg viewBox="0 0 22 22"><use href="#i-corner"/></svg></span>
-      <span class="corner c-br"><svg viewBox="0 0 22 22"><use href="#i-corner"/></svg></span>
-      <span class="corner c-bl"><svg viewBox="0 0 22 22"><use href="#i-corner"/></svg></span>
-      <svg class="wm" viewBox="0 0 24 24"><path fill="#131F38" d="M12 2 4.5 5v6c0 4.8 3.2 9.1 7.5 10.4 4.3-1.3 7.5-5.6 7.5-10.4V5L12 2Z"/></svg>
-
-      <div class="cert-head">
-        <div class="cert-issuer">굿카닷컴</div>
-        <div class="cert-title">계약 보증서</div>
-        <div class="cert-no">NO. SD-2608-0142 &nbsp;·&nbsp; 발급일 2026. 8. 8</div>
-      </div>
-
-          <div class="cert-body">
-        <div class="cert-row"><span>차 량</span><b>그랜저 IG 2.5 (2021) · 12가 3456</b></div>
-        <div class="cert-row"><span>매수인</span><b>이O진 <span style="color:var(--green);font-size:11px;font-weight:800">· 본인인증 완료</span></b></div>
-        <div class="cert-row"><span>판매 상사</span><b>굿카닷컴 · 담당 김성훈</b></div>
-
-        <div class="cert-sec">성능 보증 내용</div>
-        <div class="cert-li">성능보증보험 가입 차량 — <b>주요 장치 무상 보증</b><br><span style="opacity:.75">인도일부터 30일 또는 2,000km 중 <b>먼저 도래한 시점까지</b></span></div>
-            <div class="cert-li">보증 범위는 <b>성능·상태점검기록부의 점검 항목</b>과 보험사 약관을 따릅니다</div>
-        <div class="cert-li ex">소모성 부품은 보증 제외 — 계약 시 상호 확인</div>
-
-        <div class="cert-sec">합의 기록</div>
-            <div class="cert-li"><b>엔진오일·오일필터 교환 후 인도</b> (2026. 8. 12까지)</div>
-        <div class="cert-li">타이어 마모 → 차량가액 30만 원 할인 반영 · 추가 조치 없음 합의</div>
-        <div class="cert-li">전 항목 매수인 본인 확인 · 전자서명 (2026. 8. 8 14:28)</div>
-
-        <div class="cert-foot">
-          <div class="cert-keep">
-                <b>만료 없음</b>
-                <span>나중에 차를 파실 때도<br>같은 주소로 열립니다</span>
-              </div>
-              <div class="seal-area">
-            <div class="seal"><span class="s-ring"></span><span class="s-in">굿카<br>닷&nbsp;컴</span></div>
-            <div class="seal-name">굿카닷컴 대표 김성훈</div>
-            <div class="seal-date">SUREDEAL 발급 시스템 · 2026. 8. 8</div>
-          </div>
-        </div>
-        <div class="cert-legal">보증 이행 주체 <b>굿카닷컴</b> · 사업자등록번호 698-26-01844<br>
-          발급·기록 슈어딜 — 본 보증서의 보증·약속에 대한 책임은 판매 상사에 있습니다.</div>
-      </div>
-    </div></div>
+    <!-- ★ 앱의 «실제» 보증서를 렌더한 이미지다 (2026.09.04 대표 지시).
+         랜딩(index.html·biz/index.html)은 2026.09.02 에 이미 실물 이미지로 바꿨는데
+         데모만 옛 CSS 목업으로 남아 있었다 — 시연물이 실물과 다른 것을 보여주고 있었다.
+         ⚠️ 앱 보증서를 고치면 이 이미지를 «다시 뽑아» 교체한다 — 다시 그리지 않는다.
+         ⚠️ 아래 `.cert-*` CSS 는 옛 목업의 것이고 지금은 쓰이지 않는다.
+            데모는 원복 이력이 있는 파일이라 지우지 않고 둔다. -->
+    <div class="cert-outer">
+      <img class="cert-img" src="cert-sample.webp" width="1400" height="1959"
+           alt="계약 보증서 — 굿카닷컴이 발급한 문서. 차량과 매수인 본인인증 완료 표시, 성능 보증 내용, 합의 기록 3건, 상사 인장과 «보증 이행 주체는 판매 상사»라는 문구가 적혀 있습니다."
+           decoding="async">
+    </div>
 
     <!-- 보증서 화면 = 손님의 상시 허브 (§2-13) -->
     <div class="hub">
@@ -935,7 +904,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
           <div class="vt">그랜저 IG 2.5</div>
           <div class="vs2">이O진 님 · 2026. 8. 8(토) 계약 · 인도 완료</div>
         </div>
-        <span class="no">SD-2608-0142</span>
+        <span class="no">SD-2608-0002</span>
       </div>
 
       <div class="lk-sec">고객이 직접 확인한 항목</div>
@@ -944,7 +913,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
         <div class="lk-row"><span class="ck2">✓</span>보증 범위와 제외 항목<span class="tm2">14:23</span></div>
         <div class="lk-row"><span class="ck2">✓</span>소모성 부품 보증 제외<span class="tm2">14:24</span></div>
         <div class="lk-row"><span class="ck2">✓</span>거래 조건 · 인도까지 추가 청구 비용 없음<span class="tm2">14:27</span></div>
-        <div class="lk-row"><span class="ck2">✓</span>기재된 내용 외 구두 약속 없음<span class="tm2">14:28</span></div>
+        <div class="lk-row"><span class="ck2">✓</span>기재된 내용 외 구두 약속 없음<span class="tm2">14:29</span></div>
       </div>
 
       <div class="lk-sec">거래 금액 <span style="font-weight:700;letter-spacing:0;color:var(--faint)">· 딜러 확인용</span></div>
@@ -1266,7 +1235,7 @@ function toast(msg){
   t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2600);
 }
 function shareCert(){
-  const data={title:'슈어딜 보증서',text:'[슈어딜 보증서] 그랜저 IG 2.5 (12가 3456) · NO. SD-2608-0142\n본인인증 기반으로 확정된 계약 보증서입니다.',url:location.href};
+  const data={title:'슈어딜 보증서',text:'[슈어딜 보증서] 그랜저 IG 2.5 (12가 3456) · NO. SD-2608-0002\n본인인증 기반으로 확정된 계약 보증서입니다.',url:location.href};
   if(navigator.share){navigator.share(data).catch(()=>{});}
   else{const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600);}
 }
@@ -1288,7 +1257,7 @@ function clearSig(){
       <div class="rec-c">
         <div class="rec-r"><span class="ck2">✓</span>성능·상태점검기록부 확인<i>8. 8(토) 14:25</i></div>
         <div class="rec-r"><span class="ck2">✓</span>주행거리 41,820km<i>계약 시점</i></div>
-        <div class="rec-r"><span class="ck2">✓</span>본인인증 계약 · 전자서명<i>8. 8(토) 14:28</i></div>
+        <div class="rec-r"><span class="ck2">✓</span>본인인증 계약 · 전자서명<i>8. 8(토) 14:29</i></div>
         <div class="rec-r"><span class="ck2">✓</span>합의 기록 1건<i>타이어 마모 → 30만 원 반영</i></div>
       </div>
       <div class="rec-msg"><b>나중에 이 차를 파실 때, 이 기록이 그대로 남아 있습니다.</b><br>
