@@ -494,6 +494,8 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
   border-left:3px solid var(--amber);border-radius:11px;padding:10px 12px;margin-bottom:11px;
   font-size:13px;color:var(--amber);font-weight:650;letter-spacing:-.2px;line-height:1.45}
 .ow-todo i{font-style:normal;font-weight:900;flex-shrink:0}
+/* ⚠️ 텍스트는 «한 덩어리»로 둔다 — 조각마다 flex item 이 되면 gap 이 끼고 줄바꿈이 깨진다 */
+.ow-todo>span{min-width:0}
 .ow-todo b{font-weight:850}
 .ow-dl{display:grid;grid-template-columns:26px 1fr auto;gap:8px 9px;align-items:center;
   background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 12px;margin-bottom:7px}
@@ -505,6 +507,29 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
 .ow-dl .bar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--blue),#4A76F0)}
 .ow-dl .ct{font-size:11.5px;color:var(--faint);font-weight:700;text-align:right}
 .ow-dl .bar{margin-top:1px}
+/* ---------- 커넥트 라이브 (목업 안) ----------
+   ★ 이 섹션이 「단순 대시보드가 아니다」를 말이 아니라 «모양»으로 말하는 자리다.
+   ★ 어두운 면으로 깐다 — 위 딜러 줄(흰 카드)과 성격이 다른 «기계가 돌고 있는 자리»임을 색으로 가른다.
+   ⚠️ 각주(`.ow-live-n`)를 지우지 마라. NICE·AI 문서검증이 10월 순차 적용이라
+      각주 없이 「연결됨」만 두면 표시광고법상 부당표시가 된다. */
+.ow-live{margin-top:11px;background:var(--deep);border-radius:13px;padding:13px 14px;
+  background-image:radial-gradient(120% 160% at 0% 0%,#152A55 0%,var(--deep) 60%)}
+.ow-live-h{display:flex;align-items:center;gap:7px;margin-bottom:9px}
+.ow-live-h b{color:#fff;font-size:13px;font-weight:850;letter-spacing:-.3px}
+.ow-live-pill{font-size:9.5px;font-weight:900;letter-spacing:.06em;color:#8FE9BE;
+  border:1px solid rgba(143,233,190,.45);border-radius:999px;padding:1px 6px}
+.ow-lr{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:12.2px;
+  color:#C3D2EC;font-weight:600;letter-spacing:-.2px}
+.ow-lr i{flex:0 0 auto;width:6px;height:6px;border-radius:50%;background:#2FD48A;
+  box-shadow:0 0 0 3px rgba(47,212,138,.18)}
+.ow-lr em{margin-left:auto;font-style:normal;font-size:11.5px;font-weight:800;color:#8FE9BE;letter-spacing:-.1px}
+.ow-live-n{margin-top:9px;padding-top:9px;border-top:1px solid rgba(195,210,236,.16);
+  font-size:11px;color:#9FB4DD;line-height:1.55;letter-spacing:-.1px}
+@media(max-width:430px){
+  .ow-lr{font-size:11.6px;gap:7px}
+  .ow-lr em{font-size:11px}
+}
+
 .ow-list{display:grid;gap:11px;list-style:none}
 .ow-list li{position:relative;padding-left:22px;font-size:15.2px;line-height:1.7;color:var(--ink-2);letter-spacing:-.2px}
 .ow-list li:before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;
@@ -1171,6 +1196,7 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
     <div class="nav-cta">
       <a href="#how" class="nav-link">작동 방식</a>
       <a href="#cust" class="nav-link">손님이 받는 것</a>
+      <a href="#owner" class="nav-link">슈어딜 커넥트</a>
       <a href="#versus" class="nav-link">무엇이 다른가</a>
       <a href="#partner" class="nav-link">인증 상사</a>
       <a href="#aftercall" class="nav-link">출고 후</a>
@@ -1187,6 +1213,7 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
     <div class="wrap">
       <a href="#how" class="np-link">작동 방식</a>
       <a href="#cust" class="np-link">손님이 받는 것</a>
+      <a href="#owner" class="np-link">슈어딜 커넥트</a>
       <a href="#versus" class="np-link">무엇이 다른가</a>
       <a href="#partner" class="np-link">인증 상사</a>
       <a href="#aftercall" class="np-link">출고 후</a>
@@ -2231,9 +2258,10 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
 <section id="owner" class="pad">
   <div class="wrap">
     <div class="reveal">
-      <div class="eyebrow">대표가 보는 것</div>
-      <h2 class="sec">딜러 실적은<br>계약하면 저절로 쌓입니다.</h2>
-      <p class="sec-lead">따로 적어 두실 필요가 없습니다. 딜러가 계약을 슈어딜로 하면 그대로 정리됩니다.
+      <div class="eyebrow">슈어딜 커넥트</div>
+      <h2 class="sec">보여주는 화면이 아닙니다.<br>대신 확인하는 화면입니다.</h2>
+      <p class="sec-lead">국세청·본인확인·알림톡·성능점검 유효기간이 <b>뒤에서 돌고</b>, 그 결과가 한 화면에 모입니다.
+        따로 적어 두실 필요가 없고, <b>챙길 것이 먼저 뜹니다.</b>
         판매관리 시스템을 따로 사시는 게 아닙니다.</p>
     </div>
 
@@ -2243,21 +2271,36 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
           <div><span>이번 달 계약</span><b>9<em>건</em></b></div>
           <div><span>매매금액</span><b>2억 2,210<em>만 원</em></b></div>
         </div>
-        <div class="ow-todo"><i>!</i>이전등록 기한 임박 <b>1건</b> · 확인 없는 링크 <b>1건</b></div>
+        <div class="ow-todo"><i>!</i><span>성능점검 만료 <b>2대</b> · 이전등록 기한 <b>1건</b><br>확인 없는 링크 <b>1건</b> · 잔금 대기 <b>1건</b></span></div>
         <div class="ow-dl"><span class="av">김</span><span class="nm">김성훈</span><span class="am">1억 1,240만</span>
           <span class="bar"><i style="width:100%"></i></span><span class="ct">4건</span></div>
         <div class="ow-dl"><span class="av">박</span><span class="nm">박준호</span><span class="am">6,850만</span>
           <span class="bar"><i style="width:61%"></i></span><span class="ct">3건</span></div>
         <div class="ow-dl"><span class="av">이</span><span class="nm">이재민</span><span class="am">4,120만</span>
           <span class="bar"><i style="width:37%"></i></span><span class="ct">2건</span></div>
+
+        <!-- ★ 커넥트 라이브 — 이 섹션의 «핵심»이다.
+             「대시보드가 아니다」를 말로 하지 않고 보여주는 자리다. 뒤에서 돌고 있는 것들의 목록.
+             ⚠️ NICE·AI 문서검증은 10월 순차 적용이라 아래 각주를 «반드시» 함께 둔다(표시광고법). -->
+        <div class="ow-live">
+          <div class="ow-live-h"><b>커넥트 라이브</b><span class="ow-live-pill">LIVE</span></div>
+          <div class="ow-lr"><i></i>국세청 API · 사업자 진위확인<em>연결됨</em></div>
+          <div class="ow-lr"><i></i>NICE 본인확인 · PASS<em>연결됨</em></div>
+          <div class="ow-lr"><i></i>카카오 비즈메시지 · 알림톡<em>연결됨</em></div>
+          <div class="ow-lr"><i></i>성능점검 유효기간 엔진<em>연결됨</em></div>
+          <div class="ow-lr"><i></i>슈어딜 AI 문서검증 엔진<em>연결됨</em></div>
+          <div class="ow-live-n">NICE 본인확인과 AI 문서검증은 2026년 10월 순차 적용됩니다.</div>
+        </div>
       </div>
 
       <div class="ow-txt reveal">
         <ul class="ow-list">
           <li><b>딜러별 건수·매매금액</b>이 이번 달·지난달 대비로 쌓입니다</li>
           <li>계약 → 인도 → 이전등록 <b>진행 상태</b>가 한눈에 보입니다</li>
-          <li>딜러별 <b>할인</b> — 얼마를 할인했는지</li>
-          <li><b>오늘 챙기실 것</b> — 이전등록 기한, 확인 없는 링크가 먼저 뜹니다</li>
+          <li>딜러별 <b>가격 조정</b> — 얼마를 조정했는지</li>
+          <li><b>오늘 챙기실 것</b> — 성능점검 만료, 이전등록 기한, 확인 없는 링크, 잔금 대기가 먼저 뜹니다</li>
+          <li><b>재고 성능점검 유효기간</b>을 대신 셉니다 — 만료된 기록부로 계약하는 일이 없습니다</li>
+          <li><b>차량번호로 바로 조회</b> — 「그 차 다시 팔려는데요」 전화를 받은 그 자리에서 찾습니다</li>
         </ul>
         <div class="ow-note"><span>✓</span><div><b>딜러 본인도 자기 실적 화면을 봅니다.</b><br>
           대표님만 보는 화면이 아닙니다. 딜러도 같은 화면에서 자기 숫자를 그대로 봅니다.</div></div>
