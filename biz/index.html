@@ -511,7 +511,9 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
    ★ 이 섹션이 「단순 대시보드가 아니다」를 말이 아니라 «모양»으로 말하는 자리다.
    ★ 어두운 면으로 깐다 — 위 딜러 줄(흰 카드)과 성격이 다른 «기계가 돌고 있는 자리»임을 색으로 가른다.
    ⚠️ 각주(`.ow-live-n`)를 지우지 마라. NICE·AI 문서검증이 10월 순차 적용이라
-      각주 없이 「연결됨」만 두면 표시광고법상 부당표시가 된다. */
+      각주 없이 「연결됨」만 두면 표시광고법상 부당표시가 된다.
+   ★ 09-24 대표 결정 — 아직 안 붙은 줄은 라벨부터 「10월 적용 예정」(`.soon`)이다. 각주는 그대로 둔다.
+      붙는 날 그 줄만 `.soon`을 빼고 「연결됨」으로 되돌린다. 날짜가 10월을 넘기면 라벨·각주를 같이 고칠 것. */
 .ow-live{margin-top:11px;background:var(--deep);border-radius:13px;padding:13px 14px;
   background-image:radial-gradient(120% 160% at 0% 0%,#152A55 0%,var(--deep) 60%)}
 .ow-live-h{display:flex;align-items:center;gap:7px;margin-bottom:9px}
@@ -523,6 +525,9 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
 .ow-lr i{flex:0 0 auto;width:6px;height:6px;border-radius:50%;background:#2FD48A;
   box-shadow:0 0 0 3px rgba(47,212,138,.18)}
 .ow-lr em{margin-left:auto;font-style:normal;font-size:11.5px;font-weight:800;color:#8FE9BE;letter-spacing:-.1px}
+.ow-lr.soon{color:#9FB0CF}
+.ow-lr.soon i{background:transparent;box-shadow:inset 0 0 0 1.5px #7F93B8}
+.ow-lr.soon em{color:#A9B8D6;font-weight:700}
 .ow-live-n{margin-top:9px;padding-top:9px;border-top:1px solid rgba(195,210,236,.16);
   font-size:11px;color:#9FB4DD;line-height:1.55;letter-spacing:-.1px}
 @media(max-width:430px){
@@ -2281,14 +2286,15 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
 
         <!-- ★ 커넥트 라이브 — 이 섹션의 «핵심»이다.
              「대시보드가 아니다」를 말로 하지 않고 보여주는 자리다. 뒤에서 돌고 있는 것들의 목록.
-             ⚠️ NICE·AI 문서검증은 10월 순차 적용이라 아래 각주를 «반드시» 함께 둔다(표시광고법). -->
+             ⚠️ NICE·AI 문서검증은 10월 순차 적용이라 아래 각주를 «반드시» 함께 둔다(표시광고법).
+             09-24 대표 결정: 두 줄은 라벨도 「10월 적용 예정」(.soon). -->
         <div class="ow-live">
           <div class="ow-live-h"><b>커넥트 라이브</b><span class="ow-live-pill">LIVE</span></div>
           <div class="ow-lr"><i></i>국세청 API · 사업자 진위확인<em>연결됨</em></div>
-          <div class="ow-lr"><i></i>NICE 본인확인 · PASS<em>연결됨</em></div>
+          <div class="ow-lr soon"><i></i>NICE 본인확인 · PASS<em>10월 적용 예정</em></div>
           <div class="ow-lr"><i></i>카카오 비즈메시지 · 알림톡<em>연결됨</em></div>
           <div class="ow-lr"><i></i>성능점검 유효기간 엔진<em>연결됨</em></div>
-          <div class="ow-lr"><i></i>슈어딜 AI 문서검증 엔진<em>연결됨</em></div>
+          <div class="ow-lr soon"><i></i>슈어딜 AI 문서검증 엔진<em>10월 적용 예정</em></div>
           <div class="ow-live-n">NICE 본인확인과 AI 문서검증은 2026년 10월 순차 적용됩니다.</div>
         </div>
       </div>
