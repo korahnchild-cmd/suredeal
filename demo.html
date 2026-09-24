@@ -132,7 +132,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 /* ============ S2 계약 내용 ============ */
 .veh{display:flex;gap:15px;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--line-2);margin-bottom:6px}
 .veh-thumb{width:62px;height:62px;border-radius:16px;background:linear-gradient(140deg,#22345E,#0C1730);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
-.veh-thumb svg{width:34px;height:34px}
+.veh-thumb svg{width:56px;height:56px} /* 09-24 대표: 차 그림을 더 크게 */
 .veh h2{font-size:17.5px;font-weight:800;letter-spacing:-.4px}
 .veh .plate{display:inline-block;font-size:11.5px;font-weight:700;border:1.3px solid var(--ink);border-radius:5px;padding:1.5px 7px;margin-top:5px;letter-spacing:.6px}
 .veh .meta{font-size:12.5px;color:var(--sub);margin-top:5px}
@@ -166,7 +166,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 .tb-row.sum b{color:var(--blue-d);font-size:17px;font-weight:800}
 .tb-badge{display:inline-block;font-size:10.5px;font-weight:800;color:var(--green);background:var(--green-soft);border-radius:5px;padding:3px 8px;margin-top:9px}
 
-/* ============ S4 합의 조정 ============ */
+/* ============ S4 합의 내용 ============ */
 .adj{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:17px 17px 17px 20px;margin-bottom:11px;overflow:hidden;box-shadow:var(--shadow-card)}
 .adj:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4.5px;background:var(--blue)}
 .adj.promise:before{background:var(--green)}
@@ -558,6 +558,46 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 /* ============ D+ 카운터 (보증서) ============ */
 .dplus{display:inline-flex;align-items:center;gap:7px;margin-top:11px;background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:999px;padding:6px 14px;font-size:11.5px;font-weight:700;color:var(--blue-d);letter-spacing:-.1px}
 .dplus b{font-weight:850;letter-spacing:.3px}
+
+/* ===== 2026-09-24 실물(앱) 정합 — 앱 창 ===== */
+.agree-line{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.6;color:var(--ink-2);margin:0 2px 12px;cursor:pointer;text-align:left}
+.agree-line a{color:var(--blue);text-decoration:underline}
+.agree-line .abox{flex:0 0 auto;width:20px;height:20px;border-radius:6px;border:1.6px solid #B8C2D6;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:transparent;background:#fff;margin-top:1px}
+.agree-line.on .abox{background:var(--blue);border-color:var(--blue);color:#fff}
+#s0 .agree-line{color:#C9D5EE;margin:16px auto 0;max-width:330px;justify-content:center}
+/* 동의 줄이 고정 CTA 밑에 깔리지 않게 — 첫 화면 본문 아래 여백을 CTA 높이만큼 */
+#s0 .body{padding-bottom:178px}
+/* 가입/미가입 전환 스위치는 s2·s3에서만(go()가 켠다) — 첫 로드 때 첫 화면 방패를 가리던 것 */
+#demoSw{display:none}
+#s0 .agree-line a{color:#A9C1FF}
+#s0 .agree-line b{color:#fff}
+#s0 .agree-line .abox{background:rgba(255,255,255,.06);border-color:#7E92BF}
+#s0 .agree-line.on .abox{background:var(--blue);border-color:var(--blue)}
+.g-when{font-size:11.5px;color:var(--faint);text-align:center;margin:-2px 0 10px}
+.cert-outer{cursor:zoom-in}
+.cert-acts{display:flex;gap:8px;margin-top:10px}
+.cert-acts button{flex:1;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 0;font:inherit;font-size:13.5px;font-weight:700;color:var(--ink);cursor:pointer}
+.g-caveat{font-size:12px;line-height:1.65;color:var(--sub);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin:12px 0 0}
+.g-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 16px;margin-top:14px}
+.g-card b{font-size:14px;font-weight:800}
+.g-card p{font-size:12.5px;color:var(--sub);line-height:1.6;margin:5px 0 0}
+.g-card label{display:block;font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--faint);margin-bottom:4px}
+.g-card .doc-btn{margin-top:10px}
+.doc-hint.done{color:var(--green)}
+/* 기록부·보증서 뷰어 — 앱 InspectionViewer 와 같은 규칙: 가로 문서를 세로 화면에서 열면 90° 돌려 크게 */
+.rv{position:fixed;inset:0;z-index:140;background:#0B1224;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .2s,visibility 0s .2s}
+.rv.on{opacity:1;visibility:visible;transition-delay:0s}
+.rv-bar{display:flex;align-items:center;gap:8px;padding:calc(12px + env(safe-area-inset-top)) 14px 10px;color:#fff}
+.rv-bar b{font-size:14px;font-weight:800;letter-spacing:-.3px;white-space:nowrap}
+.rv-bar small{font-size:11px;color:#9FB0CF;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rv-bar .sp{flex:1}
+.rv-bar button{flex:0 0 auto;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:10px;padding:7px 11px;font:inherit;font-size:12.5px;font-weight:700;cursor:pointer}
+.rv-stage{flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;padding:6px;-webkit-overflow-scrolling:touch;min-height:0}
+.rv-stage img{max-width:100%;max-height:100%;display:block;border-radius:4px;background:#fff;cursor:zoom-in}
+.rv-stage.zoom{align-items:flex-start;justify-content:flex-start}
+.rv-stage.zoom img{max-width:none;max-height:none;cursor:zoom-out}
+.rv-foot{padding:10px 16px calc(14px + env(safe-area-inset-bottom));color:#9FB0CF;font-size:11.5px;text-align:center;line-height:1.6}
+.rv-foot b{color:#fff}
 </style>
 </head>
 <body>
@@ -594,15 +634,19 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
       <div class="shop-card">
         <div class="shop-row"><span>판매 상사</span><b>굿카닷컴 · 대구 동구</b></div>
         <div class="shop-row"><span>담당 딜러</span><b>김성훈</b></div>
-        <div class="shop-row"><span>계약 차량</span><b>그랜저 IG 2.5 (2021)</b></div>
+        <div class="shop-row"><span>계약 차량</span><b>그랜저 IG 2.5 (2022)</b></div>
+        <div class="shop-row"><span>차량번호</span><b>12가 3456</b></div>
       </div>
       <div class="secure-line">🔒 본인인증 기반 · 모든 확인 기록이 안전하게 보관됩니다</div>
+      <!-- 앱 첫 화면과 같다 — 약관·개인정보 동의(필수)를 눌러야 본인확인으로 넘어간다 -->
+      <div class="agree-line" id="agLine" onclick="tgAgree(event)"><span class="abox">✓</span><span><a href="terms.html" target="_blank" rel="noopener">이용약관</a> · <a href="privacy.html" target="_blank" rel="noopener">개인정보 수집·이용</a> 동의 <b>(필수)</b></span></div>
     </div>
   </div>
-  <div class="cta-wrap"><button class="cta" onclick="go('s1')">본인인증하고 시작하기</button>
+  <div class="cta-wrap">
+    <button class="cta" id="startBtn" disabled onclick="go('s1')">본인확인하고 계약 확인하기</button>
     <div style="text-align:center;margin-top:12px"><span class="back-link" style="margin:0;color:#7E92BF"
       onclick="go('s8')">딜러·상사 화면 — 빠른 조회 보기 →</span></div>
-  <p class="hint">고객님 명의의 휴대폰으로 본인 확인을 진행합니다</p></div>
+  <p class="hint">본인 명의 휴대폰으로 확인합니다. 1분이면 끝납니다.</p></div>
 </section>
 
 <!-- ============ 1. PASS ============ -->
@@ -645,38 +689,27 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
   </div>
   <div class="body">
     <p class="eyebrow">STEP 2 — 계약 내용</p>
-    <h1>계약 내용을<br>확인해 주세요</h1>
-    <p class="lead">아래 내용은 작성된 매매계약서와 동일합니다.</p>
+    <h1>이O진님,<br>확인해 주세요</h1>
+    <p class="lead">굿카닷컴 · 담당 김성훈</p>
     <div class="card rise">
       <div class="veh">
         <div class="veh-thumb"><svg><use href="#i-car"/></svg></div>
         <div>
           <h2>그랜저 IG 2.5 가솔린</h2>
           <span class="plate">12가 3456</span>
-          <div class="meta" id="vehMeta">2021년식 · 41,820km</div>
+          <div class="meta" id="vehMeta">2022년식 · 18,334km</div>
         </div>
       </div>
-      <div class="kv"><span>차량 매매금액</span><b class="price">2,780<small style="font-size:13px;font-weight:700">만 원</small></b></div>
-      <div class="kv"><span>인도 예정일</span><b>2026. 8. 12 (수)</b></div>
-
-      <div class="paybox">
-        <div class="ph2"><i>₩</i>입금 확인 기록</div>
-        <div class="pay-r"><span>계약금 <span class="when">8. 8(토) 14:05</span></span><b>300만 원 <span style="color:var(--green);font-size:11px;font-weight:800">입금 확인</span></b></div>
-        <div class="pay-r" id="payRest"><span>잔금 <span class="when">8. 12(수) 예정</span></span><b>2,520만 원</b></div>
-        <div class="pay-sub"><b>✓ 인도까지 추가로 청구되는 비용은 없습니다</b></div>
-        <div class="pay-shot">
-          <div class="thumb"><span></span><span></span><span></span><span></span></div>
-          <div>딜러가 첨부한 <b>입금 확인 화면</b>입니다.<br>계약 기록과 함께 보관되어 나중에 다시 확인하실 수 있습니다.</div>
-        </div>
-        <div class="pay-note">※ 세법상 영수증·현금영수증이 아니라, 당사자 간 <b>입금 사실을 남기는 기록</b>입니다.
-          현금영수증은 판매 상사에 별도로 요청해 주세요.</div>
-      </div>
+      <div class="kv"><span>매매금액</span><b class="price">2,780<small style="font-size:13px;font-weight:700">만 원</small></b></div>
+      <div class="kv"><span>인도 예정일</span><b>2026. 8. 8 (토)</b></div>
+      <div class="kv"><span>성능보증보험</span><b id="insKv">가입</b></div>
+      <div class="pay-note" style="margin-top:8px">매매금액은 <b>차량 금액</b>입니다. 이전 등록 비용 등은 담당 딜러가 따로 안내해 드립니다.</div>
     </div>
     <div class="card rise" style="animation-delay:.08s">
       <div class="kv" style="padding-top:2px"><span>판매 상사</span><b>굿카닷컴 · 대구 동구</b></div>
       <div class="kv"><span>담당 딜러</span><b>김성훈 &nbsp;010-1234-5678</b></div>
-      <div class="kv"><span>계약 일시</span><b>2026. 8. 8 (토) 14:20</b></div>
     </div>
+    <p class="lead" style="text-align:center;font-size:12.5px;margin-top:14px">한 가지라도 다르면 다음으로 넘어가지 마시고<br>담당 딜러에게 바로 말씀해 주세요.</p>
   </div>
   <div class="cta-wrap"><button class="cta" onclick="go('s3')">계약 내용을 확인했습니다</button></div>
 </section>
@@ -694,7 +727,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
   <div class="body">
     <p class="eyebrow">STEP 3 — 고지 사항 확인</p>
     <h1>안내를 읽고<br>직접 체크해 주세요</h1>
-    <p class="lead">담당 딜러에게 설명받은 내용입니다. 한 항목씩 확인 후 체크해 주세요.</p>
+    <p class="lead">담당 딜러에게 설명받은 내용입니다. 한 항목씩 확인 후 체크해 주세요.<br>한 번 확인하시면 되돌릴 수 없으니 읽어보시고 눌러 주세요.</p>
 
     <div class="group" id="grpA1">
       <div class="group-title"><span class="gnum">A</span>보증 안내<span class="gsub">4개 항목</span></div>
@@ -704,16 +737,15 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
       <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>중고차 특성상 소모품은 사용 정도에 따른 마모 상태이며, <b>언제든 교환 시기가 도래할 수 있음</b>을 확인했습니다.</div></div>
     </div>
 
-    <!-- 20만km 초과 차량: 보험 미가입 → 법정 보증 안내로 대체 (A그룹 교체) -->
+    <!-- 성능보증보험 미가입 차량 — 앱 disclosures.ts N1~N4 그대로. ⛔ 미가입 «사유»는 적지 않는다(앱 결정 4) -->
     <div class="group" id="grpA2" style="display:none">
-      <div class="group-title"><span class="gnum">A</span>보증 안내<span class="gsub">보험 미가입 차량 · 4개 항목</span></div>
+      <div class="group-title"><span class="gnum">A</span>수리 책임 안내<span class="gsub">4개 항목</span></div>
       <div class="km-warn" style="margin:0 0 10px"><span>!</span><div>
-        본 차량은 <b>주행거리 20만km를 초과</b>하여 성능·상태점검 책임보험(성능보증보험) <b>가입 대상이 아닙니다.</b>
-        아래 내용을 반드시 확인해 주세요.</div></div>
+        본 차량은 성능·상태점검 책임보험(성능보증보험) <b>가입 대상이 아닙니다.</b> 아래 내용을 반드시 확인해 주세요.</div></div>
       <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>본 차량은 <span class="warn">성능보증보험에 가입되지 않은 차량</span>이며, 보험을 통한 무상 수리는 <span class="warn">적용되지 않습니다.</span></div></div>
       <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>다만 <b>자동차관리법에 따른 판매자의 하자담보책임</b>은 그대로 유지되며, 성능·상태점검 기록과 다른 사실이 확인되면 법에 정한 바에 따라 조치를 요구하실 수 있습니다.</div></div>
-      <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>보험이 없는 대신 <b>판매 상사가 직접 약속한 보증 내용</b>은 다음 단계 &lt;합의 조정 내역&gt;에 기재되며, 기재된 내용만 효력이 있습니다.</div></div>
-      <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>주행거리 20만km 초과 차량 특성상 <b>주요 장치에도 노후에 따른 고장이 발생할 수 있음</b>을 확인했으며, 이를 감안한 가격임을 이해했습니다.</div></div>
+      <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>보험이 없는 대신 <b>판매 상사가 직접 약속한 사항</b>은 다음 단계 〈합의 내용 확인〉에 기재되며, <b>기재된 내용만 효력이 있습니다.</b></div></div>
+      <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>중고차 특성상 <b>주요 장치에도 노후에 따른 고장이 발생할 수 있음</b>을 확인했으며, 이를 감안한 가격임을 이해했습니다.</div></div>
     </div>
 
     <div class="group">
@@ -737,7 +769,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
   <div class="cta-wrap"><button class="cta" id="chkBtn" disabled onclick="go('s4')">모두 확인했습니다 (0/9)</button></div>
 </section>
 
-<!-- ============ 4. 합의 조정 ============ -->
+<!-- ============ 4. 합의 내용 (앱 D4) ============ -->
 <section class="screen" id="s4">
   <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><a class="home-btn" href="biz/">← 홈</a><div class="demo-tag">DEMO</div></div>
   <div class="steps">
@@ -748,25 +780,24 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
     <div class="step"><div class="bar"></div><div class="nm">서명</div></div>
   </div>
   <div class="body">
-    <p class="eyebrow">STEP 4 — 합의 조정 내역</p>
-    <h1>이번 계약에서<br>합의된 내용입니다</h1>
-    <p class="lead">고객님과 딜러가 협의한 내용을 문서로 남깁니다.</p>
+    <p class="eyebrow">STEP 4 — 합의 내용</p>
+    <h1>합의 내용을<br>확인해 주세요</h1>
+    <p class="lead">계약서 금액 외에 오간 내용을 기록으로 남깁니다.</p>
 
     <div class="adj rise">
-      <div class="adj-type">가격 반영 합의</div>
-      <p>타이어 마모 상태를 고객님이 직접 확인하셨고, 이를 반영하여 차량가액에서 <span class="amt">30만 원 할인</span>이 적용되었습니다. 해당 부분에 대한 <b>별도의 추가 조치는 없는 것</b>으로 상호 합의합니다.</p>
+      <div class="adj-type">할인</div>
+      <p><span class="amt">300,000원</span><br>앞에서 확인하신 <b>매매금액에 이미 반영된 금액</b>입니다.<br><span style="font-size:12.5px;color:var(--sub)">명목 — 타이어 마모</span></p>
     </div>
 
     <div class="adj promise rise" style="animation-delay:.08s">
-      <div class="adj-type">판매자 이행 약속</div>
-      <p><b>엔진오일 및 오일필터 교환 후 인도</b>합니다.<br><span style="font-size:12.5px;color:var(--sub)">이행 기한 2026. 8. 12 · 이행 주체 굿카닷컴</span></p>
+      <div class="adj-type">판매 상사가 해드리기로 한 것</div>
+      <p><b>엔진오일 · 오일필터 교환</b><br><span style="font-size:12.5px;color:var(--sub)">2026. 8. 8 (토)까지</span></p>
     </div>
 
-    <div class="chk" onclick="tgSingle(this)" style="margin-top:18px"><div class="box"><svg><use href="#i-check"/></svg></div><div>위 합의 내용을 확인했으며, <b>기재된 내용 외 구두 약속은 없음</b>을 상호 확인합니다.</div></div>
-
-    <div class="note-strip">⚠️ <span>이 페이지에 기재된 내용이 협의의 전부입니다. 기재되지 않은 사항은 계약 조건에 포함되지 않습니다.</span></div>
+    <div class="note-strip">✓ <span>위에 적힌 것 외에는 판매 상사가 추가로 이행할 사항이 없습니다.</span></div>
+    <p class="lead" style="text-align:center;font-size:12.5px;margin-top:14px">들으신 내용과 다르면 넘어가지 마시고<br>담당 딜러에게 바로 말씀해 주세요.</p>
   </div>
-  <div class="cta-wrap"><button class="cta" id="adjBtn" disabled onclick="go('s5')">합의 내용을 확인했습니다</button></div>
+  <div class="cta-wrap"><button class="cta" id="adjBtn" onclick="go('s5')">확인했습니다 · 다음</button></div>
 </section>
 
 <!-- ============ 5. 전자서명 ============ -->
@@ -782,7 +813,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
   <div class="body">
     <p class="eyebrow">STEP 5 — 전자서명</p>
     <h1>마지막으로<br>서명해 주세요</h1>
-    <p class="lead">서명과 동시에 계약이 확정되고, 슈어딜 보증서가 발급됩니다.</p>
+    <p class="lead">확인하신 내용에 대한 전자서명입니다. 서명하시면 계약이 확정됩니다.</p>
     <div class="sig-wrap rise">
       <canvas id="sigpad"></canvas>
       <div class="sig-ph" id="sigPh"><svg viewBox="0 0 24 24" fill="none" stroke="#B3BCCF" stroke-width="1.6"><path d="m16.7 3.3 4 4L8.4 19.6 3 21l1.4-5.4L16.7 3.3Z"/></svg>여기에 손가락으로 서명해 주세요</div>
@@ -790,7 +821,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
     </div>
     <div class="sig-note"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg><span>본 서명은 본인인증(PASS) 기록 및 각 항목의 확인 시각과 함께 안전하게 보관되며, 매매계약의 확인 절차로 사용됩니다.</span></div>
   </div>
-  <div class="cta-wrap"><button class="cta" id="sigBtn" disabled onclick="sealAndGo()">서명 완료 · 계약 확정하기</button></div>
+  <div class="cta-wrap"><button class="cta" id="sigBtn" disabled onclick="sealAndGo()">서명 완료 · 계약 확정</button></div>
 </section>
 
 <!-- ============ 6. 완료 ============ -->
@@ -809,20 +840,20 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
     <div class="verify-card rise" style="animation-delay:.15s">
       <div class="vc-title">📋 오늘 고객님이 직접 확인하셨습니다</div>
       <div class="vc-row"><span class="vc-chk">✓</span><span><b>성능·상태점검기록부</b> — 사고이력·침수여부·주행거리</span></div>
-      <div class="vc-row"><span class="vc-chk">✓</span><span><b>보증 범위와 제외 항목</b> — 주요 장치 30일·2,000km 중 먼저 도래 · 소모품 제외</span></div>
+      <div class="vc-row"><span class="vc-chk">✓</span><span id="vcWarr"><b>보증 범위와 제외 항목</b> — 주요 장치 30일·2,000km 중 먼저 도래 · 소모품 제외</span></div>
       <div class="vc-row"><span class="vc-chk">✓</span><span><b>거래 조건</b> — 인도까지 추가 청구 비용 없음</span></div>
-      <div class="vc-row"><span class="vc-chk">✓</span><span><b>합의 조정 내역 2건</b> — 가격 반영 합의 · 판매자 이행 약속</span></div>
+      <div class="vc-row"><span class="vc-chk">✓</span><span><b>합의 내용 2건</b> — 할인 반영 · 판매 상사 이행 약속</span></div>
       <div class="vc-foot">모든 항목은 고객님 본인인증 상태에서 직접 확인·서명되었으며, 확인 시각과 함께 안전하게 보관됩니다.</div>
     </div>
     <div class="card rise" style="animation-delay:.2s">
       <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>본인인증 완료</b><small>2026. 8. 8 (토) 14:22 · PASS</small></div></div>
-      <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>고지 확인 · 전자서명 완료</b><small>2026. 8. 8 (토) 14:24 · 전 항목 본인 확인</small></div></div>
-      <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>계약 서류 확정 완료</b><small>이전등록 절차가 순차 진행됩니다</small></div></div>
-      <div class="tl-item wait"><div class="tl-dot">4</div><div>이전등록 접수<small>진행 시 알림으로 안내드립니다</small></div></div>
-      <div class="tl-item wait"><div class="tl-dot">5</div><div>등록 완료 · 등록증 발급</div></div>
+      <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>고지 확인 · 전자서명 완료</b><small>2026. 8. 8 (토) 14:29 · 9개 항목 본인 확인</small></div></div>
+      <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>계약 확정</b><small>관리번호 SD-2608-0002 발급</small></div></div>
+      <div class="tl-item wait"><div class="tl-dot">4</div><div>인도<small>오늘 인도 예정 · 인도 후 안내가 알림톡으로 갑니다</small></div></div>
+      <div class="tl-item wait"><div class="tl-dot">5</div><div>이전등록 완료<small>등록증 사본은 보증서 화면에서 열립니다</small></div></div>
     </div>
-    <div class="sendlog">💬 <span>진행 상황은 단계마다 <b>카카오 알림톡</b>으로 자동 안내됩니다. 이 페이지는 언제든 다시 열어보실 수 있습니다.</span></div>
-    <button class="btn-line" onclick="go('s7')">슈어딜 보증서 보기</button>
+    <div class="sendlog">💬 <span>인도·이전등록 단계마다 <b>카카오 알림톡</b>으로 안내됩니다. 확인하신 내용과 보증 내용은 보증서 주소에 남아 언제든 다시 열어보실 수 있습니다.</span></div>
+    <button class="btn-line" onclick="go('s7')">계약 보증서 보기</button>
   </div>
 </section>
 
@@ -831,36 +862,37 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
   <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>SUREDEAL</small></div><a class="home-btn" href="biz/">← 홈</a><div class="demo-tag">DEMO</div></div>
   <div class="body">
     <!-- ★ 앱의 «실제» 보증서를 렌더한 이미지다 (2026.09.04 대표 지시).
-         랜딩(index.html·biz/index.html)은 2026.09.02 에 이미 실물 이미지로 바꿨는데
-         데모만 옛 CSS 목업으로 남아 있었다 — 시연물이 실물과 다른 것을 보여주고 있었다.
-         ⚠️ 앱 보증서를 고치면 이 이미지를 «다시 뽑아» 교체한다 — 다시 그리지 않는다.
-         ⚠️ 아래 `.cert-*` CSS 는 옛 목업의 것이고 지금은 쓰이지 않는다.
-            데모는 원복 이력이 있는 파일이라 지우지 않고 둔다. -->
-    <div class="cert-outer">
-      <img class="cert-img" src="cert-sample.webp" width="1400" height="1959"
+         🔁 2026-09-24 재생성(앱 창) — 기록부 실물(2022년식·18,334km)에 맞춰 앱 GuaranteeDoc 의 좌표·CSS 그대로 다시 뽑았다.
+            «이전등록 뒤 다시 열었을 때» 상태다: 인도일 확정 · 이행 약속 «완료». 미가입판은 cert-sample-uninsured.webp.
+         ⚠️ 앱 보증서를 고치면 이 이미지를 «다시 뽑아» 교체한다 — 다시 그리지 않는다. -->
+    <div class="g-when">이전등록이 끝난 뒤(8. 10) 다시 열었을 때의 화면입니다</div>
+    <div class="cert-outer" onclick="openCertBig()">
+      <img class="cert-img" id="certImg" src="cert-sample.webp" width="1400" height="1955"
            alt="계약 보증서 — 굿카닷컴이 발급한 문서. 차량과 매수인 본인인증 완료 표시, 성능 보증 내용, 합의 기록 3건, 상사 인장과 «보증 이행 주체는 판매 상사»라는 문구가 적혀 있습니다."
            decoding="async">
     </div>
+    <div class="cert-acts">
+      <button type="button" onclick="openCertBig()">크게 보기</button>
+      <button type="button" onclick="toast('데모 화면입니다 — 실제 화면에서는 PDF로 저장·인쇄됩니다')">저장 · 인쇄</button>
+    </div>
+    <!-- 보증서 «밖»의 단서 한 줄 — 앱 core/guarantee.ts caveat 그대로. 미가입 건에는 나가지 않는다 -->
+    <p class="g-caveat" id="gCaveat">남은 기간은 날짜 기준입니다. 주행거리는 이 화면에서 확인되지 않습니다. 보증 접수는 판매 상사에 문의해주세요.</p>
 
-    <!-- 보증서 화면 = 손님의 상시 허브 (§2-13) -->
+    <div class="g-card">
+      <b>이전등록 완료 · 2026. 8. 10 (월)</b>
+      <p>고객님 명의로 소유권 이전등록이 되었습니다. 원본은 판매 상사에서 전달합니다.</p>
+      <button type="button" class="doc-btn" onclick="toast('데모 화면입니다 — 실제 화면에서는 등록증 사본이 열립니다')"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-doc"/></svg>등록증 사본 보기</button>
+    </div>
+
     <div class="hub">
-      <div class="hub-t">이 화면에서 언제든 다시 보실 수 있습니다</div>
       <button type="button" class="hub-i" onclick="openInsp()">
         <span class="ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
         <span class="tx"><b>성능·상태점검기록부</b><i>계약 시 열람 · 8. 8(토) 14:25</i></span>
         <span class="ar">›</span></button>
-      <button type="button" class="hub-i" onclick="toast('데모 화면입니다 — 정식 버전에서 등록증 사본이 열립니다')">
-        <span class="ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
-        <span class="tx"><b>자동차등록증 사본</b><i>이전등록 완료 · 8. 10(월) 14:51</i></span>
-        <span class="ar">›</span></button>
-      <button type="button" class="hub-i" onclick="openRec()">
-        <span class="ic car"><svg viewBox="0 0 120 78"><g fill="none" stroke="#2453D9" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 53c0-7 3-11 9-12l25-3 17-21c3-4 7-6 12-6h16c5 0 10 2 13 6l11 15 11 3c4 1 7 5 7 10v8c0 2-2 4-4 4H10c-2 0-4-2-4-4z"/><circle cx="32" cy="59" r="9"/><circle cx="90" cy="59" r="9"/></g></svg></span>
-        <span class="tx"><b>차량에 남은 기록</b><i>나중에 파실 때 값을 지켜 줍니다</i></span>
-        <span class="ar">›</span></button>
     </div>
 
-    <button class="share-btn" onclick="shareCert()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><path d="M4 12v7a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 20 19v-7"/><path d="M12 15V3.5"/><path d="m7.5 7.5 4.5-4.5 4.5 4.5"/></svg>보증서 공유하기</button>
-    <div class="toast" id="toast">데모 버전입니다 — 정식 버전에서 카카오톡·문자로 공유됩니다</div>
+    <div class="g-card"><label>문의</label><p style="margin:0;font-size:14px;color:var(--ink)">김성훈 010-1234-5678 · 굿카닷컴</p></div>
+
     <button class="btn-line" onclick="go('s8')">딜러 화면 — 전화 받았을 때 조회하기</button>
     <span class="back-link" onclick="go('s0')">↺ 데모 처음으로</span>
   </div>
@@ -885,13 +917,13 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
       <div class="lk-recent">
         <div class="rc" onclick="runLookup()"><span class="pl2">12가 3456</span>
           <div><div class="nm2">그랜저 IG 2.5</div><div class="dt">이O진 · 8/8(토) 계약</div></div>
-          <span class="st ok">등록 완료</span></div>
+          <span class="st ok">이전등록 완료</span></div>
         <div class="rc"><span class="pl2">34나 7788</span>
           <div><div class="nm2">쏘렌토 MQ4</div><div class="dt">박O수 · 8/9(일) 계약</div></div>
-          <span class="st ing">이전 진행</span></div>
+          <span class="st ing">인도 완료</span></div>
         <div class="rc"><span class="pl2">56다 1122</span>
           <div><div class="nm2">아반떼 CN7</div><div class="dt">최O민 · 8/10(월) 계약</div></div>
-          <span class="st ing">서류 준비</span></div>
+          <span class="st ing">알림톡 발송</span></div>
       </div>
       <div class="lk-hint" style="padding:18px 10px 0">차량번호를 입력하거나 위에서 고르면
         그 계약의 기록이 바로 나옵니다.</div>
@@ -902,64 +934,64 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
         <svg style="width:40px;height:26px;flex-shrink:0" viewBox="0 0 120 78"><g fill="none" stroke="#2453D9" stroke-width="4.4" stroke-linejoin="round" stroke-linecap="round"><path d="M6 53c0-7 3-11 9-12l25-3 17-21c3-4 7-6 12-6h16c5 0 10 2 13 6l11 15 11 3c4 1 7 5 7 10v8c0 2-2 4-4 4H10c-2 0-4-2-4-4z"/><path d="M62 20h16v17"/><path d="M62 20 47 37h31"/><path d="M84 20h2l14 17H84z"/><circle cx="32" cy="59" r="10"/><circle cx="90" cy="59" r="10"/></g></svg>
         <div>
           <div class="vt">그랜저 IG 2.5</div>
-          <div class="vs2">이O진 님 · 2026. 8. 8(토) 계약 · 인도 완료</div>
+          <div class="vs2">이O진 님 · 8/8(토) 계약 · 이전등록 완료</div>
         </div>
         <span class="no">SD-2608-0002</span>
       </div>
 
-      <div class="lk-sec">고객이 직접 확인한 항목</div>
+      <div class="lk-sec">계약 정보</div>
       <div class="lk-card">
-        <div class="lk-row"><span class="ck2">✓</span>성능·상태점검기록부 열람<span class="tm2">14:25</span></div>
-        <div class="lk-row"><span class="ck2">✓</span>보증 범위와 제외 항목<span class="tm2">14:23</span></div>
-        <div class="lk-row"><span class="ck2">✓</span>소모성 부품 보증 제외<span class="tm2">14:24</span></div>
-        <div class="lk-row"><span class="ck2">✓</span>거래 조건 · 인도까지 추가 청구 비용 없음<span class="tm2">14:27</span></div>
-        <div class="lk-row"><span class="ck2">✓</span>기재된 내용 외 구두 약속 없음<span class="tm2">14:29</span></div>
+        <div class="lk-row">거래 유형<span class="tm2" style="font-size:12px;color:var(--ink);font-weight:750">오늘 인도</span></div>
+        <div class="lk-row">매매금액<span class="tm2" style="font-size:12px;color:var(--ink);font-weight:750">2,780만 원</span></div>
+        <div class="lk-row">인도일<span class="tm2" style="font-size:12px;color:var(--ink);font-weight:750">2026. 8. 8 (토)</span></div>
+        <div class="lk-row">성능보증보험<span class="tm2" id="lkIns" style="font-size:12px;color:var(--ink);font-weight:750">가입</span></div>
       </div>
 
-      <div class="lk-sec">거래 금액 <span style="font-weight:700;letter-spacing:0;color:var(--faint)">· 딜러 확인용</span></div>
+      <div class="lk-sec">손님이 직접 확인한 항목 <span style="font-weight:700;letter-spacing:0;color:var(--faint)">· 서버 시각</span></div>
       <div class="lk-card">
-        <div class="lk-row">차량 매매금액<span class="tm2" style="font-size:12px;color:var(--ink);font-weight:750">2,780만 원</span></div>
-        <div class="lk-row">부대비용 (매도비 30 · 보험료 10)<span class="tm2" style="font-size:12px;color:var(--ink);font-weight:750">40만 원</span></div>
-        <div class="lk-row" style="font-weight:750;color:var(--ink)">입금 합계<span class="tm2" style="font-size:13px;color:var(--blue-d);font-weight:800">2,820만 원</span></div>
+        <div class="lk-row"><span class="ck2">✓</span>본인확인<span class="tm2">14:22</span></div>
+        <div class="lk-row"><span class="ck2">✓</span><span id="lkW1">보증 기간</span><span class="tm2">14:23</span></div>
+        <div class="lk-row"><span class="ck2">✓</span><span id="lkW2">소모품 제외</span><span class="tm2">14:24</span></div>
+        <div class="lk-row"><span class="ck2">✓</span>기록부 열람<span class="tm2">14:25</span></div>
+        <div class="lk-row"><span class="ck2">✓</span>추가 비용 없음<span class="tm2">14:27</span></div>
+        <div class="lk-row"><span class="ck2">✓</span>합의 내용 확인<span class="tm2">14:28</span></div>
+        <div class="lk-row"><span class="ck2">✓</span>전자서명<span class="tm2">14:29</span></div>
       </div>
 
       <div class="lk-sec">첨부 서류</div>
       <div class="doc-row" onclick="openInsp()">
         <span class="dc-ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
-        <span class="dc-t"><b>성능·상태점검기록부</b><i>사진 3장 · 손님 열람 8. 8(토) 14:25</i></span>
+        <span class="dc-t"><b>성능·상태점검기록부</b><i>사진 1장 · 손님 열람 8. 8(토) 14:25</i></span>
         <span class="dc-b ok">손님 확인</span></div>
-      <div class="doc-row" onclick="toast('데모 화면입니다 — 정식 버전에서 원본 사진이 열립니다')">
+      <div class="doc-row" onclick="toast('데모 화면입니다 — 실제 화면에서는 등록증 사본이 열립니다')">
         <span class="dc-ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
-        <span class="dc-t"><b>입금 확인 화면</b><i>8. 8(토) 14:05 · 8. 12(수)</i></span>
-        <span class="dc-b ok">손님 확인</span></div>
-      <div class="doc-row" onclick="toast('데모 화면입니다 — 정식 버전에서 원본 사진이 열립니다')">
-        <span class="dc-ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
-        <span class="dc-t"><b>자동차등록증 사본</b><i>8. 10(월) 14:51 발송</i></span>
-        <span class="dc-b ok">손님 확인</span></div>
+        <span class="dc-t"><b>자동차등록증 사본</b><i>8. 10(월) 14:51 업로드</i></span>
+        <span class="dc-b ok">보증서에 연결</span></div>
 
       <div class="lk-sec">합의 기록</div>
       <div class="lk-card">
-        <div class="lk-row">타이어 마모 → 차량가액 30만 원 할인 반영 · 추가 조치 없음</div>
-        <div class="lk-row">엔진오일·오일필터 교환 후 인도 <span class="tm2">이행 완료</span></div>
+        <div class="lk-row">가격 조정 30만 원 · 명목 타이어 마모<span class="tm2">손님 확인</span></div>
+        <div class="lk-row">엔진오일 · 오일필터 교환<span class="tm2">이행 완료 8/8 15:52</span></div>
       </div>
 
       <div class="lk-sec">손님에게 나간 알림톡</div>
       <div class="sendlog stack">
-        <div class="sl-row"><span class="dot">✓</span>계약 확정<span class="tm3">8/8(토) 14:29</span></div>
-        <div class="sl-row"><span class="dot">✓</span>계약 서류 확정<span class="tm3">8/8(토) 15:42</span></div>
-        <div class="sl-row"><span class="dot">✓</span>인도 당일 보증 안내<span class="tm3">8/8(토) 19:00</span></div>
-        <div class="sl-row"><span class="dot">✓</span>이전등록 절차 진행<span class="tm3">8/10(월) 09:38</span></div>
-        <div class="sl-row"><span class="dot">✓</span>이전등록 완료 · 등록증 사본<span class="tm3">8/10(월) 14:51</span></div>
-        <div class="sl-foot">손님이 “연락 못 받았다”고 하실 때 발송 시각을 그대로 보여드릴 수 있습니다.
-          아래 버튼으로 같은 내용을 다시 보낼 수 있습니다.</div>
+        <div class="sl-row"><span class="dot">✓</span><span>계약 확인 요청</span><span class="tm3">8/8(토) 14:18</span></div>
+        <div class="sl-row"><span class="dot">✓</span><span>계약 확정 · 당일 전액</span><span class="tm3">8/8(토) 14:29</span></div>
+        <div class="sl-row"><span class="dot">✓</span><span>이행 약속 완료</span><span class="tm3">8/8(토) 15:52</span></div>
+        <div class="sl-row" id="slA3"><span class="dot">✓</span><span id="slA3t">보증 안내 · 보험 가입</span><span class="tm3">8/8(토) 19:00</span></div>
+        <div class="sl-row"><span class="dot">✓</span><span>이전등록 절차 진행</span><span class="tm3">8/10(월) 11:00</span></div>
+        <div class="sl-row"><span class="dot">✓</span><span>이전등록 완료</span><span class="tm3">8/10(월) 14:51</span></div>
+        <div class="sl-row" id="slG1"><span class="dot">✓</span><span id="slG1t">성능보증 범위 안내</span><span class="tm3">8/11(화) 11:00</span></div>
+        <div class="sl-row"><span class="dot">✓</span><span>계약 확인 기록 안내</span><span class="tm3">8/15(토) 11:00</span></div>
+        <div class="sl-foot">손님이 “연락 못 받았다”고 하실 때 발송 시각을 그대로 보여드릴 수 있습니다.</div>
       </div>
 
       <div class="lk-note"><span>💬</span><div>
         <b>“8월 8일 14시 25분에 직접 확인하신 항목입니다.”</b><br>
-        이 한 문장이면 통화가 끝납니다. 필요하면 아래에서 보증서 링크를 다시 보내세요.</div></div>
+        이 한 문장이면 통화가 끝납니다.</div></div>
 
-      <button class="btn-line" style="margin-top:16px" onclick="toast('데모 버전입니다 — 정식 버전에서 손님에게 알림톡이 재발송됩니다')">보증서 · 등록증 다시 보내기</button>
-      <button class="btn-line" onclick="toast('데모 버전입니다 — 정식 버전에서 고지 확인 PDF가 열립니다')">고지 확인 PDF 열기</button>
+      <button class="btn-line" style="margin-top:16px" onclick="go('s7')">손님에게 보이는 화면 미리보기 →</button>
       <button class="btn-line" onclick="go('s9')">슈어딜 커넥트 — 딜러별 실적 보기</button>
       <span class="back-link" onclick="go('s0')">↺ 데모 처음으로</span>
     </div>
@@ -968,10 +1000,10 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
 
 <!-- ============ 9. 대표 화면 — 딜러 실적 ============ -->
 <section class="screen" id="s9">
-  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>대표</small></div><a class="home-btn" href="biz/">← 홈</a><div class="demo-tag" style="cursor:pointer;visibility:visible" onclick="go('s8')">← 딜러 화면</div></div>
+  <div class="topbar"><div class="brand"><div class="mark"><svg><use href="#i-mark"/></svg></div>슈어딜<small>커넥트</small></div><a class="home-btn" href="biz/">← 홈</a><div class="demo-tag" style="cursor:pointer;visibility:visible" onclick="go('s8')">← 딜러 화면</div></div>
 
   <div class="owner-head">
-    <div class="lh-eye">굿카닷컴</div>
+    <div class="lh-eye">슈어딜 커넥트 · 굿카닷컴</div>
     <h2>딜러 실적은<br>계약하면 저절로 쌓입니다</h2>
     <p>따로 적어 두실 필요가 없습니다.<br>딜러가 계약을 슈어딜로 하면 그대로 정리됩니다.</p>
     <div class="ov-sum">
@@ -983,59 +1015,60 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
   <div class="ow-body">
     <div class="lk-sec" style="margin-top:2px">오늘 챙기실 것</div>
     <div class="todo">
-      <div class="todo-h">확인이 필요합니다<b>2건</b></div>
-      <div class="td-row">이전등록 완료 · <b style="font-weight:800">등록증 사본 미발송</b><span class="who">이O진 · 김성훈</span></div>
-      <div class="td-row">내일 인도 예정 · 잔금 입금 확인 전<span class="who">박O수 · 박준호</span></div>
+      <div class="todo-h">확인이 필요합니다<b>3건</b></div>
+      <div class="td-row"><span>링크를 보내고 확인이 없는 계약 · <b style="font-weight:800">2일째</b></span><span class="who">최O민 · 박준호</span></div>
+      <div class="td-row"><span>잔금을 기다리는 가계약</span><span class="who">정O호 · 이재민</span></div>
+      <div class="td-row"><span>성능점검 만료가 다가온 차량 <b style="font-weight:800">2대</b></span><span class="who">재고</span></div>
     </div>
 
-    <div class="lk-sec">딜러별 실적 <span style="font-weight:700;letter-spacing:0;color:var(--faint)">· 8월 1~12일</span></div>
+    <div class="lk-sec">딜러별 이번 달 <span style="font-weight:700;letter-spacing:0;color:var(--faint)">· 8월 1~15일</span></div>
 
     <div class="dl">
       <div class="dl-top">
         <div class="dl-av">김</div>
-        <div><div class="dl-nm">김성훈</div><div class="dl-sub">진행 2 · 완료 2</div></div>
+        <div><div class="dl-nm">김성훈</div><div class="dl-sub">진행 중 1 · 확인 완료율 100%</div></div>
         <div class="dl-amt"><b>1억 1,240<em>만 원</em></b><span>4건</span></div>
       </div>
       <div class="dl-bar"><i data-w="100"></i></div>
-      <div class="dl-meta"><span>평균 <b>2,810만 원</b></span><span>할인 반영 <b>2건 · 55만</b></span></div>
+      <div class="dl-meta"><span>평균 <b>2,810만 원</b></span><span>가격 조정 <b>2건 · 55만</b></span></div>
     </div>
 
     <div class="dl">
       <div class="dl-top">
         <div class="dl-av">박</div>
-        <div><div class="dl-nm">박준호</div><div class="dl-sub">진행 2 · 완료 1</div></div>
+        <div><div class="dl-nm">박준호</div><div class="dl-sub">진행 중 2 · 확인 완료율 <b style="color:#B7791F">75%</b></div></div>
         <div class="dl-amt"><b>6,850<em>만 원</em></b><span>3건</span></div>
       </div>
       <div class="dl-bar"><i data-w="61"></i></div>
-      <div class="dl-meta"><span>평균 <b>2,283만 원</b></span><span>할인 반영 <b>1건 · 30만</b></span><span class="warn">미이행 약속 <b>1건</b></span></div>
+      <div class="dl-meta"><span>평균 <b>2,283만 원</b></span><span>가격 조정 <b>1건 · 30만</b></span></div>
     </div>
 
     <div class="dl">
       <div class="dl-top">
         <div class="dl-av">이</div>
-        <div><div class="dl-nm">이재민</div><div class="dl-sub">진행 1 · 완료 1</div></div>
+        <div><div class="dl-nm">이재민</div><div class="dl-sub">진행 중 1 · 확인 완료율 100%</div></div>
         <div class="dl-amt"><b>4,120<em>만 원</em></b><span>2건</span></div>
       </div>
       <div class="dl-bar"><i data-w="37"></i></div>
-      <div class="dl-meta"><span>평균 <b>2,060만 원</b></span><span>할인 반영 <b>없음</b></span></div>
+      <div class="dl-meta"><span>평균 <b>2,060만 원</b></span><span>가격 조정 <b>없음</b></span></div>
     </div>
 
     <div class="lk-sec">최근 계약</div>
     <div class="lk-recent">
       <div class="rc"><span class="pl2">34나 5678</span>
-        <div><div class="nm2">소나타 DN8</div><div class="dt">박준호 · 8/12(수) 계약</div></div>
+        <div><div class="nm2">쏘나타 DN8</div><div class="dt">박준호 · 8/12(수) 계약</div></div>
         <span class="st ing">계약 확정</span></div>
       <div class="rc"><span class="pl2">19바 2345</span>
         <div><div class="nm2">K5 3세대</div><div class="dt">이재민 · 8/11(화) 계약</div></div>
-        <span class="st ing">서류 확정</span></div>
+        <span class="st ing">인도 완료</span></div>
       <div class="rc" onclick="go('s8')"><span class="pl2">12가 3456</span>
         <div><div class="nm2">그랜저 IG 2.5</div><div class="dt">김성훈 · 8/8(토) 계약</div></div>
-        <span class="st ok">등록 완료</span></div>
+        <span class="st ok">이전등록 완료</span></div>
     </div>
 
     <div class="own-note"><span>✓</span><div>
-      <b>딜러 본인도 자기 실적 화면을 봅니다.</b><br>
-      대표님만 보는 화면이 아닙니다. 딜러도 같은 화면에서 자기 숫자를 그대로 봅니다.</div></div>
+      <b>이 숫자는 각자의 기록입니다.</b><br>
+      딜러도 같은 화면에서 자기 숫자를 그대로 봅니다.</div></div>
 
     <button class="btn-line" style="margin-top:16px" onclick="go('s8')">차량번호로 계약 조회하기</button>
     <span class="back-link" onclick="go('s0')">↺ 데모 처음으로</span>
@@ -1051,8 +1084,9 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
   <div class="so-title">계약을 확정하고 있습니다</div>
   <div class="so-line" id="sol1"><span class="so-dot">✓</span>본인인증 기록 결합</div>
   <div class="so-line" id="sol2"><span class="so-dot">✓</span>전자서명 봉인</div>
-  <div class="so-line" id="sol3"><span class="so-dot">✓</span>슈어딜 보증서 생성</div>
+  <div class="so-line" id="sol3"><span class="so-dot">✓</span>계약 보증서 생성</div>
 </div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 </div>
 <script>
@@ -1072,22 +1106,28 @@ function runLookup(){
   },110);
   }, 1100);   /* 최근 계약 목록을 잠깐 보여준 뒤 타이핑 시작 */
 }
-/* 주행거리 20만km 초과 분기 — 성능보증보험 미가입 대상 */
+/* 성능보증보험 가입/미가입 분기 — ⛔ 미가입 «사유»(주행거리 등)는 화면에 적지 않는다(앱 disclosures 결정 4) */
 var HIGH_KM = false;
 function toggleKm(){
   HIGH_KM = !HIGH_KM;
   applyKm();
-  toast(HIGH_KM ? '20만km 초과 차량 — 보험 미가입 안내로 전환되었습니다'
-                : '일반 차량 — 성능보증보험 가입 안내로 전환되었습니다');
+  toast(HIGH_KM ? '성능보증보험 미가입 차량 — 고지가 「수리 책임 안내」로 바뀝니다'
+                : '성능보증보험 가입 차량 — 「보증 안내」로 돌아왔습니다');
 }
 function applyKm(){
   var meta=document.getElementById('vehMeta');
   var a1=document.getElementById('grpA1'), a2=document.getElementById('grpA2');
   var lab=document.getElementById('swLabel'), sw=document.getElementById('demoSw');
   var dot=document.getElementById('swDot');
-  if(meta) meta.innerHTML = HIGH_KM
-    ? '2015년식 · 213,400km<span class="km-badge">성능보증보험 미가입</span>'
-    : '2021년식 · 41,820km';
+  if(meta) meta.innerHTML = '2022년식 · 18,334km' + (HIGH_KM ? '<span class="km-badge">성능보증보험 미가입</span>' : '');
+  setTxt('insKv', HIGH_KM ? '미가입' : '가입'); setTxt('lkIns', HIGH_KM ? '미가입' : '가입');
+  var ci=document.getElementById('certImg'); if(ci) ci.setAttribute('src', HIGH_KM ? 'cert-sample-uninsured.webp' : 'cert-sample.webp');
+  var cv=document.getElementById('gCaveat'); if(cv) cv.style.display = HIGH_KM ? 'none' : '';
+  setHtml('vcWarr', HIGH_KM ? '<b>수리 책임 안내</b> — 성능보증보험 미가입 · 하자담보책임 유지 · 약속은 기재된 것만'
+                            : '<b>보증 범위와 제외 항목</b> — 주요 장치 30일·2,000km 중 먼저 도래 · 소모품 제외');
+  setTxt('slA3t', HIGH_KM ? '계약 내용 안내 · 보험 미가입' : '보증 안내 · 보험 가입');
+  var g1=document.getElementById('slG1'); if(g1) g1.style.display = HIGH_KM ? 'none' : '';
+  setTxt('lkW1', HIGH_KM ? '보험 미가입' : '보증 기간'); setTxt('lkW2', HIGH_KM ? '하자담보책임' : '소모품 제외');
   var hide = HIGH_KM ? a1 : a2;
   if(hide) hide.querySelectorAll('.chk.on').forEach(function(c){ c.classList.remove('on'); });
   if(a1) a1.style.display = HIGH_KM ? 'none' : '';
@@ -1188,27 +1228,71 @@ function updChk(){
 }
 function tg(el){
   if(el.classList.contains('lock')){ toast('먼저 성능·상태점검기록부를 열어보셔야 합니다'); return; }
-  el.classList.toggle('on'); updChk();
+  /* 앱과 같다 — 한 번 누르면 서버 시각으로 기록되고 되돌릴 수 없다 */
+  if(el.classList.contains('on')){ toast('한 번 확인하신 항목은 되돌릴 수 없습니다 — 확인 시각이 기록입니다'); return; }
+  el.classList.add('on'); updChk();
 }
-function openRec(){ var o=document.getElementById('recOv'); if(o) o.classList.add('on'); }
-function closeRec(){ var o=document.getElementById('recOv'); if(o) o.classList.remove('on'); }
-/* 성능·상태점검기록부 — 열람해야 체크가 열린다 */
+function setTxt(id,t){ var e=document.getElementById(id); if(e) e.textContent=t; }
+function setHtml(id,t){ var e=document.getElementById(id); if(e) e.innerHTML=t; }
+function tgAgree(e){
+  if(e && e.target.closest('a')) return;
+  var l=document.getElementById('agLine'); var on=l.classList.toggle('on');
+  document.getElementById('startBtn').disabled=!on;
+}
+/* 문서 뷰어 — 앱 InspectionViewer 와 같은 규칙: 가로 문서를 세로 화면에서 열면 90° 돌려 크게 보여준다.
+   ★ 열람 표시는 «닫을 때»가 아니라 «사진이 실제로 뜬 뒤»가 원칙(앱) — 데모는 닫을 때 잠금을 푼다. */
+var RV={src:'',deg:0,isRec:false};
+function openViewer(src,title,sub,isRec){
+  RV.src=src; RV.isRec=!!isRec; RV.deg=0;
+  document.getElementById('rvTitle').textContent=title;
+  document.getElementById('rvSub').textContent=sub||'';
+  document.getElementById('rvRecNote').style.display=isRec?'':'none';
+  document.getElementById('rvStage').classList.remove('zoom');
+  document.getElementById('rvHint').textContent='사진을 누르면 크게 보입니다';
+  document.getElementById('rvImg').removeAttribute('src');
+  var p=new Image();
+  p.onload=function(){
+    var landscape=p.naturalWidth>p.naturalHeight*1.15, portrait=window.innerHeight>window.innerWidth;
+    RV.deg=(landscape&&portrait)?90:0; rvRender(p);
+  };
+  p.src=src;
+  document.getElementById('rvOv').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function rvRender(img){
+  var el=document.getElementById('rvImg');
+  if(!RV.deg){ el.src=RV.src; return; }
+  try{
+    var w=img.naturalWidth,h=img.naturalHeight,q=RV.deg%180!==0,cv=document.createElement('canvas');
+    cv.width=q?h:w; cv.height=q?w:h;
+    var c=cv.getContext('2d'); c.translate(cv.width/2,cv.height/2); c.rotate(RV.deg*Math.PI/180); c.drawImage(img,-w/2,-h/2);
+    el.src=cv.toDataURL('image/jpeg',.92);
+  }catch(e){ el.src=RV.src; }
+}
+function rvRotate(){ RV.deg=(RV.deg+90)%360; var p=new Image(); p.onload=function(){ rvRender(p); }; p.src=RV.src; }
+function rvZoom(){
+  var z=document.getElementById('rvStage').classList.toggle('zoom');
+  document.getElementById('rvHint').textContent=z?'다시 누르면 전체가 보입니다':'사진을 누르면 크게 보입니다';
+}
+function closeViewer(){
+  document.getElementById('rvOv').classList.remove('on'); document.body.style.overflow='';
+  if(RV.isRec) afterInsp();
+}
 function openInsp(){
-  var ov=document.getElementById('inspOv'); if(!ov) return;
-  ov.classList.add('on');
-  var t=document.getElementById('inspTime');
-  if(t && !t.dataset.set){ t.textContent='2026. 8. 8  14:25'; t.dataset.set=1; }
+  openViewer('inspection-sample.webp','성능·상태점검기록부','제01-05-007490호',true);
+  var t=document.getElementById('inspTime'); if(t && !t.dataset.set){ t.textContent='2026. 8. 8 14:25'; t.dataset.set=1; }
 }
-function closeInsp(){
-  var ov=document.getElementById('inspOv'); if(ov) ov.classList.remove('on');
+function closeInsp(){ closeViewer(); }
+function afterInsp(){
   var c=document.getElementById('chkInsp');
   if(c && c.classList.contains('lock')){
     c.classList.remove('lock');
-    var h=document.getElementById('inspHint');
-    if(h){ h.textContent='열람 완료 · 8. 8(토) 14:25'; h.classList.add('done'); }
-    if(!c.classList.contains('on')){ c.classList.add('on'); updChk(); }
+    var h=document.getElementById('inspHint'); if(h){ h.textContent='보셨습니다 · 8. 8(토) 14:25'; h.classList.add('done'); }
+    var b=document.getElementById('inspBtn'); if(b && b.lastChild) b.lastChild.textContent='다시 보기';
   }
 }
+function openCertBig(){ openViewer(document.getElementById('certImg').getAttribute('src'),'계약 보증서','NO. SD-2608-0002',false); }
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ var o=document.getElementById('rvOv'); if(o && o.classList.contains('on')) closeViewer(); } });
 function tgSingle(el){
   el.classList.toggle('on');
   document.getElementById('adjBtn').disabled=!el.classList.contains('on');
@@ -1234,75 +1318,21 @@ function toast(msg){
   if(msg) t.textContent=msg;
   t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2600);
 }
-function shareCert(){
-  const data={title:'슈어딜 보증서',text:'[슈어딜 보증서] 그랜저 IG 2.5 (12가 3456) · NO. SD-2608-0002\n본인인증 기반으로 확정된 계약 보증서입니다.',url:location.href};
-  if(navigator.share){navigator.share(data).catch(()=>{});}
-  else{const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600);}
-}
 function clearSig(){
   if(!ctx)return;ctx.clearRect(0,0,cv.width,cv.height);drawn=false;
   document.getElementById('sigPh').style.display='flex';
   document.getElementById('sigBtn').disabled=true;
 }
 </script>
-<!-- 차량에 남은 기록 -->
-<div class="insp-ov" id="recOv">
-  <div class="insp-sheet">
-    <div class="insp-hd">
-      <svg style="width:18px;height:18px" viewBox="0 0 24 24"><use href="#i-doc"/></svg>
-      <b>고객님 차량에 남은 기록</b>
-      <span class="x" onclick="closeRec()">×</span>
-    </div>
-    <div class="insp-bd">
-      <div class="rec-c">
-        <div class="rec-r"><span class="ck2">✓</span>성능·상태점검기록부 확인<i>8. 8(토) 14:25</i></div>
-        <div class="rec-r"><span class="ck2">✓</span>주행거리 41,820km<i>계약 시점</i></div>
-        <div class="rec-r"><span class="ck2">✓</span>본인인증 계약 · 전자서명<i>8. 8(토) 14:29</i></div>
-        <div class="rec-r"><span class="ck2">✓</span>합의 기록 1건<i>타이어 마모 → 30만 원 반영</i></div>
-      </div>
-      <div class="rec-msg"><b>나중에 이 차를 파실 때, 이 기록이 그대로 남아 있습니다.</b><br>
-        이력이 확인되는 차는 값을 지킵니다.</div>
-      <div class="rec-sec">참고 · 연식별 감가 구간</div>
-      <div class="rec-g">
-        <div class="rec-bar"><span class="l">신차 첫 해</span><i class="b1" style="width:100%"></i><span class="v">−20~30%</span></div>
-        <div class="rec-bar"><span class="l">3~5년차</span><i class="b2" style="width:38%"></i><span class="v">연 −8~12%</span></div>
-      </div>
-      <div class="rec-note">고객님 차량은 <b>가장 가파른 구간을 이미 지났습니다.</b><br>
-        <span>※ 일반적인 감가 흐름에 대한 참고 정보이며, 특정 금액을 예측하거나 보장하지 않습니다.</span></div>
-    </div>
-    <div class="insp-ft">
-      <button type="button" onclick="closeRec()">닫기</button>
-    </div>
-  </div>
-</div>
-
-<!-- 성능·상태점검기록부 열람 -->
-<div class="insp-ov" id="inspOv">
-  <div class="insp-sheet">
-    <div class="insp-hd">
-      <svg style="width:18px;height:18px" viewBox="0 0 24 24"><use href="#i-doc"/></svg>
-      <b>성능·상태점검기록부</b>
-      <span class="x" onclick="closeInsp()">×</span>
-    </div>
-    <div class="insp-bd">
-      <div class="insp-paper">
-        <div class="insp-ttl">중고자동차 성능·상태점검기록부</div>
-        <div class="ir"><span>차량번호</span><b>12가 3456</b></div>
-        <div class="ir"><span>차명 / 연식</span><b>그랜저 IG 2.5 · 2021</b></div>
-        <div class="ir"><span>주행거리</span><b>41,820 km</b></div>
-        <div class="ir ok"><span>사고이력</span><b>없음</b></div>
-        <div class="ir ok"><span>침수이력</span><b>없음</b></div>
-        <div class="ir"><span>주요장치</span><b>양호</b></div>
-        <div class="ir"><span>점검일</span><b>2026. 8. 5</b></div>
-        <div class="ir"><span>점검자</span><b>○○자동차성능시험소</b></div>
-      </div>
-      <div class="pay-note" style="margin-top:12px">※ 데모 화면입니다. 정식 버전에서는 딜러가 업로드한 <b>실제 기록부 원본</b>이 표시됩니다.</div>
-    </div>
-    <div class="insp-ft">
-      <div class="tm">열람 시각 <b id="inspTime">—</b></div>
-      <button type="button" onclick="closeInsp()">확인했습니다</button>
-    </div>
-  </div>
+<!-- 성능·상태점검기록부 / 계약 보증서 뷰어 — 앱 InspectionViewer 와 같은 동작
+     ⛔ 「차량에 남은 기록」(감가 구간 시트)은 뺐다(09-24): 폐지된 F-1 개념이고, 재판매 값은 손님 화면·랜딩에 싣지 않는다(ld-11·dev-resale) -->
+<div class="rv" id="rvOv" role="dialog" aria-modal="true" aria-label="문서 보기">
+  <div class="rv-bar"><b id="rvTitle">성능·상태점검기록부</b><small id="rvSub"></small><span class="sp"></span>
+    <button type="button" onclick="rvRotate()">돌리기</button>
+    <button type="button" onclick="closeViewer()">닫기</button></div>
+  <div class="rv-stage" id="rvStage"><img id="rvImg" alt="" onclick="rvZoom()"></div>
+  <div class="rv-foot"><span id="rvHint">사진을 누르면 크게 보입니다</span>
+    <div id="rvRecNote">시연용 실제 기록부입니다 — 차명·차량번호·차대번호는 가렸습니다 · 열람 시각 <b id="inspTime">—</b></div></div>
 </div>
 
 <button type="button" class="ins-sw" id="demoSw" onclick="toggleKm()" aria-pressed="true"
