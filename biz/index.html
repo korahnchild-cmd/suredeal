@@ -431,10 +431,10 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
   font-weight:900;transition:background .25s,border-color .25s,color .25s}
 .chk.ok{border-color:#CBE8D8;background:#FBFEFC}
 .chk.ok i{background:var(--green);border-color:var(--green);color:#fff}
-/* 고지 화면만 9항목이라 더 촘촘하게 */
-.scr[data-s="2"] .chk{padding:5px 10px;margin-bottom:3.5px;font-size:11.2px;line-height:1.42}
+/* 고지 화면만 10항목이라 더 촘촘하게 */
+.scr[data-s="2"] .chk{padding:3.5px 10px;margin-bottom:2.5px;font-size:11.2px;line-height:1.36}
 .scr[data-s="2"] .chk i{width:13.5px;height:13.5px;margin-top:.5px}
-.scr[data-s="2"] .chk-grp{margin:5px 0 3px;font-size:9.5px}
+.scr[data-s="2"] .chk-grp{margin:4px 0 2px;font-size:9.5px}
 .scr[data-s="2"] .s-h{margin-bottom:8px}
 .chk-bar{margin-top:9px;height:3px;background:#DFE4EE;border-radius:2px;overflow:hidden}
 .chk-bar b{display:block;height:100%;width:0;background:var(--green);border-radius:2px;transition:width .35s ease}
@@ -1486,7 +1486,7 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
       </button>
       <button class="sc" type="button" data-go="2">
         <span class="n">3</span>
-        <h3>고지 9항목 확인</h3>
+        <h3>고지 10항목 확인</h3>
         <p>보증 범위 · 차량 상태 · 거래 조건. 전부 체크해야 다음으로 넘어갑니다.</p>
         <span class="tm">1분</span>
       </button>
@@ -1531,7 +1531,7 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
           <div class="pc" data-i="2">
             <div class="no">3</div>
             <h3>손님이 직접 체크합니다.</h3>
-            <p>보증 범위 · 차량 상태 · 거래 조건. 아홉 항목을 전부 체크해야 다음으로 넘어갑니다.
+            <p>보증 범위 · 차량 상태 · 거래 조건. 10개 항목을 전부 체크해야 다음으로 넘어갑니다.
                지금도 딜러가 말로 하던 설명을, 손님의 행위 기록으로 바꾸는 지점입니다.</p>
             <span class="tag">손님 화면 · 1분</span>
           </div>
@@ -1598,7 +1598,7 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
               차량이 다른 사람 명의로 등록되는 것을 막습니다.</div></div>
           </div>
 
-          <!-- 3. 고지 9항목 -->
+          <!-- 3. 고지 10항목 (2026.09.26 압류·저당 B3 추가) -->
           <div class="scr" data-s="2">
             <div class="s-lab">고지 확인</div>
             <div class="s-h">모든 항목을 확인해주세요</div>
@@ -1610,6 +1610,7 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
             <div class="chk-grp">B. 차량 상태</div>
             <div class="chk"><i>✓</i>성능·상태점검기록부 열람</div>
             <div class="chk"><i>✓</i>외관·실내 직접 확인</div>
+            <div class="chk"><i>✓</i>압류·저당 등록 여부 안내</div>
             <div class="chk-grp">C. 거래 조건</div>
             <div class="chk"><i>✓</i>낼 비용 안내 · 그 외 추가 청구 없음</div>
             <div class="chk"><i>✓</i>이전등록 세금·수수료 안내</div>
@@ -2127,7 +2128,7 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
         <tbody>
         <tr><td class="lbl"><b>무엇을 확인했는지</b>가 항목별로 남는다</td><td><span class="mk n">—</span><span class="sub">종이로는 불가능</span></td><td><span class="mk n">—</span></td><td class="sdcol"><span class="mk y">✓</span><span class="sub">항목마다 확인 시각</span></td></tr>
         <tr><td class="lbl">문서에 서명이 남는다</td><td><span class="mk p">△</span><span class="sub">종이 서명</span></td><td><span class="mk y">✓</span></td><td class="sdcol"><span class="mk y">✓</span><span class="sub">전자서명</span></td></tr>
-        <tr><td class="lbl">중고차 <b>고지 항목이 기본으로 내장</b></td><td><span class="mk n">—</span><span class="sub">양식마다 다름</span></td><td><span class="mk n">—</span><span class="sub">직접 만들어야</span></td><td class="sdcol"><span class="mk y">✓</span><span class="sub">9항목 표준</span></td></tr>
+        <tr><td class="lbl">중고차 <b>고지 항목이 기본으로 내장</b></td><td><span class="mk n">—</span><span class="sub">양식마다 다름</span></td><td><span class="mk n">—</span><span class="sub">직접 만들어야</span></td><td class="sdcol"><span class="mk y">✓</span><span class="sub">10항목 표준</span></td></tr>
         
         <tr><td class="lbl">할인·약속 등 <b>합의 기재란</b></td><td><span class="mk p">△</span><span class="sub">수기 특약</span></td><td><span class="mk n">—</span></td><td class="sdcol"><span class="mk y">✓</span><span class="sub">표준 제공</span></td></tr>
         <tr><td class="lbl">본인인증(PASS) 결합</td><td><span class="mk n">—</span></td><td><span class="mk p">△</span><span class="sub">별도 설정</span></td><td class="sdcol"><span class="mk y">✓</span><span class="sub">기본 포함</span></td></tr>
@@ -2227,11 +2228,12 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
           <div class="doc-row"><span class="ck">✓</span>현재 소모품 마모 상태 확인<span class="tm">14:24</span></div>
           <div class="doc-row"><span class="ck">✓</span>성능·상태점검기록부 열람<span class="tm">14:25</span></div>
           <div class="doc-row"><span class="ck">✓</span>외관·실내 직접 확인<span class="tm">14:26</span></div>
+          <div class="doc-row"><span class="ck">✓</span>압류·저당 등록 여부 안내<span class="tm">14:26</span></div>
           <div class="doc-row"><span class="ck">✓</span>낼 비용 안내 · 그 외 추가 청구 없음<span class="tm">14:26</span></div>
           <div class="doc-row"><span class="ck">✓</span>이전등록 세금·수수료 안내<span class="tm">14:27</span></div>
           <div class="doc-row"><span class="ck">✓</span>단순 변심 해제 시 계약금 규정 안내<span class="tm">14:27</span></div>
           <div class="doc-meta">
-            <span>총 9항목 확인</span>
+            <span>총 10항목 확인</span>
             <span>PASS 본인인증 완료</span>
             <span>합의 조정 1건</span>
             <span>기재 외 구두 약속 없음</span>

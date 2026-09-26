@@ -12,7 +12,7 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:url" content="https://suredeal.kr/demo.html">
 <meta property="og:title" content="슈어딜 데모 — 손님 화면 직접 체험해보기">
-<meta property="og:description" content="계약 등록부터 본인인증·고지 9항목 확인·전자서명·보증서까지, 손님이 보는 화면을 그대로 체험할 수 있습니다.">
+<meta property="og:description" content="계약 등록부터 본인인증·고지 10항목 확인·전자서명·보증서까지, 손님이 보는 화면을 그대로 체험할 수 있습니다.">
 <meta property="og:image" content="https://suredeal.kr/og.png">
 <meta property="og:image:secure_url" content="https://suredeal.kr/og.png">
 <meta property="og:image:type" content="image/png">
@@ -21,7 +21,7 @@
 <meta property="og:image:alt" content="슈어딜 — 수기계약서는 그대로, 확정만 디지털로">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="슈어딜 데모 — 손님 화면 직접 체험해보기">
-<meta name="twitter:description" content="계약 등록부터 본인인증·고지 9항목 확인·전자서명·보증서까지, 손님이 보는 화면을 그대로 체험할 수 있습니다.">
+<meta name="twitter:description" content="계약 등록부터 본인인증·고지 10항목 확인·전자서명·보증서까지, 손님이 보는 화면을 그대로 체험할 수 있습니다.">
 <meta name="twitter:image" content="https://suredeal.kr/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;800;900&display=swap" rel="stylesheet">
@@ -749,7 +749,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
     </div>
 
     <div class="group">
-      <div class="group-title"><span class="gnum">B</span>차량 상태 확인<span class="gsub">2개 항목</span></div>
+      <div class="group-title"><span class="gnum">B</span>차량 상태 확인<span class="gsub">3개 항목</span></div>
       <div class="chk lock" id="chkInsp" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div>
         <div><b>성능·상태점검기록부</b>를 열람하고 사고이력 · 침수여부 · 주행거리를 확인했습니다.
           <button type="button" class="doc-btn" id="inspBtn" onclick="event.stopPropagation();openInsp()">
@@ -757,6 +757,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
           <span class="doc-hint" id="inspHint">열어보셔야 체크할 수 있습니다</span>
         </div></div>
       <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>차량의 외관·실내 상태를 <b>직접 또는 사진·영상으로</b> 확인했습니다.</div></div>
+      <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>계약 시점 <b>자동차등록원부</b> 기준으로 이 차량에 <b>압류·저당권 등록이 없음</b>을 안내받았습니다.</div></div>
     </div>
 
     <div class="group">
@@ -766,7 +767,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
       <div class="chk" onclick="tg(this)"><div class="box"><svg><use href="#i-check"/></svg></div><div>계약 체결 후 <b>단순 변심에 의한 해제 시 계약금 관련 규정</b>을 안내받았습니다.</div></div>
     </div>
   </div>
-  <div class="cta-wrap"><button class="cta" id="chkBtn" disabled onclick="go('s4')">모두 확인했습니다 (0/9)</button></div>
+  <div class="cta-wrap"><button class="cta" id="chkBtn" disabled onclick="go('s4')">모두 확인했습니다 (0/10)</button></div>
 </section>
 
 <!-- ============ 4. 합의 내용 (앱 D4) ============ -->
@@ -847,7 +848,7 @@ h1{font-size:23px;font-weight:800;letter-spacing:-.55px;line-height:1.34;margin-
     </div>
     <div class="card rise" style="animation-delay:.2s">
       <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>본인인증 완료</b><small>2026. 8. 8 (토) 14:22 · PASS</small></div></div>
-      <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>고지 확인 · 전자서명 완료</b><small>2026. 8. 8 (토) 14:29 · 9개 항목 본인 확인</small></div></div>
+      <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>고지 확인 · 전자서명 완료</b><small>2026. 8. 8 (토) 14:29 · 10개 항목 본인 확인</small></div></div>
       <div class="tl-item ok"><div class="tl-dot">✓</div><div><b>계약 확정</b><small>관리번호 SD-2608-0002 발급</small></div></div>
       <div class="tl-item wait"><div class="tl-dot">4</div><div>인도<small>오늘 인도 예정 · 인도 후 안내가 알림톡으로 갑니다</small></div></div>
       <div class="tl-item wait"><div class="tl-dot">5</div><div>이전등록 완료<small>등록증 사본은 보증서 화면에서 열립니다</small></div></div>

@@ -396,10 +396,10 @@ header.nav-open{background:rgba(12,23,48,.96);backdrop-filter:saturate(160%) blu
   font-weight:900;transition:background .25s,border-color .25s,color .25s}
 .chk.ok{border-color:#CBE8D8;background:#FBFEFC}
 .chk.ok i{background:var(--green);border-color:var(--green);color:#fff}
-/* 고지 화면만 9항목이라 더 촘촘하게 */
-.scr[data-s="2"] .chk{padding:5px 10px;margin-bottom:3.5px;font-size:11.2px;line-height:1.42}
+/* 고지 화면만 10항목이라 더 촘촘하게 */
+.scr[data-s="2"] .chk{padding:3.5px 10px;margin-bottom:2.5px;font-size:11.2px;line-height:1.36}
 .scr[data-s="2"] .chk i{width:13.5px;height:13.5px;margin-top:.5px}
-.scr[data-s="2"] .chk-grp{margin:5px 0 3px;font-size:9.5px}
+.scr[data-s="2"] .chk-grp{margin:4px 0 2px;font-size:9.5px}
 .scr[data-s="2"] .s-h{margin-bottom:8px}
 .chk-bar{margin-top:9px;height:3px;background:#DFE4EE;border-radius:2px;overflow:hidden}
 .chk-bar b{display:block;height:100%;width:0;background:var(--green);border-radius:2px;transition:width .35s ease}
@@ -1306,7 +1306,7 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
       </button>
       <button class="sc" type="button" data-go="2">
         <span class="n">3</span>
-        <h3>고지 9항목 확인</h3>
+        <h3>고지 10항목 확인</h3>
         <p>보증 범위 · 차량 상태 · 거래 조건. 전부 체크해야 다음으로 넘어갑니다.</p>
         <span class="tm">1분</span>
       </button>
@@ -1415,7 +1415,7 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
               차량이 다른 사람 명의로 등록되는 것을 막습니다.</div></div>
           </div>
 
-          <!-- 3. 고지 9항목 -->
+          <!-- 3. 고지 10항목 (2026.09.26 압류·저당 B3 추가) -->
           <div class="scr" data-s="2">
             <div class="s-lab">고지 확인</div>
             <div class="s-h">모든 항목을 확인해주세요</div>
@@ -1427,6 +1427,7 @@ footer{background:#070D1D;color:#7286AB;padding:44px 0 40px;font-size:13.7px}
             <div class="chk-grp">B. 차량 상태</div>
             <div class="chk"><i>✓</i>성능·상태점검기록부 열람</div>
             <div class="chk"><i>✓</i>외관·실내 직접 확인</div>
+            <div class="chk"><i>✓</i>압류·저당 등록 여부 안내</div>
             <div class="chk-grp">C. 거래 조건</div>
             <div class="chk"><i>✓</i>낼 비용 안내 · 그 외 추가 청구 없음</div>
             <div class="chk"><i>✓</i>이전등록 세금·수수료 안내</div>
